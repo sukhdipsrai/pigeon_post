@@ -54,12 +54,10 @@ Sukhdip Rai(Leader, Flex), Juan Sanchez(Frontend), Zihao Li(Backend)
     * Juan - developing action creators, reducers, the form components, for both the user and driver
     * Zihao - backend API for authentication
 
-* Day 2 ~ 3
+* Day 2
   #### Delivery tasks CRUD:
   * Allowing users to create delivery tasks (setup locations)
   * Allowing users to cancel tasks before the driver takes it.
-  * Allowing drivers to edit delivery tasks (finished/accepted)
-  * Allowing drivers to view delivery tasks from which to choose from.
   * Creating the frontend flow of customers to create, cancel , view they deliveries.
       * Sukhdip - flex role, assisting frontend and/or backend through task delegation
      * Juan - leading frontend, build out different dashboards: one for the user to view their history/place task; one for the driver to see their history/accept task
