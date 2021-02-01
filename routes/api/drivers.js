@@ -7,6 +7,8 @@ const passport = require('passport');
 
 //import driver model
 
-router.get("/driver_test", (req, res)=>{
-    res.json({ msg: "This is the drivers route" })
+router.get("/test", (req, res)=>{
+    return res.json({ msg: "This is the drivers route" })
 }  )
+
+module.exports = router;
