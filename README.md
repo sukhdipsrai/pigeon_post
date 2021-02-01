@@ -1,4 +1,4 @@
-# pigeon_post
+# PigeonPost
 
 ## Background and Overview:
 PigeonPost is a Web Application that allows users to hire other users to make same day deliveries; customers make delivery tasks, while drivers process and complete these tasks.
@@ -26,7 +26,6 @@ Make sure to update the redux states with no perceptible delay for interactions 
 
 * Heroku
 * Production Readme
-
 
 
 ## Technical Challenges:
@@ -61,11 +60,20 @@ Sukhdip Rai(Leader, Flex), Juan Sanchez(Frontend), Zihao Li(Backend)
   * Allowing users to cancel tasks before the driver takes it.
   * Allowing drivers to edit delivery tasks (finished/accepted)
   * Allowing drivers to view delivery tasks from which to choose from.
-  * Creating the frontend flow
+  * Creating the frontend flow of customers to create, cancel , view they deliveries.
       * Sukhdip - flex role, assisting frontend and/or backend through task delegation
      * Juan - leading frontend, build out different dashboards: one for the user to view their history/place task; one for the driver to see their history/accept task
      * Zihao - leading backend
-
+     
+* Day 3
+  #### Delivery tasks CRUD cont.:
+  * Allowing drivers to edit delivery tasks (finished/accepted)
+  * Allowing drivers to view delivery tasks from which to choose from.
+  * Creating the frontend flow of drivers to accept, update, and view their deliveries.
+      * Sukhdip - flex role, assisting frontend and/or backend through task delegation
+     * Juan - leading frontend, build out different dashboards: one for the user to view their history/place task; one for the driver to see their history/accept task
+     * Zihao - leading backend
+     
 * Day 4
   #### Polishing our app with CSS.
   * Sukhdip - Finish up Styling related issues or remaining backend/frontend features
