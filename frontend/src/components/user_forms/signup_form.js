@@ -8,7 +8,8 @@ class SignupForm extends React.Component {
       userType: '',
       email: '',
       firstname: '',  
-      lastname: '',  
+      lastname: '', 
+      phone: "", 
       password: '',
       password2: '',
       errors: {}
@@ -45,15 +46,16 @@ class SignupForm extends React.Component {
     e.preventDefault();
     debugger
     let user = {
-      user_type: this.userType, 
-      firstname: this.firstname,  
-      lastname: this.lastname,   
+      usertype: this.state.userType, 
+      firstname: this.state.firstname,  
+      lastname: this.state.lastname,   
+      phone: this.state.phone,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user); 
   }
 
   renderErrors() {
@@ -93,6 +95,12 @@ class SignupForm extends React.Component {
                 value={this.state.firstname}
                 onChange={this.update('firstname')}
                 placeholder="First Name"
+              />
+              <br/>
+              <input type="text"
+                value={this.state.phone}
+                onChange={this.update('phone')}
+                placeholder="phone"
               />
               <br/>
               <input type="text"
