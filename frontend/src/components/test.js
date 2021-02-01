@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import React from 'react'
-import { test } from '../actions/session_actions'
+// import { test } from '../actions/session_actions'
 class Test extends React.Component {
     constructor(props) {
         super(props)
