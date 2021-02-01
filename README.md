@@ -56,24 +56,28 @@ Sukhdip Rai(Leader, Flex), Juan Sanchez(Frontend), Zihao Li(Backend)
 
 * Day 2
   #### Delivery tasks CRUD:
-  * Allowing users to create delivery tasks (setup locations)
+  * Allowing users to create delivery tasks.
+    * Backend API creating table and schema and routes to add entries, front end form with CSS.
   * Allowing users to cancel tasks before the driver takes it.
+    * Backend API for deleting the entries the customer posts, components and view with CSS on the front end.
   * Creating the frontend flow of customers to create, cancel , view they deliveries.
-      * Sukhdip - flex role, assisting frontend and/or backend through task delegation
+     * Sukhdip - flex role, assisting frontend and/or backend through task delegation
      * Juan - leading frontend, build out different dashboards: one for the user to view their history/place task; one for the driver to see their history/accept task
-     * Zihao - leading backend
+     * Zihao - leading backend and API routes for customer actions needed for the frontend.
      
 * Day 3
   #### Delivery tasks CRUD cont.:
   * Allowing drivers to edit delivery tasks (finished/accepted)
+    * Backend routes that update delivery entries, front end components that use this actions.
   * Allowing drivers to view delivery tasks from which to choose from.
+    * Backend routes which send requested data, front end components that render componets to display data.
   * Creating the frontend flow of drivers to accept, update, and view their deliveries.
       * Sukhdip - flex role, assisting frontend and/or backend through task delegation
      * Juan - leading frontend, build out different dashboards: one for the user to view their history/place task; one for the driver to see their history/accept task
-     * Zihao - leading backend
+     * Zihao - leading backend and API routes for driver actions needed for the frontend.
      
 * Day 4
-  #### Polishing our app with CSS.
+  #### Delivery tasks CRUD cont. + Final Polishing touches:
   * Sukhdip - Finish up Styling related issues or remaining backend/frontend features
   * Juan - Finishing up/continuing any styling needed to pages previously made.
   * Zihao - Finish up Styling related issues or remaining backend/frontend features
