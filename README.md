@@ -1,6 +1,6 @@
 # pigeon_post
 
-##Background and Overview:
+## Background and Overview:
 PigeonPost is a Web Application that allows users to hire other users to make same day deliveries; customers make delivery tasks, while drivers process and complete these tasks.
 
 We will need to:
