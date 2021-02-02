@@ -19,9 +19,10 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 const users = require("./routes/api/users");
+const tasks = require("./routes/api/tasks");
 
 app.use("/api/users", users);
-
+app.use("/api/tasks", tasks);
 
 
 
