@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import Test from './test'
 import SplashPage from './splash_page'
-import Dashboard from './dashboard/dashboard'
+import DashboardContainer from './dashboard/dashboard_container'
 import LoginFormContainer from './user_forms/user_signin_container'
 import SignUpFormContainer from './user_forms/user_signup_container'
 
@@ -15,7 +15,7 @@ const App = () => (
         <AuthRoute exact path="/" component={SplashPage} />
        <AuthRoute exact path="/users/login" component={LoginFormContainer} />
         <AuthRoute exact path="/users/signup" component={SignUpFormContainer} />
-        <AuthRoute exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
          {/* <AuthRoute exact path="/login/drivers" component={LoginDriverFormContainer} />
         <AuthRoute exact path="/signup/drivers" component={SignupDriverFormContainer} /> */}
 
