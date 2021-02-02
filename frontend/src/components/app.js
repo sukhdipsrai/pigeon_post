@@ -6,10 +6,12 @@ import SplashPage from './splash_page'
 import DashboardContainer from './dashboard/dashboard_container'
 import LoginFormContainer from './user_forms/user_signin_container'
 import SignUpFormContainer from './user_forms/user_signup_container'
-
+import '../stylesheets/app.css'
 
 const App = () => (
-  <div>
+  <div className="app">
+
+    <div className="inner-app">
 
     <Switch>
         <AuthRoute exact path="/" component={SplashPage} />
@@ -23,13 +25,14 @@ const App = () => (
       {/* <Test></Test> */}
     {/* <NavBarContainer />
     <Switch>
-        
-      <AuthRoute exact path="/" component={MainPage} />
-
-      <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-      <ProtectedRoute exact path="/new_tweet" component={TweetComposeContainer} />
-    </Switch> */}
+    
+    <AuthRoute exact path="/" component={MainPage} />
+    
+    <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
+    <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+    <ProtectedRoute exact path="/new_tweet" component={TweetComposeContainer} />
+  </Switch> */}
+  </div>
   </div>
 );
 

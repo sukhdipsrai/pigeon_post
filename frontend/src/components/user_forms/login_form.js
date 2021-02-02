@@ -59,9 +59,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="signup-form-container">
+          <div className="signup-form">
         <form onSubmit={this.handleSubmit}>
-          <div>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -76,8 +76,8 @@ class LoginForm extends React.Component {
             <br/>
             <input type="submit" value="Submit" />
             {this.renderErrors()}
-          </div>
         </form>
+          </div>
       </div>
     );
   }
