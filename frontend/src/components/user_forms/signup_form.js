@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
       phone: "", 
       password: '',
       password2: '',
+      page: 0,
       errors: {}
     };
     // this.handleType = this.handleType.bind(this);
@@ -30,6 +31,13 @@ class SignupForm extends React.Component {
 
   update(field) {
       debugger
+      if(field === 'userType'){
+        // this.setState({ page: this.state.page + 1 })
+        return e => this.setState({
+          [field]: e.currentTarget.value,
+          page: 1
+        });
+      }
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -74,13 +82,12 @@ class SignupForm extends React.Component {
   render() {
 
     debugger
-    return (
-      <div className="signup-form-container">
 
 
-              
+    if (this.state.page === 0){
 
-        
+      return (
+        <div className="signup-form-container">    
         <div className="signup-main"> 
 
           <div className="signup-form">
@@ -89,9 +96,72 @@ class SignupForm extends React.Component {
               <div className="driver-or-customer">
 
 
-              <input className="clickon" type="submit" value="Driver"  onClick={()=>this.update('userType')}/>
+              <input className="clickon" type="submit" value="Driver"  onClick={this.update('userType')}/>
               <br/>
-              <input className="clickon" type="submit" value="Customer"  onClick={()=>this.update('userType')}/>
+              <input className="clickon" type="submit" value="Customer"  onClick={this.update('userType')}/>
+              </div>
+        {/* <form onSubmit={this.handleSubmit}>
+            <br/>
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="Email"
+                />
+            <br/>
+              <input type="text"
+                value={this.state.firstname}
+                onChange={this.update('firstname')}
+                placeholder="First Name"
+                />
+              <br/>
+              
+              <input type="text"
+                value={this.state.lastname}
+                onChange={this.update('lastname')}
+                placeholder="Last Name"
+                />
+            <br/>
+            <input type="text"
+                value={this.state.phone}
+                onChange={this.update('phone')}
+                placeholder="Phone"
+                />
+              <br/>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+                />
+            <br/>
+              <input type="password"
+                value={this.state.password2}
+                onChange={this.update('password2')}
+                placeholder="Confirm Password"
+                />
+            <br/>
+            <input type="submit" value="Submit" />
+            {this.renderErrors()}
+        </form> */}
+                </div>
+          </div>
+        </div>
+      </div>
+    );
+} else if (this.state.page === 1){
+  debugger
+    return(
+      <div className="signup-form-container">    
+        <div className="signup-main"> 
+
+          <div className="signup-form">
+            <div className="holder" >
+          {/* <h1>What would you like to sign up as?</h1> */}
+              <div className="driver-or-customer">
+
+              <h1>{this.state.userType} sign up</h1>
+              {/* <input className="clickon" type="submit" value="Driver"  onClick={()=>this.update('userType')}/>
+              <br/>
+              <input className="clickon" type="submit" value="Customer"  onClick={()=>this.update('userType')}/> */}
               </div>
         <form onSubmit={this.handleSubmit}>
             <br/>
@@ -139,7 +209,12 @@ class SignupForm extends React.Component {
           </div>
         </div>
       </div>
-    );
+
+    )
+
+
+
+}
   }
 }
 

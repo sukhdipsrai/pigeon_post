@@ -1,0 +1,36 @@
+.navbar {
+    /* margin-top: 40px; */
+    width: 80%;
+    min-width: 600px;
+    max-width: 1000px;
+    background-color: darkslateblue;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+.header-logo {
+    font-size: 40px;
+}
+
+.top{
+    /* height: 120px; */
+    padding-top: 30px;
+    letter-spacing: -2px;
+    /* background-color:  silver; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.dropdown{
+    width: 80%;
+    /* background-color: skyblue; */
+    /* float: right; */
+    display: flex;
+    justify-content:space-between
+}
+

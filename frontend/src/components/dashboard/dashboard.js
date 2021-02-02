@@ -20,11 +20,9 @@ class Dashboard extends React.Component {
         // debugger
 
         return (
-            <div>
+            <div className="dashboard-main">
                 <h1>this is the Dashboard</h1>
-                <div className="dropdown">
-                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.email}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
-                </div>
+                
             </div>
 
         )

@@ -1,17 +1,4 @@
-.header-logo {
-    font-size: 40px;
-}
 
-.top{
-    /* height: 120px; */
-    letter-spacing: -2px;
-    background-color:  #687C96;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20px;
-}
 
 .splashbuttons {
     width: 50%;
@@ -29,7 +16,7 @@
     /* background-color: seashell; */
     width: 500px;
     display: flex;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 

@@ -1,37 +1,37 @@
-import { connect } from "react-redux"
-import React from 'react'
-// import { test } from '../actions/session_actions'
-class Test extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    componentDidMount() {
+// import { connect } from "react-redux"
+// import React from 'react'
+// // import { test } from '../actions/session_actions'
+// class Test extends React.Component {
+//     constructor(props) {
+//         super(props)
+//     }
+//     componentDidMount() {
         
-        this.props.test();
-    }
+//         this.props.test();
+//     }
 
-    render() {
+//     render() {
         
-        return (
-            <div>
-                <p>{this.props.testData}</p>
-                <p>Hello World, Test</p>
-            </div>
-        )
-    }
-}
+//         return (
+//             <div>
+//                 <p>{this.props.testData}</p>
+//                 <p>Hello World, Test</p>
+//             </div>
+//         )
+//     }
+// }
 
-const mstp = (state, ownProps) => {
+// const mstp = (state, ownProps) => {
 
-    return {
-        testData: state.session.msg
-    }
-}
+//     return {
+//         testData: state.session.msg
+//     }
+// }
 
-const mdtp = dispatch => {
-    return {
-        test: () => dispatch(test())
-    }
-}
+// const mdtp = dispatch => {
+//     return {
+//         test: () => dispatch(test())
+//     }
+// }
 
-export default connect(mstp, mdtp)(Test);
+// export default connect(mstp, mdtp)(Test);

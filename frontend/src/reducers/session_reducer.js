@@ -7,7 +7,7 @@ import { RECEIVE_CURRENT_USER,
             user: {}
       };
 
-      export default function(state = initialState, action) {
+const SessionReducer = (state = initialState, action) => {
           switch (action.type) {
         case RECEIVE_CURRENT_USER:
           return {
@@ -31,3 +31,5 @@ import { RECEIVE_CURRENT_USER,
       }
     // case TEST:
     //   return action.res.data;
+
+    export default SessionReducer;

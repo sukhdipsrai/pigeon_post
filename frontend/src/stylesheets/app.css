@@ -60,13 +60,18 @@ table {
 }
 
 .inner-app {
-    padding-top: 45px;
+    padding-top: 120px;
+    margin:0;
     width: 80%;
     min-width: 600px;
     max-width: 1000px;
     /* background-color: seagreen; */
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: center;
+}
+
+.routes {
+    width: 100%;
 }
 
 .links {
