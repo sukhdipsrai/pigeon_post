@@ -31,8 +31,8 @@ class Navbar extends React.Component {
             {/* <h1 className="header-logo">Pigeon Post</h1> */}
             </div>
             <div className="dropdown">
-            <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
-                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.email}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
+            {/* <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1> */}
+                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>email here▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
                 </div>
             </div>
         )
