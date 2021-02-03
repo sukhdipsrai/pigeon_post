@@ -1,7 +1,10 @@
 .signup-form-container {
+    min-height: 500px;
     background-color: silver;
     display: flex;
     justify-content: center;
+    align-content: center;
+    border-radius: 10px;
 }
 
 .driver-or-customer {
@@ -21,21 +24,21 @@
     width: 350px;
     /* flex-direction: row; */
 }
-/* 
+
 .signup-main {
-    background: slateblue; */
+    /* background: slateblue; */
     /* width: 500px; */
-    /* height: 500px;
+    /* height: 500px; */
     padding:50px;
     display: flex;
     justify-content: space-evenly;
-} */
+}
 
 .signup-form{
-    background: #4a5050;
+    background-color: #4a5050;
     padding: 15px;
-    border-radius: 10%;
-    /* height: 400px; */
+    border-radius: 15px;
+    /* height: inherit; */
     width: 400px;
     display: flex;
     justify-content: center;
@@ -54,14 +57,24 @@ form input {
 }
 
 .clickon {
-    width: 50%;
-    margin: 5px 15px;
-    padding: 5px 15px; 
-    font-size: 16px;
+    width: 30%;
+    height: 30px;
+    /* margin: 10px 30px; */
+    /* padding: 10px 0px;  */
+    font-size: 12px;
     border: none;
-    /* text-decoration: none; */
-    text-align: center;
+    text-decoration: none;
+    /* text-align: center; */
     align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.clickon:hover {
+    height: 40px;
+    width: 75px;
 }
 .clickon:focus {
     background-color:black;

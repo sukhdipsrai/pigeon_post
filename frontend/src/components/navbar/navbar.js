@@ -1,5 +1,8 @@
 import React from 'react'
 import '../../stylesheets/navbar.css'
+import logoblack from '../../images/pigeonpostblack.png'
+import logowhite from '../../images/pigeonpostwhite.png'
+
 
 class Navbar extends React.Component {
 
@@ -23,8 +26,9 @@ class Navbar extends React.Component {
             return (
                 <div className="navbar">
              <div className="top">
+                <img src={logowhite}  />
 
-            <h1 className="header-logo">Pigeon Post</h1>
+            {/* <h1 className="header-logo">Pigeon Post</h1> */}
             </div>
             <div className="dropdown">
             <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
@@ -36,8 +40,9 @@ class Navbar extends React.Component {
             return (
              <div className="navbar">
              <div className="top">
+             <img src={logowhite}  />
 
-            <h1 className="header-logo">Pigeon Post</h1>
+            {/* <h1 className="header-logo">Pigeon Post</h1> */}
             </div>
             </div>
              )    

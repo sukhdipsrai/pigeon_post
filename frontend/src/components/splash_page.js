@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../stylesheets/splashpage.css'
+
+import splashpaper from '../images/splash-test.png'
+
 class SplashPage extends React.Component{
 
 
@@ -9,6 +12,16 @@ class SplashPage extends React.Component{
         return (
             <div className="splashpage-main">
   
+
+            <div className="left-side">
+
+                <div className="left-side-text">
+
+                <p>PigeonPost is a same-day delivery service that gets your package delivered 
+                    to its destination in a timely manner by our Pigeons, who are 
+                    native New Yorkers who know their way around the 5 boroughs.</p>
+                </div>
+
                 <div className="buttons" >
 
                 <button className="splashbuttons"> <Link className="links" to="users/signup" > 
@@ -22,6 +35,12 @@ class SplashPage extends React.Component{
                         </Link> 
                 </button>
                 </div>  
+            </div>
+            <div className="right-side" >
+
+                <img src={splashpaper}/>
+
+            </div>
             </div>
         )
     }

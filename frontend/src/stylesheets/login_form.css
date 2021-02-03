@@ -1,0 +1,39 @@
+.login-form-container{
+    background: silver;
+    border-radius: 10px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.holder {
+    /* padding-top: 20px; */
+    /* background: crimson; */
+    /* width: 600px; */
+    /* height: 500px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.login-form {
+    width: 100%;
+    height: 200px;
+    background-color: #4a5050;
+    border-radius: 15px;
+
+    padding-top: 15px;
+    /* width: 500px;
+    height: 100%; */
+    display: flex;
+    /* justify-content: co; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form form {
+    width: 90%;
+    padding: 5px;
+}

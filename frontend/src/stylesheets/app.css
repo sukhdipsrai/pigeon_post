@@ -21,7 +21,7 @@ time, mark, audio, video {
 	border: 0;
     font-size: 100%;
     font-family: 'Product Sans Regular', Arial;
-    font-weight: bold;
+    /* font-weight: bold; */
 	/* font: inherit; */
 	vertical-align: baseline;
 }
@@ -60,11 +60,11 @@ table {
 }
 
 .inner-app {
-    padding-top: 120px;
+    padding-top: 147px;
     margin:0;
     width: 80%;
-    min-width: 600px;
-    max-width: 1000px;
+    min-width: 750px;
+    max-width: 1200px;
     /* background-color: seagreen; */
     display: flex;
     justify-content: center;
@@ -76,4 +76,5 @@ table {
 
 .links {
     text-decoration: none;
+    color: white
 }
