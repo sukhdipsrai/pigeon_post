@@ -3,8 +3,8 @@ import * as TaskUtil from '../util/tasks_api_util'
 
 export const RECEIVE_ALL_TASKS ="RECEIVE_ALL_TASKS"
 export const RECEIVE_SINGLE_USER_TASKS ="RECEIVE_SINGLE_USER_TASKS"
-export const RECEIVE_NEW_TASK ="RECEIVE_NEW_TASK"
-
+export const RECEIVE_TASK ="RECEIVE_TASK"
+export const REMOVE_TASK = "REMOVE_TASK"
 
 export const receiveTasks = tasks => ({
     type: RECEIVE_ALL_TASKS,
@@ -16,10 +16,14 @@ export const receiveUserTasks = tasks => ({
     tasks
 })
 
-
 export const receiveTask = task => ({
-    type: RECEIVE_NEW_TASK,
+    type: RECEIVE_TASK,
     task
+})
+
+export const removeTask = taskId => ({
+    type: REMOVE_TASK,
+    taskId
 })
 
 
@@ -27,6 +31,12 @@ export const fetchTasks = () => dispatch => {
     return TaskUtil.getTasks()
     .then(tasks => dispatch(receiveTasks(tasks)))
     .catch(err => console.log(err))
+}
+
+export const fetchTask = (taskId) => dispatch => {
+    return TaskUtil.getTask(taskId)
+        .then(task => dispatch(receiveTask(task)))
+        .catch(err => console.log(err))
 }
 
 export const fetchUserTasks = id => dispatch => {
@@ -40,3 +50,15 @@ export const createTask = task => dispatch => {
     .then(task => dispatch(receiveTask(task)))
     .catch(err => console.log(err))
 }
+
+export const updateTask = task => dispatch => (
+    TaskUtil.editTask(task)
+        .then(task => (dispatch(receiveTask(task)))
+        .catch(err => console.log(err))
+))
+
+export const deleteTask = (taskId) => dispatch => (
+    TaskUtil.removeTask(taskId)
+        .then(task => (dispatch(removeTask(task.id)))
+        .catch (err => console.log(err))
+))
