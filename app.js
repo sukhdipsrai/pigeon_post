@@ -11,6 +11,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
+  // Conflicting  route with production, put in else statement
 // app.get("/", (req, res) => res.send("Hello World"));
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
