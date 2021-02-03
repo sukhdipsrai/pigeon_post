@@ -9,7 +9,7 @@ function Modal({ modal, closeModal }) {
     switch (modal.modal) {
         case 'create-task':
             component = <CreateTaskContainer
-                authorId={modal.authorId}
+                // authorId={modal.authorId}
             />
             break;
         default:
