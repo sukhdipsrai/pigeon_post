@@ -53,16 +53,12 @@ export const createTask = task => dispatch => {
 
 export const updateTask = task => dispatch => (
     TaskUtil.editTask(task)
-        .then(task => (dispatch(receiveTask(task))
-        ), err => {
-            return dispatch(receiveErrors(err.responseJSON))
-        })
-)
+        .then(task => (dispatch(receiveTask(task)))
+        .catch(err => console.log(err))
+))
 
 export const deleteTask = (taskId) => dispatch => (
     TaskUtil.removeTask(taskId)
-        .then((task) => (dispatch(removeTask(task.id))
-        ), err => {
-            return dispatch(receiveErrors(err.responseJSON))
-        })
-)
+        .then(task => (dispatch(removeTask(task.id)))
+        .catch (err => console.log(err))
+))
