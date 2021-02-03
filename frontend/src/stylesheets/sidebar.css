@@ -3,3 +3,16 @@
     width: 175px;
     background-color: red;
 }
+
+.sidebar-links{ 
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-links li {
+    /* margin: 5px; */
+    padding: 10px;
+    border-bottom: 1px solid black;
+    background-color: chartreuse;
+}

@@ -13,12 +13,28 @@
     border-bottom-right-radius: 10px;
 
 }
+
+.navbar-loggedin {
+    /* margin-top: 40px; */
+    width: 80%;
+    min-width: 750px;
+    max-width: 1200px;
+    background-color: #4a5050;
+    /* height: 140px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
 .header-logo {
     font-size: 40px;
 }
 
 .top{
-    /* height: 120px; */
+    height: 100px;
     /* padding-top: 30px; */
     letter-spacing: -2px;
     /* background-color:  pink; */
@@ -35,7 +51,8 @@
 }
 
 .dropdown{
-    width: 80%;
+    width: 85%;
+    margin-top: -10px;
     /* background-color: skyblue; */
     /* float: right; */
     display: flex;

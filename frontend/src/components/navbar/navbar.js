@@ -24,7 +24,7 @@ class Navbar extends React.Component {
         if(this.props.isloggedin){ 
 
             return (
-                <div className="navbar">
+                <div className="navbar-loggedin">
              <div className="top">
                 <img src={logowhite}  />
 
