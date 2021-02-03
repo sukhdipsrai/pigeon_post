@@ -4,21 +4,21 @@ import { RECEIVE_CURRENT_USER,
 
       const initialState = {
             isAuthenticated: false,
-            user: {}
+            userId: null
       };
 
 const SessionReducer = (state = initialState, action) => {
           switch (action.type) {
         case RECEIVE_CURRENT_USER:
           return {
-             ...state,
+             
              isAuthenticated: !!action.currentUser,
-             user: action.currentUser
+             userId: action.currentUser.id
       };
         case RECEIVE_USER_LOGOUT:
            return {
                isAuthenticated: false,
-                user: undefined
+                user: null
       };
         case RECEIVE_USER_SIGN_IN:
             return {

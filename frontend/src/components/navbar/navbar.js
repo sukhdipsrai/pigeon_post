@@ -26,6 +26,7 @@ class Navbar extends React.Component {
 
             return (
                 <div className="navbar">
+<<<<<<< HEAD
                     <div className="top">
                         <Link to='/'>
                             <h1 className="header-logo">Pigeon Post</h1>
@@ -35,6 +36,16 @@ class Navbar extends React.Component {
                         <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
                         <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.email}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
                     </div>
+=======
+             <div className="top">
+                <img src={logowhite}  />
+
+            {/* <h1 className="header-logo">Pigeon Post</h1> */}
+            </div>
+            <div className="dropdown">
+            {/* <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1> */}
+                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>email here▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
+>>>>>>> state-branch
                 </div>
             )
         } else {
