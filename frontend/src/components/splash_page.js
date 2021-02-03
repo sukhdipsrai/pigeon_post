@@ -4,6 +4,7 @@ import '../stylesheets/splashpage.css'
 
 import splashpaper from '../images/splash-test.png'
 
+// import '../stylesheets/splashpage.css'
 class SplashPage extends React.Component{
 
 

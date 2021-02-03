@@ -1,5 +1,6 @@
 import React from 'react'
-import Gapi from './gapi'
+import GapiAutoFillForm from './gapi'
+
 class GapiForm extends React.Component{
     constructor(props){
         super(props);
@@ -17,8 +18,11 @@ class GapiForm extends React.Component{
         return(
             <div>
                 This is the GapiForm
-                <Gapi
-        
+                <GapiAutoFillForm
+                    type="origin"
+                />
+                <GapiAutoFillForm
+                    type={"destination"}
                 />
             </div>
         )

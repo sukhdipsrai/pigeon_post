@@ -4,6 +4,7 @@ import logoblack from '../../images/pigeonpostblack.png'
 import logowhite from '../../images/pigeonpostwhite.png'
 
 import { Link } from 'react-router-dom';
+// import '../../stylesheets/navbar.css'
 
 class Navbar extends React.Component {
 
