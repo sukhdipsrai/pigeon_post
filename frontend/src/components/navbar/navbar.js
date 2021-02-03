@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../stylesheets/navbar.css'
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
 
@@ -22,29 +23,26 @@ class Navbar extends React.Component {
 
             return (
                 <div className="navbar">
-             <div className="top">
-
-            <h1 className="header-logo">Pigeon Post</h1>
-            </div>
-            <div className="dropdown">
-            <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
-                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.email}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
+                    <div className="top">
+                        <Link to='/'>
+                            <h1 className="header-logo">Pigeon Post</h1>
+                        </Link>
+                    </div>
+                    <div className="dropdown">
+                        <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
+                        <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.email}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
+                    </div>
                 </div>
-            </div>
-        )
+            )
         } else {
             return (
-             <div className="navbar">
-             <div className="top">
-
-            <h1 className="header-logo">Pigeon Post</h1>
-            </div>
-            </div>
-             )    
+                <div className="navbar">
+                    <div className="top">
+                        <h1 className="header-logo">Pigeon Post</h1>
+                    </div>
+                </div>
+            )    
+        }
     }
-
-
-}
-
 }
 export default Navbar

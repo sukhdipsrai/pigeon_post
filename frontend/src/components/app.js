@@ -10,10 +10,11 @@ import NavbarContainer from './navbar/navbar_container'
 import SidebarContainer from './sidebar/sidebar_container'
 import '../stylesheets/app.css'
 // import Sidebar from './sidebar/sidebar';
+import Modal from './modal/modal';
 
 const App = () => (
   <div className="app">
-
+    <Modal />
     <NavbarContainer />
     <div className="inner-app">
         <SidebarContainer/>
@@ -21,7 +22,7 @@ const App = () => (
 
     <Switch >
         <AuthRoute exact path="/" component={SplashPage} />
-       <AuthRoute exact path="/users/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/users/login" component={LoginFormContainer} />
         <AuthRoute exact path="/users/signup" component={SignUpFormContainer} />
         <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
          {/* <AuthRoute exact path="/login/drivers" component={LoginDriverFormContainer} />
