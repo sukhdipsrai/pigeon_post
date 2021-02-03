@@ -114,4 +114,12 @@ router.post("/login", (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+        .catch(err =>
+            res.status(404).json({ notaskfound: 'No task found with that ID' })
+        );
+});
+
 module.exports = router;
