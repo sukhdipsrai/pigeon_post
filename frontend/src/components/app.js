@@ -1,7 +1,8 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
 // import Test from './test'
+import { Switch, Route } from 'react-router-dom';
+import Test from './test'
 import SplashPage from './splash_page'
 import DashboardContainer from './dashboard/dashboard_container'
 import LoginFormContainer from './user_forms/user_signin_container'
@@ -20,7 +21,7 @@ import CurrentDeliveryContainer from './driver_dashboard/current_delivery_contai
 import DriverHistoryContainer from './driver_dashboard/driver_history_container'
 
 import '../stylesheets/app.css'
-// import Sidebar from './sidebar/sidebar';
+import Sidebar from './sidebar/sidebar';
 import Modal from './modal/modal';
 
 const App = () => (
@@ -28,42 +29,29 @@ const App = () => (
     <Modal />
     <NavbarContainer />
     <div className="inner-app">
-        <SidebarContainer/>
-        <div className="routes">
+      <SidebarContainer />
+      <div className="routes">
 
-    <Switch >
-        <AuthRoute exact path="/" component={SplashPage} />
-        <AuthRoute exact path="/users/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/users/signup" component={SignUpFormContainer} />
-        <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
-        {/* <ProtectedRoute exact path="users/delivery/new" component={DashboardContainer} /> */}
+        <Switch >
+          <AuthRoute exact path="/" component={SplashPage} />
+          <AuthRoute exact path="/users/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/users/signup" component={SignUpFormContainer} />
+          <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
+          {/* <ProtectedRoute exact path="users/delivery/new" component={DashboardContainer} /> */}
 
-        {/* customer routes  */}
-        <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
-        <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
-        <ProtectedRoute exact path="/users/delivery/history" component={CustomerHistoryContainer} />
-
-        {/* driver routes  */}
-        <ProtectedRoute exact path="/driver/deliveries" component={DeliverTasksIndexContainer} />
-        <ProtectedRoute exact path="/driver/currentdelivery" component={CurrentDeliveryContainer} />
-        <ProtectedRoute exact path="/driver/history" component={DriverHistoryContainer} />
-
-         {/* <AuthRoute exact path="/login/drivers" component={LoginDriverFormContainer} />
-        <AuthRoute exact path="/signup/drivers" component={SignupDriverFormContainer} /> */}
-
-    </Switch>
+          {/* customer routes  */}
+          <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
+          <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
+          <ProtectedRoute exact path="/users/delivery/history" component={CustomerHistoryContainer} />
+          
+          {/* driver routes  */}
+          <ProtectedRoute exact path="/driver/deliveries" component={DeliverTasksIndexContainer} />
+          <ProtectedRoute exact path="/driver/currentdelivery" component={CurrentDeliveryContainer} />
+          <ProtectedRoute exact path="/driver/history" component={DriverHistoryContainer} />
+        </Switch>
       </div>
-      {/* <Test></Test> */}
-    {/* <NavBarContainer />
-    <Switch>
-    
-    <AuthRoute exact path="/" component={MainPage} />
-    
-    <ProtectedRoute exact path="/tweets" component={TweetsContainer} />
-    <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-    <ProtectedRoute exact path="/new_tweet" component={TweetComposeContainer} />
-  </Switch> */}
-  </div>
+
+    </div>
   </div>
 );
 
