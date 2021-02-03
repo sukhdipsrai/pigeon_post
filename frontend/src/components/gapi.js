@@ -3,15 +3,10 @@ import React from 'react';
 import PlacesAutocomplete, {
     geocodeByAddress,
     getLatLng,
-} 
-from 'react-places-autocomplete';
-const GOOGLE_MAPS_API_KEY = "AIzaSyCLZHODuHiiEicmkIspcTrjtQQmmviO9S8"
-
-// getDist() {
-//     axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=H8MW%2BWP%20Kolkata%20India&destinations=GCG2%2B3M%20Kolkata%20India&key=${GOOGLE_MAPS_API_KEY}`)
-//         .then(res => console.log(res.data.rows[0]))
-//         .catch(err => console.log(err))
-// }
+}
+    from 'react-places-autocomplete';
+import { connect } from 'react-redux';
+import * as gActions from '../actions/gapi_actions'
 
 
 class GapiAutoFillForm extends React.Component {
@@ -27,52 +22,74 @@ class GapiAutoFillForm extends React.Component {
     handleSelect = address => {
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
-            .then(latLng => console.log('Success', latLng))
+            .then(latLng => {
+                console.log('Success', latLng)
+                if(this.props.field === 'Origin')
+                    this.props.originToState(latLng);
+                else if( this.props.field == 'Destination')
+                    this.props.destinationToState(latLng); 
+            })
             .catch(error => console.error('Error', error));
     };
 
     render() {
         return (
-            <PlacesAutocomplete
-                value={this.state.address}
-                onChange={this.handleChange}
-                onSelect={this.handleSelect}
-            >
-                {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
-                        <input
-                            {...getInputProps({
-                                placeholder: 'Search Places ...',
-                                className: 'location-search-input',
-                            })}
-                        />
-                        <div className="autocomplete-dropdown-container">
-                            {loading && <div>Loading...</div>}
-                            {suggestions.map(suggestion => {
-                                const className = suggestion.active
-                                    ? 'suggestion-item--active'
-                                    : 'suggestion-item';
-                                // inline style for demonstration purpose
-                                const style = suggestion.active
-                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                    : { backgroundColor: '#ffffff', cursor: 'pointer' };
-                                return (
-                                    <div
-                                        {...getSuggestionItemProps(suggestion, {
-                                            className,
-                                            style,
-                                        })}
-                                    >
-                                        <span>{suggestion.description}</span>
-                                    </div>
-                                );
-                            })}
+            <div>
+                <PlacesAutocomplete
+                    value={this.state.address}
+                    onChange={this.handleChange}
+                    onSelect={this.handleSelect}
+                    type={this.props.field}
+                >
+                    {({ getInputProps, suggestions, getSuggestionItemProps, loading, type=this.props.type }) => (
+                        <div>
+                            <input
+                                {...getInputProps({
+                                    placeholder: `${type}`,
+                                    className: 'location-search-input',
+                                })}
+                            />
+                            <div className="autocomplete-dropdown-container">
+                                {loading && <div>Loading...</div>}
+                                {suggestions.map(suggestion => {
+                                    const className = suggestion.active
+                                        ? 'suggestion-item--active'
+                                        : 'suggestion-item';
+                                    // inline style for demonstration purpose
+                                    const style = suggestion.active
+                                        ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+                                        : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                    return (
+                                        <div
+                                            {...getSuggestionItemProps(suggestion, {
+                                                className,
+                                                style,
+                                            })}
+                                        >
+                                            <span>{suggestion.description}</span>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
-                )}
-            </PlacesAutocomplete>
+                    )}
+                </PlacesAutocomplete>
+            </div>
         );
     }
 }
 
-export default GapiAutoFillForm;
+
+const mstp = (state, ownProps) => {
+    return{}
+
+}
+
+const mdtp = dispatch => {
+    return {
+        originToState: coord => dispatch(gActions.originToState(coord)),
+        destinationToState: coord => dispatch(gActions.destinationToState(coord))
+    }
+}
+
+export default connect(mstp, mdtp)(GapiAutoFillForm);
