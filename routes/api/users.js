@@ -51,7 +51,7 @@ router.post("/register", (req, res) => {
                         .save()
                         .then(user => {
                             const payload = { 
-                                // id: user.id, 
+                                id: user.id,
                                 email: user.email, 
                                 firstname: user.firstname,
                                 lastname: user.lastname,

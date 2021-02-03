@@ -21,10 +21,11 @@ import DriverHistoryContainer from './driver_dashboard/driver_history_container'
 
 import '../stylesheets/app.css'
 // import Sidebar from './sidebar/sidebar';
+import Modal from './modal/modal';
 
 const App = () => (
   <div className="app">
-
+    <Modal />
     <NavbarContainer />
     <div className="inner-app">
         <SidebarContainer/>

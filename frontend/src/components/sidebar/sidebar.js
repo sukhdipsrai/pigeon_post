@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
         debugger
         if(this.props.isloggedin){
 
-            if (this.props.currentUser.usertype === 'Driver'){
+            if (true){
 
                 return (
                     <div className="sidebar">
