@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_TASKS, 
     RECEIVE_SINGLE_USER_TASKS,
-    RECEIVE_NEW_TASK } 
+    RECEIVE_TASK,
+    REMOVE_TASK } 
     from '../actions/task_actions'
 
     const defaultState = ({
@@ -19,9 +20,12 @@ import { RECEIVE_ALL_TASKS,
             case RECEIVE_SINGLE_USER_TASKS:
                 newState.user = action.tasks.data
                 return newState
-            case RECEIVE_NEW_TASK:
+            case RECEIVE_TASK:
                 newState.new = action.task.data 
-                return newState       
+                return newState  
+            case REMOVE_TASK:
+                delete newState[action.task._id];
+                return newState     
             default:
                 return oldState;
         }
