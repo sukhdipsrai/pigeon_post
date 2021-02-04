@@ -63,8 +63,8 @@ class GapiForm extends React.Component {
         });
         let ori = this.props.form.pickup_loc.latLng
         let dist = this.props.form.dropoff_loc.latLng
-        dist = { lat: 40.7198865, lng: -73.6522537 }
-        ori = { lat: 40.7121554, lng: -73.8264545 }
+        // dist = { lat: 40.7198865, lng: -73.6522537 }
+        // ori = { lat: 40.7121554, lng: -73.8264545 }
         this.getDist(ori, dist).
             then(()=> this.validateForm());
     }

@@ -5,7 +5,6 @@ router.post('/distance', (req, res) => {
     const { ori, dist } = req.body;
     return axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${ori.lat},${ori.lng}&destinations=${dist.lat},${dist.lng}&key=AIzaSyAGCbX3hgsPnsWfUJwle8aco46J2G_P9I0`)
          .then(response => {
-            debugger;
             res.json(response.data)
             
             })
