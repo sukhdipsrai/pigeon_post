@@ -1,10 +1,10 @@
 const aws = require('aws-sdk')
 const multer = require('multer')
 const multerS3 = require('multer-s3')
-
+const skey = require('../config/keys_dev')
 aws.config.update({
-    secretAccessKey: 'PnvDaXF9r5G+UXPtSh5SFubmz8lPcxr69taxJHqC',
-    accessKeyId: 'AKIAJF2E57G5Y7JZKIJA',
+    secretAccessKey: skey.secretAccessKey,
+    accessKeyId: skey.accessKeyId,
     region: 'us-east-2'
 })
 
@@ -35,4 +35,4 @@ const upload = multer({
     })
 })
 
-module.exports = upload;
+module.exports = {upload, s3};
