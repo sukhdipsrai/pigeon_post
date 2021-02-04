@@ -15,7 +15,8 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         firstname: req.user.firstname,
         lastname: req.user.lastname,
         email: req.user.email,
-        phone: req.user.phone
+        phone: req.user.phone,
+        imageUrl: req.user.imageUrl
     });
 })
 
@@ -40,7 +41,8 @@ router.post("/register", (req, res) => {
                 email: req.body.email,
                 phone: req.body.phone,
                 password: req.body.password,
-                usertype: req.body.usertype
+                usertype: req.body.usertype,
+                imageUrl: req.body.imageUrl
             });
 
             bcrypt.genSalt(10, (err, salt) => {
@@ -56,7 +58,8 @@ router.post("/register", (req, res) => {
                                 firstname: user.firstname,
                                 lastname: user.lastname,
                                 phone: user.phone,
-                                usertype: user.usertype
+                                usertype: user.usertype,
+                                imageUrl: user.imageUrl
                             };
 
                             jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -97,7 +100,8 @@ router.post("/login", (req, res) => {
                     firstname: user.firstname,
                     lastname: user.lastname,
                     phone: user.phone,
-                    usertype: user.usertype
+                    usertype: user.usertype,
+                    imageUrl: user.imageUrl
                 };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
