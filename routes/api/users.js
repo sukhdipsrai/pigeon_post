@@ -7,17 +7,6 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-const multer = require('multer');
-const path = require('path')
-const uploadPath = path.join('public', User.UserProfileImagePath)
-const imageMimeTypes = ['image/jpeg', 'image/png']
-const fs = require('fs')
-const upload = multer({
-    dest: uploadPath,
-    fileFilter: (req, file, callback)=>{
-        callback(null, imageMimeTypes.includes(file.mimetype))
-    }
-})
 //import user model
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -26,12 +15,11 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         firstname: req.user.firstname,
         lastname: req.user.lastname,
         email: req.user.email,
-        phone: req.user.phone,
-        userImage: req.user.userImage
+        phone: req.user.phone
     });
 })
 
-router.post("/register", upload.single('image'), async (req, res) => {
+router.post("/register", (req, res) => {
     // debugger
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -45,7 +33,6 @@ router.post("/register", upload.single('image'), async (req, res) => {
             return res.status(400).json(errors);
         } else {
             // debugger
-            const filename = req.file != null ? req.file.filename : null
             const newUser = new User({
                 // id: req.user.id,
                 firstname: req.body.firstname,
@@ -53,8 +40,7 @@ router.post("/register", upload.single('image'), async (req, res) => {
                 email: req.body.email,
                 phone: req.body.phone,
                 password: req.body.password,
-                usertype: req.body.usertype,
-                userImage: filename
+                usertype: req.body.usertype
             });
 
             bcrypt.genSalt(10, (err, salt) => {
@@ -70,8 +56,7 @@ router.post("/register", upload.single('image'), async (req, res) => {
                                 firstname: user.firstname,
                                 lastname: user.lastname,
                                 phone: user.phone,
-                                usertype: user.usertype,
-                                userImage: user.userImage
+                                usertype: user.usertype
                             };
 
                             jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -112,8 +97,7 @@ router.post("/login", (req, res) => {
                     firstname: user.firstname,
                     lastname: user.lastname,
                     phone: user.phone,
-                    usertype: user.usertype,
-                    userImage: user.userImage
+                    usertype: user.usertype
                 };
 
                 jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
