@@ -2,6 +2,7 @@ import React from 'react'
 import GapiAutoFillForm from './gapi'
 import { connect } from 'react-redux'
 import axios from 'axios';
+import {createTask} from '../../actions/task_actions'
 import '../../stylesheets/gapiform.css'
 
 class GapiForm extends React.Component {
@@ -16,7 +17,7 @@ class GapiForm extends React.Component {
             distance: '',
             price: '',
             status: 'unfinished',
-            customer_id: '',
+            customer_id: this.props.user.id,
             price: null,
             apiCall: null,
             duration: ''
@@ -98,17 +99,32 @@ class GapiForm extends React.Component {
         if (weight instanceof String) weight = Number(weight);
         if (weight < 1) weight = 1;
         // distanc is always in meters, time is in seconds..
-        let x = weight * .01 + (distance / 1000.0) * .75;
-        let y = weight * .01 + (duration / 3600.0) * 15;
+        let x = weight * .10 + (distance / 1000.0) * .75;
+        let y = weight * .10 + (duration / 3600.0) * 25;
         // x = 50;
         // y = 60;
         if (x > y) return x;
         else return y;
     }
 
+    handleFinalSubmit(){
+        const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id } = this.state;
+        const data={
+            pickup_loc: pickup_loc,
+            dropoff_loc:dropoff_loc,
+            drop_off_number:drop_off_number,
+            weight:weight,
+            distance:distance,
+            price:price,
+            status:status,
+            customer_id:customer_id
+        }
+        this.props.createTask(data);
+    }
+
     render() {
         let priceDisplay = null;
-        const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, customer_id, duration } = this.state;
+        const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id, duration } = this.state;
         if (this.state.price && this.state.errors === null) {
             priceDisplay =
                 <div className="price-display-box">
@@ -119,7 +135,8 @@ class GapiForm extends React.Component {
                     <p>Start Location: {pickup_loc}</p>
                     <p>Dropoff Location: {dropoff_loc}</p>
                     <p>Conact number for Delivery: {drop_off_number}</p>
-                    <h1>FINAL SUBMIT BUTTON</h1>
+                    <p>{this.props.user.id}</p>
+                    <button onClick={()=>this.handleFinalSubmit()}></button>
                 </div>
         }
         return (
@@ -161,13 +178,14 @@ class GapiForm extends React.Component {
 
 const mstp = (state, ownProps) => {
     return {
-        form: state.task_form
+        form: state.task_form,
+        user: state.entities.user
     }
 }
 
 const mdtp = dispatch => {
     return {
-
+        createTask: data => dispatch(createTask(data))
     }
 }
 
