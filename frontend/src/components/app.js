@@ -51,7 +51,7 @@ const App = () => (
           <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/history" component={CustomerHistoryContainer} />
-          <ProtectedRoute exact path="/users/delivery/create" component={GapiForm} />
+          {/* <ProtectedRoute exact path="/users/delivery/create" component={GapiForm} /> */}
 
           {/* driver routes  */}
           <ProtectedRoute exact path="/driver/deliveries" component={DeliverTasksIndexContainer} />

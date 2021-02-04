@@ -1,7 +1,13 @@
 input{
     color: black;
+    width: 300px;
 }
 
+.modal-child{
+    padding: 40px;
+    background-color: #4A5050 ;
+    border-radius: 10px;;
+}
 
 
 .location-search-input{
@@ -11,4 +17,38 @@ input{
 
 .autocomplete-dropdown-container{
     color:black;
+}
+
+input.task-form-button{
+    width:80px;
+    height:30px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    background-color: #687C96;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    z-index: 10;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+:focus{
+    outline: none;
+}
+
+.task-form-container{
+    border:0;
+    padding: 0;
+    margin: 0;
+    width:300px;
+    align-content: center;
+    display: flex;
 }

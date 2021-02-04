@@ -86,7 +86,8 @@ class GapiAutoFillForm extends React.Component {
 
 
 const mstp = (state, ownProps) => {
-    return{}
+    return{
+    }
 
 }
 

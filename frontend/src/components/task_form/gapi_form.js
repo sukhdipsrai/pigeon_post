@@ -2,9 +2,11 @@ import React from 'react'
 import GapiAutoFillForm from './gapi'
 import { connect } from 'react-redux'
 import axios from 'axios';
-import {createTask} from '../../actions/task_actions'
+import { createTask } from '../../actions/task_actions'
 import * as gActions from '../../actions/gapi_actions'
 import '../../stylesheets/gapiform.css'
+import { closeModal } from '../../actions/modal_actions'
+import { withAlert } from 'react-alert'
 
 class GapiForm extends React.Component {
     constructor(props) {
@@ -48,30 +50,35 @@ class GapiForm extends React.Component {
 
                 })
             })
-            .catch(err => that.setState({errors:err}))
-            return new Promise(function (resolve, reject){
-                resolve("Fetch Final Data.")
-            })
+            .catch(err => that.setState({ errors: err }))
+        return new Promise(function (resolve, reject) {
+            resolve("Fetch Final Data.")
+        })
     }
 
     handleSubmit() {
-        debugger;
-        this.setState({
-
-            pickup_loc: this.props.form.pickup_loc.address,
-            dropoff_loc: this.props.form.dropoff_loc.address
-
-        });
-        let ori = this.props.form.pickup_loc.latLng
-        let dist = this.props.form.dropoff_loc.latLng
-        // dist = { lat: 40.7198865, lng: -73.6522537 }
-        // ori = { lat: 40.7121554, lng: -73.8264545 }
-        this.getDist(ori, dist).
-            then(()=> this.validateForm());
+        let errors = null;
+        const { pickup_loc, dropoff_loc } = this.props.form;
+        if (pickup_loc === null || dropoff_loc === null) {
+            errors = "Please Choose a Pickup AND Drop-off Address"
+            this.setState({ errors: errors });
+        }
+        else {
+            this.setState({
+                pickup_loc: pickup_loc.address,
+                dropoff_loc: dropoff_loc.address,
+            });
+            // let ori = pickup_loc.latLng;
+            // let dist = dropoff_loc.latLng;
+            // dist = { lat: 40.7198865, lng: -73.6522537 }
+            // ori = { lat: 40.7121554, lng: -73.8264545 }
+            this.getDist(pickup_loc.latLng, dropoff_loc.latLng).
+                then(() => this.validateForm());
+        }
     }
 
-    validateForm(){
-        if(this.state.weight < 1) return false;
+    validateForm() {
+        if (this.state.weight < 1) return false;
     }
 
     update(field) {
@@ -79,8 +86,8 @@ class GapiForm extends React.Component {
             const num = e.target.value
             if (field === 'drop_off_number') {
                 this.setState({ [field]: this.phonefy(num), price: null })
-            } 
-            else if( field === 'weight')  this.setState({ [field]: Number(num), price: null })
+            }
+            else if (field === 'weight') this.setState({ [field]: Number(num), price: null })
             else
                 this.setState({ [field]: e.target.value, price: null })
         }
@@ -89,7 +96,7 @@ class GapiForm extends React.Component {
     phonefy(str) {
         let re = str.match(/(\d{3})(\d{3})(\d{4})$/)
         if (re) {
-          return '(' + re[1] + ') ' + re[2] + '-' + re[3]
+            return '(' + re[1] + ') ' + re[2] + '-' + re[3]
         }
         return str;
     }
@@ -108,58 +115,73 @@ class GapiForm extends React.Component {
         else return y.toFixed(2);
     }
 
-    handleFinalSubmit(){
+    handleFinalSubmit() {
         const that = this;
         this.createPost()
-            .then( ()=>{
+            .then(() => {
                 debugger;
                 that.props.resetTaskForm();
-                that.setState({pirce:null});
-            });
+                that.setState({ price: null });
+                alert("Task Created!")
+            })
+            .then(() => {
+                debugger;
+                that.props.closeModal()
+                // that.props.history.push("/customer_dashboard/unclaimed_delivery_container");
+            }
+            );
     }
 
-    createPost(){
+    createPost() {
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id } = this.state;
-        const data={
+        const data = {
             pickup_loc: pickup_loc,
-            dropoff_loc:dropoff_loc,
-            drop_off_number:drop_off_number,
-            weight:weight,
-            distance:distance,
-            price:price,
-            status:status,
-            customer_id:customer_id
+            dropoff_loc: dropoff_loc,
+            drop_off_number: drop_off_number,
+            weight: weight,
+            distance: distance,
+            price: price,
+            status: status,
+            customer_id: customer_id
         }
         this.props.createTask(data);
-        return new Promise(function (resolve, reject){
+        return new Promise(function (resolve, reject) {
             resolve("Post Final Data.")
         })
     }
 
+    formSubmit() {
+        if (this.state.price !== null && this.state.errors === null)
+            this.handleFinalSubmit();
+        else
+            this.handleSubmit()
+    }
+
     render() {
         let priceDisplay = null;
+        let submitButtonValue = "Submit"
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id, duration } = this.state;
-        if (this.state.price !==null  && this.state.errors === null) {
+        if (this.state.price !== null && this.state.errors === null) {
+            submitButtonValue ="Confirm and Submit";
             priceDisplay =
-                <div className="price-display-box">
-                    <p>Price Determined {price}</p>
-                    <p>Based on Distance: {distance}</p>
-                    <p>Based on Route Duration: {duration}</p>
-                    <p>Based on Estimated Weight: {weight}</p>
-                    <p>Start Location: {pickup_loc}</p>
-                    <p>Dropoff Location: {dropoff_loc}</p>
-                    <p>Conact number for Delivery: {drop_off_number}</p>
-                    <p>{this.props.user.id}</p>
-                    <button onClick={()=>this.handleFinalSubmit()}></button>
-                </div>
+            <div className="price-display-box">
+                <p>Price Determined {price}</p>
+                <p>Based on Distance: {distance}</p>
+                <p>Based on Route Duration: {duration}</p>
+                <p>Based on Estimated Weight: {weight}</p>
+                <p>Start Location: {pickup_loc}</p>
+                <p>Dropoff Location: {dropoff_loc}</p>
+                <p>Conact number for Delivery: {drop_off_number}</p>
+                <p>{this.props.user.id}</p>
+                <button className='task-form-button' onClick={()=>this.props.closeModal() }value="Cancel"></button>
+            </div>
         } else {
             priceDisplay = null;
             debugger
         }
         return (
-            <div>
-                <h2>Create Task</h2>
-                <form onSubmit={() => this.handleSubmit()}>
+            <div className="task-form-container">
+                <form onSubmit={() => this.formSubmit()} className="task-form">
                     <br />
                     <input type="tel"
                         pattern="\(([0-9]{3})\) [0-9]{3}-[0-9]{4}"
@@ -168,42 +190,47 @@ class GapiForm extends React.Component {
                         placeholder="Recipient Phone Number"
                     />
                     <br /><label>
-                    <input type="number"
-                        value={this.state.weight}
-                        onChange={this.update('weight')}
-                        min={1}
-                        placeholder="Weight of Package in Pounds"
-                    /> lbs.</label>
+                        <input type="number"
+                            value={this.state.weight}
+                            onChange={this.update('weight')}
+                            min={1}
+                            placeholder="Weight of Package in Pounds"
+                        /></label>
                     <br />
                     <GapiAutoFillForm
                         type="Origin"
                         field="Pick Up Location"
                     />
+                    <br></br>
                     <GapiAutoFillForm
                         type={"Destination"}
                         field="Drop Off Location"
                     />
-                    <input type="submit" value="Submit" />
+                    <br></br>
+                    {this.state.errors}
+                    {priceDisplay}
+                    <input type="submit" value={submitButtonValue} className='task-form-button' />
                 </form>
-                
-                {this.state.errors}
-                {priceDisplay}
+
             </div>
         )
     }
 }
 
 const mstp = (state, ownProps) => {
+    debugger
     return {
         form: state.task_form,
         user: state.entities.user
+        // history: ownProps.history
     }
 }
 
 const mdtp = dispatch => {
     return {
         createTask: data => dispatch(createTask(data)),
-        resetTaskForm: data=> dispatch(gActions.resetTaskForm())
+        resetTaskForm: data => dispatch(gActions.resetTaskForm()),
+        closeModal: () => dispatch(closeModal())
     }
 }
 
