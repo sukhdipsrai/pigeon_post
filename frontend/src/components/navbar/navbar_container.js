@@ -6,7 +6,7 @@ import { logout } from '../../actions/session_actions';
 const mSTP = (state, ownProps) => {
     debugger
     return {
-            currentUser: state.session.user,
+            currentUser: Object.values(state.entities.user)[0],
             isloggedin: state.session.isAuthenticated
     }
 }

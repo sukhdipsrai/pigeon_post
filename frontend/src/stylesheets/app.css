@@ -20,7 +20,9 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
     font-size: 100%;
-    font-family: 'Product Sans Regular', Arial;
+    font-family: 'Trebuchet MS', sans-serif;
+
+    /* font-family: 'Product Sans Regular', Arial; */
     /* font-weight: bold; */
 	/* font: inherit; */
 	vertical-align: baseline;
@@ -78,3 +80,22 @@ table {
     text-decoration: none;
     color: white
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

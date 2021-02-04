@@ -21,6 +21,16 @@ router.get('/user/:user_id', (req, res) => {
         );
 });
 
+router.get('/driver/:driver_id', (req, res) => {
+    debugger
+    Task.find({ driver_id: req.params.driver_id })
+        .then(tasks => res.json(tasks))
+        .catch(err =>
+            res.status(404).json({ notasksfound: 'No tasks found from this driver' }
+            )
+        );
+});
+
 router.get('/:id', (req, res) => {
     Task.findById(req.params.id)
         .then(task => res.json(task))
@@ -68,6 +78,7 @@ router.delete(
 );
 
 router.put('/:id/edit', (req, res) => {
+    debugger
     Task.findByIdAndUpdate(req.params.id, req.body)
         .then(task => {
             res.json(task)

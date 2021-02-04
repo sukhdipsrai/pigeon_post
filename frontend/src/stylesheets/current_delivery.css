@@ -1,0 +1,15 @@
+.current-delivery-container {
+    width: 100%;
+    background-color: oldlace;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-delivery-item {
+    background-color: navy;
+    width: 80%;
+    height: 80%;
+}

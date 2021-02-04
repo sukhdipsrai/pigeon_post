@@ -11,15 +11,15 @@ class Sidebar extends React.Component {
         debugger
         if(this.props.isloggedin){
 
-            if (true){
+            if (this.props.currentUser.usertype === 'Driver'){
 
                 return (
                     <div className="sidebar">
                 <ul className="sidebar-links">
-                 <Link to="/dashboard" > <li> Home </li></Link>
-                 <Link to="/driver/deliveries"><li>  Make a Delivery </li></Link>
-                <Link to="/driver/currentdelivery"><li>Current Delivery</li></Link>
-                <Link to="/driver/history"><li>Past Packages</li></Link>
+                 <Link className="links" to="/dashboard" > <li> Home </li></Link>
+                 <Link  className="links" to="/driver/deliveries"><li>  Open Delivieries </li></Link>
+                <Link  className="links" to="/driver/currentdelivery"><li>Current Delivery</li></Link>
+                <Link  className="links" to="/driver/history"><li>Past Packages</li></Link>
                 </ul>
             </div>
         )
@@ -27,11 +27,11 @@ class Sidebar extends React.Component {
                 return (
                     <div className="sidebar">
                 <ul className="sidebar-links">
-                <Link to="/dashboard" > <li> Home </li></Link>
+                <Link className="links"  to="/dashboard" > <li> Home </li></Link>
                 <li>Post a Listing</li>
-                <Link to="/users/delivery/active"><li> In Progress </li></Link>
-                <Link to="/users/delivery/unclaimed" ><li> Unclaimed </li></Link>
-                <Link to="/users/delivery/history" ><li>History/Receipts</li></Link>
+                <Link  className="links" to="/users/delivery/active"><li> In Progress </li></Link>
+                <Link  className="links" to="/users/delivery/unclaimed" ><li> Unclaimed </li></Link>
+                <Link  className="links" to="/users/delivery/history" ><li>History/Receipts</li></Link>
                 </ul>
             </div>
         )
