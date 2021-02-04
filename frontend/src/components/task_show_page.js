@@ -1,7 +1,23 @@
 import React from 'react'
 import '../stylesheets/task_show.css'
-class TaskShowPage extends React.Component {
+import axios from 'axios';
 
+class TaskShowPage extends React.Component {
+    constructor(props){
+        super(props)
+        this.handleImageUpload = this.handleImageUpload.bind(this)
+    }
+    handleImageUpload = event => {
+        debugger
+        const files = event.target[0].files
+        const formData = new FormData()
+        formData.append('image', files[0])
+
+        axios.post('/api/image-upload', formData)
+            .then(res => {
+                console.log(res.data.imageUrl)
+            })
+    }
     componentDidMount(){
         this.props.fetchTask(this.props.taskId)
     }
@@ -11,7 +27,11 @@ class TaskShowPage extends React.Component {
         if(this.props.tasks !== undefined) {
             return (
                 <div className="taskshow-main">
-
+                    <form type='form-data' onSubmit={(e) => this.handleImageUpload(e)}>
+                        <input type="file"
+                        />
+                        <button>submit</button>
+                    </form>
 
                 <h1>this is the tasks show page</h1>
 
