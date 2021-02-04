@@ -41,7 +41,7 @@ class SplashPage extends React.Component{
                 </Link> 
                 </div>  
             </div>
-            <div className="right-side" >
+            <div className="splashpage-right-side" >
 
                 <img src={splashpaper}/>
 

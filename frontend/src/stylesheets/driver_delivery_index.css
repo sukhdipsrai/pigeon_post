@@ -11,8 +11,78 @@
 }
 
 .inner-delivery-main {
-    background-color: darkslateblue;
-    width: 50%;
+    width: 90%;
     /* height: 1000px; */
+    
+}
 
+.index-item{
+    background-color: darkslateblue;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    border-radius: 7px;
+    display: flex;
+    /* flex-direction: column; */
+}
+.addresses {
+    width: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.addresses h2{ 
+    font-size: 13px;
+    font-weight: 100;
+    
+}
+.right-side {
+    width: 50%;
+    height: 50px;
+    background-color: maroon;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.payout {
+    display: flex;
+    flex-direction: column;
+
+}
+.money {
+    background-color: royalblue;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+}
+
+.money h1 {
+    font-weight: 100;
+
+    font-size: 40px;
+    /* background-color: red; */
+}
+
+.payout span{
+    margin-top: -5px;
+    margin-left: 80px;
+    font-size: 13px;
+    /* background-color: rosybrown; */
+}
+
+.distance {
+    background-color: rosybrown;
+    width: 75px;
+    font-size: 40px;
+}
+.distance h1 {
+    font-weight: 100;
+}
+
+.distance p {
+    margin-left: 40%;
+    margin-top: -5px;
+    font-size: 13px;
 }

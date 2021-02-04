@@ -24,13 +24,31 @@ class DeliveryIndexItem extends React.Component {
         render(){
             return(
 
-                      <div>
-                            <h1> pickup: {this.props.task.pickup_loc}</h1>
-                            <h1>dropoff: {this.props.task.dropoff_loc}</h1>
-                            <h1>payout: ${this.props.task.price}</h1>
-                            <h1>{this.state.currentTask.status}</h1>
-                            <h1>{this.state.currentTask.driver_id}</h1>
-                            <button onClick={() => this.handleClick()} >Claim this delivery</button>
+                      <div className="index-item">
+                          <div className="addresses">
+
+                            <h2> pickup: {this.props.task.pickup_loc}</h2>
+                            <h2>dropoff: {this.props.task.dropoff_loc}</h2>
+                          </div>
+                          <div className="right-side">
+
+                            {/* <h1>{this.state.currentTask.status}</h1> */}
+                            {/* <h1>{this.state.currentTask.driver_id}</h1> */}
+                            <div className="distance">
+                                <h1>{this.state.currentTask.distance}</h1>
+                                <p>Mi</p>
+                            </div>
+                            
+                            <div className="payout">
+
+                                    <div className="money">
+                                        <p>$</p>
+                                        <h1>{this.props.task.price.toFixed(2)}</h1>
+                                    </div>
+                                    <span>payout</span>
+                            </div>
+                            {/* <button onClick={() => this.handleClick()} >Claim this delivery</button> */}
+                          </div>
                         <br/>
                         <br/>
                      </div>
