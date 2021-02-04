@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../stylesheets/sidebar.css'
 import {Link} from 'react-router-dom'
-// import '../../stylesheets/sidebar.css'
 class Sidebar extends React.Component {
 
     constructor(props) {
