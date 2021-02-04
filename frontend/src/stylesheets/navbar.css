@@ -57,9 +57,22 @@
     margin-right: 2%;
     /* background-color: skyblue; */
     /* float: right; */
-    display: flex;
+    /* display: flex; */
     justify-content:end;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
 }
-
+.dropdown .header-button{
+    position: relative;
+    display: flex;
+    font-family: 'Roboto';
+    background-color: rgb(187, 239, 248);
+    color: black;
+    padding: 2px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px #757474;
+    margin-left: 0px;
+}
