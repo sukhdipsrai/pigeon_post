@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import Sidebar from './sidebar'
+import { openModal, closeModal } from '../../actions/modal_actions';
 const mSTP = (state, ownProps) => {
     return {
         currentUser: Object.values(state.entities.user)[0],
@@ -9,7 +10,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-
+        openModal: (modal) => dispatch(openModal(modal)),
     }
 }
 

@@ -6,7 +6,14 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props)
     }
-
+    handleClick(modal) {
+        let that = this;
+        return e => {
+            e.preventDefault();
+            const authorId = that.props.currentUser.id ? that.props.currentUser.id : null;
+            this.props.openModal({ modal: modal, authorId: authorId})
+        }
+    }
     render() {
         debugger
         if(this.props.isloggedin){
@@ -26,9 +33,10 @@ class Sidebar extends React.Component {
             } else {
                 return (
                     <div className="sidebar">
+                        <button className='post-delivery' onClick={this.handleClick('create-task')}>Post a Delivery</button>
+    
                 <ul className="sidebar-links">
                 <Link to="/dashboard" > <li> Home </li></Link>
-                <Link to="/users/delivery/create">Post a Delivery</Link>
                 <Link to="/users/delivery/active"><li> In Progress </li></Link>
                 <Link to="/users/delivery/unclaimed" ><li> Unclaimed </li></Link>
                 <Link to="/users/delivery/history" ><li>History/Receipts</li></Link>
