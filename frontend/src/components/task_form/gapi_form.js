@@ -3,6 +3,7 @@ import GapiAutoFillForm from './gapi'
 import { connect } from 'react-redux'
 import axios from 'axios';
 import {createTask} from '../../actions/task_actions'
+import * as gActions from '../../actions/gapi_actions'
 import '../../stylesheets/gapiform.css'
 
 class GapiForm extends React.Component {
@@ -103,11 +104,21 @@ class GapiForm extends React.Component {
         let y = weight * .10 + (duration / 3600.0) * 25;
         // x = 50;
         // y = 60;
-        if (x > y) return x;
-        else return y;
+        if (x > y) return x.toFixed(2);
+        else return y.toFixed(2);
     }
 
     handleFinalSubmit(){
+        const that = this;
+        this.createPost()
+            .then( ()=>{
+                debugger;
+                that.props.resetTaskForm();
+                that.setState({pirce:null});
+            });
+    }
+
+    createPost(){
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id } = this.state;
         const data={
             pickup_loc: pickup_loc,
@@ -120,12 +131,15 @@ class GapiForm extends React.Component {
             customer_id:customer_id
         }
         this.props.createTask(data);
+        return new Promise(function (resolve, reject){
+            resolve("Post Final Data.")
+        })
     }
 
     render() {
         let priceDisplay = null;
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id, duration } = this.state;
-        if (this.state.price && this.state.errors === null) {
+        if (this.state.price !==null  && this.state.errors === null) {
             priceDisplay =
                 <div className="price-display-box">
                     <p>Price Determined {price}</p>
@@ -138,6 +152,9 @@ class GapiForm extends React.Component {
                     <p>{this.props.user.id}</p>
                     <button onClick={()=>this.handleFinalSubmit()}></button>
                 </div>
+        } else {
+            priceDisplay = null;
+            debugger
         }
         return (
             <div>
@@ -185,7 +202,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => {
     return {
-        createTask: data => dispatch(createTask(data))
+        createTask: data => dispatch(createTask(data)),
+        resetTaskForm: data=> dispatch(gActions.resetTaskForm())
     }
 }
 

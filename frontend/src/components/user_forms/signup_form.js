@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
   }
 
   update(field) {
-      debugger
+      // debugger
       if(field === 'userType'){
         // this.setState({ page: this.state.page + 1 })
         return e => this.setState({
@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
   }
 
   handleType(field) {
-      debugger
+      // debugger
       return e => {
           this.setState({ [field]: e.target.value  })
 
@@ -53,7 +53,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+    // debugger
     let user = {
       usertype: this.state.userType, 
       firstname: this.state.firstname,  
@@ -81,7 +81,7 @@ class SignupForm extends React.Component {
 
   render() {
 
-    debugger
+    // debugger
 
 
     if (this.state.page === 0){
@@ -148,7 +148,7 @@ class SignupForm extends React.Component {
       </div>
     );
 } else if (this.state.page === 1){
-  debugger
+  // debugger
     return(
       <div className="signup-form-container">    
         <div className="signup-main"> 

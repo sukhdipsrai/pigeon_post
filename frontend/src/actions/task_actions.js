@@ -58,7 +58,7 @@ export const createTask = task => dispatch => {
 }
 
 export const updateTask = task => dispatch => {
-    debugger
+    // debugger
     return TaskUtil.editTask(task)
         .then(task => dispatch(receiveTask(task)))
         .catch(err => console.log(err))

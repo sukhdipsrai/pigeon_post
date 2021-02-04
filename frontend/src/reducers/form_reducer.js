@@ -1,4 +1,4 @@
-import {RECEIVE_ORIGIN, RECEIVE_DESTINATION} from '../actions/gapi_actions'
+import {RECEIVE_ORIGIN, RECEIVE_DESTINATION, REST_ORI_DEST} from '../actions/gapi_actions'
 
 
 const defaultState = ({
@@ -16,6 +16,8 @@ const FormReducer = (state = defaultState, action)=>{
         case RECEIVE_DESTINATION:
             newState.dropoff_loc = action.cord
             return newState;
+        case REST_ORI_DEST:
+            return defaultState;
         default:
             return state;
     }
