@@ -5,14 +5,14 @@ export const RECEIVE_DESTINATION = "RECEIVE_DESTINATION";
 const recOri = cord =>{
     return{
         type: RECEIVE_ORIGIN,
-        cord
+        cord: cord
     }
 }
 
 const recDest = cord =>{
     return{
         type: RECEIVE_DESTINATION,
-        cord
+        cord: cord
     }
 }
 

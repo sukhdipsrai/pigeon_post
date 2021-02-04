@@ -49,11 +49,11 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 const users = require("./routes/api/users");
 const tasks = require("./routes/api/tasks");
+const gapi = require("./routes/api/gapi");
 
 app.use("/api/users", users);
 app.use("/api/tasks", tasks);
-
-
+app.use("/api/gapi", gapi)
 
 
 const passport = require('passport');

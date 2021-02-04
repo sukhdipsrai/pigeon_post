@@ -33,7 +33,7 @@ import Modal from './modal/modal';
 >>>>>>> creating componets for google api forms
 
 // import Sidebar from './sidebar/sidebar';
-import GapiForm from '../components/gapi_form'
+import GapiForm from './task_form/gapi_form'
 const App = () => (
   <div className="app">
 <<<<<<< HEAD

@@ -6,7 +6,7 @@ import PlacesAutocomplete, {
 }
     from 'react-places-autocomplete';
 import { connect } from 'react-redux';
-import * as gActions from '../actions/gapi_actions'
+import * as gActions from '../../actions/gapi_actions'
 
 
 class GapiAutoFillForm extends React.Component {
@@ -24,10 +24,13 @@ class GapiAutoFillForm extends React.Component {
             .then(results => getLatLng(results[0]))
             .then(latLng => {
                 console.log('Success', latLng)
-                if(this.props.field === 'Origin')
-                    this.props.originToState(latLng);
-                else if( this.props.field == 'Destination')
-                    this.props.destinationToState(latLng); 
+                if(this.props.type === 'Origin'){
+                    this.setState({address})
+                    this.props.originToState({address, latLng});
+                }
+                else if( this.props.type == 'Destination'){
+                    this.setState({address})
+                    this.props.destinationToState({address, latLng});}
             })
             .catch(error => console.error('Error', error));
     };
@@ -39,19 +42,20 @@ class GapiAutoFillForm extends React.Component {
                     value={this.state.address}
                     onChange={this.handleChange}
                     onSelect={this.handleSelect}
-                    type={this.props.field}
                 >
-                    {({ getInputProps, suggestions, getSuggestionItemProps, loading, type=this.props.type }) => (
+                    {({ getInputProps, suggestions, getSuggestionItemProps, loading, type=this.props.field,selectedAddr=this.state.address }) => (
                         <div>
                             <input
+                                value={selectedAddr}
                                 {...getInputProps({
                                     placeholder: `${type}`,
-                                    className: 'location-search-input',
+                                    className: 'location-search-input'
                                 })}
                             />
                             <div className="autocomplete-dropdown-container">
                                 {loading && <div>Loading...</div>}
                                 {suggestions.map(suggestion => {
+                                    const key = suggestion.index
                                     const className = suggestion.active
                                         ? 'suggestion-item--active'
                                         : 'suggestion-item';
@@ -61,9 +65,10 @@ class GapiAutoFillForm extends React.Component {
                                         : { backgroundColor: '#ffffff', cursor: 'pointer' };
                                     return (
                                         <div
+                                            key={key}
                                             {...getSuggestionItemProps(suggestion, {
                                                 className,
-                                                style,
+                                                style
                                             })}
                                         >
                                             <span>{suggestion.description}</span>
