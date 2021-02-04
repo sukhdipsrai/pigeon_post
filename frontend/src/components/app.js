@@ -19,6 +19,9 @@ import DeliverTasksIndexContainer from './driver_dashboard/delivery_tasks_contai
 import CurrentDeliveryContainer from './driver_dashboard/current_delivery_container'
 import DriverHistoryContainer from './driver_dashboard/driver_history_container'
 
+import TaskShowPageContainer from './task_show_container'
+
+
 import '../stylesheets/app.css'
 import Sidebar from './sidebar/sidebar';
 import Modal from './modal/modal';
@@ -42,6 +45,8 @@ const App = () => (
           <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
           {/* <ProtectedRoute exact path="users/delivery/new" component={DashboardContainer} /> */}
 
+          <ProtectedRoute exact path="/tasks/:taskId" component={TaskShowPageContainer} />
+
           {/* customer routes  */}
           <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
@@ -53,7 +58,6 @@ const App = () => (
           <ProtectedRoute exact path="/driver/currentdelivery" component={CurrentDeliveryContainer} />
           <ProtectedRoute exact path="/driver/history" component={DriverHistoryContainer} />
         </Switch>
-        <Route exact={true} path="/gapidev" component={GapiForm} />
         {/* <NavbarContainer /> */}
       </div>
     </div>

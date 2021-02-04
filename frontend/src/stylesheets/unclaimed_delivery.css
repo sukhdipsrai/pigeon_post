@@ -1,0 +1,170 @@
+.unclaimed-delivery-main {
+
+    background-color: black;
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+}
+
+.task-list-holder {
+    width: 90%;
+    /* height: 1000px; */
+    
+}
+
+.unclaimed-delivery-item{
+    background-color: darkslateblue;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    border-radius: 7px;
+    display: flex;
+    /* flex-direction: column; */
+}
+.addresses {
+    width: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.addresses h2{ 
+    font-size: 13px;
+    font-weight: 100;
+    
+}
+.right-side {
+    width: 50%;
+    height: 50px;
+    background-color: maroon;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.payout {
+    display: flex;
+    flex-direction: column;
+
+}
+.money {
+    background-color: royalblue;
+    /* width: 120px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.money h1 {
+    font-weight: 100;
+
+    font-size: 250%;
+    /* background-color: red; */
+}
+
+.payout span{
+    margin-top: -5px;
+    margin-left: 0px;
+    font-size: 13px;
+    /* background-color: rosybrown; */
+}
+
+.location {
+    background-color: rosybrown;
+    /* width: 75px; */
+    font-size: 40px;
+}
+.location h1 {
+    font-weight: 100;
+}
+
+.location p {
+    margin-left: 90%;
+    margin-top: -5px;
+    font-size: 13px;
+}
+
+/* .unclaimed-delivery-main {
+    background-color: black;
+    height: 500px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-list-holder {
+    width: 900px;
+    background-color: red;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.unclaimed-delivery-item {
+    height: 200px;
+    width: 300px;
+    background-color: darkslateblue;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.unclaimed-holder {
+    height: 100%;
+    background-color: seagreen;
+}
+.total-price {
+    background-color: royalblue;
+    display: flex;
+
+}
+.price {
+    background-color: rosybrown;
+    display: flex;
+}
+.price h1 {
+    font-size: 30px;
+}
+
+.total-price span {
+    background-color: saddlebrown;
+    height: 20px;
+ margin-top: 10px;
+margin-left: 3px;
+}
+
+.div-for-photo {
+    background-color: sandybrown;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.div-for-photo > div {
+    background-color: seagreen;
+    width: 50%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+.package-info {
+    background-color: salmon;
+    height:85%;
+    font-size: 13px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+} */
