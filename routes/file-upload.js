@@ -11,7 +11,7 @@ router.post('/image-upload', function(req, res) {
         if(err){
             return res.status(422).json({errors: 'Please attach jpeg or png'})
         }
-        var params = { Bucket: 'pigeon-user', Key: req.file.key };
+        var params = { Bucket: 'pigeon-task-package', Key: req.file.key };
         var promise = s3.getSignedUrlPromise('getObject', params)
         .then(function(url) {
             console.log('The URL is', url);

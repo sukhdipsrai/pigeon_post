@@ -1,7 +1,7 @@
 const aws = require('aws-sdk')
 const multer = require('multer')
 const multerS3 = require('multer-s3')
-const skey = require('../config/keys_dev')
+const skey = require('../config/keys')
 aws.config.update({
     secretAccessKey: skey.secretAccessKey,
     accessKeyId: skey.accessKeyId,
@@ -22,7 +22,7 @@ const upload = multer({
     fileFilter,
     storage: multerS3({
         s3: s3,
-        bucket: 'pigeon-user',
+        bucket: 'pigeon-task-package',
         // acl: 'public-read',
         // metadata: function (req, file, cb) {
         //     console.log(file)
