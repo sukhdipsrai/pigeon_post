@@ -1,7 +1,7 @@
 .sidebar {
     height: 100%;
     width: 175px;
-    background-color: darkb;
+    background-color: silver;
 }
 
 .sidebar-links{ 
@@ -14,5 +14,5 @@
     /* margin: 5px; */
     padding: 10px;
     border-bottom: 1px solid black;
-    background-color: chartreuse;
+    background-color: navy;
 }

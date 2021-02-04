@@ -1,7 +1,7 @@
 
 
 import React from 'react' 
-// import '../../stylesheets/customer_active_delivery_container.css'
+import CurrentDeliveryItem from './current_delivery_item';
 class CurrentDelivery extends React.Component {
 
     constructor(props){
@@ -14,11 +14,30 @@ class CurrentDelivery extends React.Component {
 
 
     render() {
+
+        if(this.props.tasks.length > 0){
+
+        let tasklist = this.props.tasks.map(task => {
+
+            // if(task.status === 'unfinished') {
+                return <CurrentDeliveryItem  driverId = {this.props.currentUser.id} claimTask={this.props.claimTask} task = {task} />
+            // }
+        })
         return(
-            <div className="active-delivery-main">
-                <h1>This is where your current delivery is located.</h1>
+            <div className="current-delivery-container">
+
+                <h1>Current Delivery</h1>
+
+                {tasklist}  
+
             </div>
         )
+    } else {
+        return (
+
+            <h1>This is where your current delivery is located.</h1>
+        )
+        }
     }
 }
 

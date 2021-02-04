@@ -6,6 +6,7 @@ import CurrentDelivery from './current_delivery'
 const mSTP = (state, ownProps) => {
     return {
         currentUser: Object.values(state.entities.user)[0],
+        tasks: state.entities.tasks,
     }
 }
 
