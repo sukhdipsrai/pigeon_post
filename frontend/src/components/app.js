@@ -1,13 +1,7 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-<<<<<<< HEAD
-// import Test from './test'
-import { Switch, Route } from 'react-router-dom';
-import Test from './test'
-=======
 import { Switch, Route } from 'react-router-dom';
 // import Test from './test'
->>>>>>> creating componets for google api forms
 import SplashPage from './splash_page'
 import DashboardContainer from './dashboard/dashboard_container'
 import LoginFormContainer from './user_forms/user_signin_container'
@@ -38,11 +32,7 @@ const App = () => (
     <Modal />
     <NavbarContainer />
     <div className="inner-app">
-<<<<<<< HEAD
-      <SidebarContainer />
-=======
       <SidebarContainer/>
->>>>>>> fixing more merge conflicts
       <div className="routes">
 
         <Switch >

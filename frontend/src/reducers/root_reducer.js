@@ -5,7 +5,6 @@ import tasks from './tasks_reducer';
 import entities from './entities'
 import ui from './uiReducer'
 import task_form from './form_reducer'
-import entities from './entities'
 
 const RootReducer = combineReducers({
     session,
