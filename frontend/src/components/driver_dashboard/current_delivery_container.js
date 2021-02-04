@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchDriverTasks } from '../../actions/task_actions'
+import { fetchDriverTasks, updateTask } from '../../actions/task_actions'
 
 import CurrentDelivery from './current_delivery'
 
@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchDriverTasks: (id) => dispatch(fetchDriverTasks(id)),
+        completeTask: task => dispatch(updateTask(task))
     }
 }
 

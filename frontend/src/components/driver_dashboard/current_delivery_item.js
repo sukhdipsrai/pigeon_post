@@ -14,10 +14,10 @@ class CurrentDeliveryItem extends React.Component {
         handleClick() {
                 debugger
                 console.log(this.state.currentTask.status)
-                this.state.currentTask.status = "In Process";
+                this.state.currentTask.status = "Finished";
                 this.state.currentTask.driver_id = this.props.driverId
                 console.log(this.state.currentTask.status)
-                this.props.claimTask(this.state.currentTask).then(window.location.reload())
+                this.props.completeTask(this.state.currentTask).then(window.location.reload())
                 debugger
         }
 
@@ -32,8 +32,8 @@ class CurrentDeliveryItem extends React.Component {
                           {/* </div> */}
                           {/* <div className="right-side"> */}
 
-                            {/* <h1>{this.state.currentTask.status}</h1> */}
-                            {/* <h1>{this.state.currentTask.driver_id}</h1> */}
+                            <h1>{this.state.currentTask.status}</h1>
+                            <h1>{this.state.currentTask.driver_id}</h1>
                             {/* <div className="distance"> */}
                                 <h1>{this.state.currentTask.distance}</h1>
                                 <p>Mi</p>
@@ -47,7 +47,7 @@ class CurrentDeliveryItem extends React.Component {
                                     {/* </div> */}
                                     <span>payout</span>
                             {/* </div> */}
-                            {/* <button onClick={() => this.handleClick()} >Claim this delivery</button> */}
+                            <button onClick={() => this.handleClick()} >Delivery finished</button>
                           {/* </div> */}
                         <br/>
                         <br/>
