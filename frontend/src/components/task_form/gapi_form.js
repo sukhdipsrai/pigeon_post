@@ -114,7 +114,7 @@ class GapiForm extends React.Component {
             .then( ()=>{
                 debugger;
                 that.props.resetTaskForm();
-                that.setState({pirce:null});
+                that.setState({price:null});
             });
     }
 
@@ -150,16 +150,15 @@ class GapiForm extends React.Component {
                     <p>Dropoff Location: {dropoff_loc}</p>
                     <p>Conact number for Delivery: {drop_off_number}</p>
                     <p>{this.props.user.id}</p>
-                    <button onClick={()=>this.handleFinalSubmit()}></button>
+                    <button onClick={()=>this.handleFinalSubmit()}>Confirm</button>
                 </div>
         } else {
             priceDisplay = null;
             debugger
         }
         return (
-            <div>
-                <h2>Create Task</h2>
-                <form onSubmit={() => this.handleSubmit()}>
+            <div className="task-form-container">
+                <form onSubmit={() => this.handleSubmit()} className="task-form">
                     <br />
                     <input type="tel"
                         pattern="\(([0-9]{3})\) [0-9]{3}-[0-9]{4}"
@@ -173,17 +172,19 @@ class GapiForm extends React.Component {
                         onChange={this.update('weight')}
                         min={1}
                         placeholder="Weight of Package in Pounds"
-                    /> lbs.</label>
+                    /></label>
                     <br />
                     <GapiAutoFillForm
                         type="Origin"
                         field="Pick Up Location"
                     />
+                    <br></br>
                     <GapiAutoFillForm
                         type={"Destination"}
                         field="Drop Off Location"
                     />
-                    <input type="submit" value="Submit" />
+                    <br></br>
+                    <input type="submit" value="Submit" id="submit-button"/>
                 </form>
                 
                 {this.state.errors}
