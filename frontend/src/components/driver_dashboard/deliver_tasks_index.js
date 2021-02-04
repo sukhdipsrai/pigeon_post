@@ -31,7 +31,7 @@ class DeliveryTasksIndex extends React.Component {
                         <h1>This is where all active deliveries will be available to choose from.</h1>
                            <h2></h2>
                             <div className="inner-delivery-main">
-                                {tasklist}  
+                                {tasklist.reverse()}  
                             </div>
                     </div>
             )

@@ -53,7 +53,7 @@
 }
 .money {
     background-color: royalblue;
-    width: 120px;
+    /* width: 120px; */
     display: flex;
     flex-direction: row;
 }
@@ -61,13 +61,13 @@
 .money h1 {
     font-weight: 100;
 
-    font-size: 40px;
+    font-size: 250%;
     /* background-color: red; */
 }
 
 .payout span{
     margin-top: -5px;
-    margin-left: 80px;
+    margin-left: 0px;
     font-size: 13px;
     /* background-color: rosybrown; */
 }
