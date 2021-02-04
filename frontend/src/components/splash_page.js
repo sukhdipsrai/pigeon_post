@@ -22,18 +22,23 @@ class SplashPage extends React.Component{
                     native New Yorkers who know their way around the 5 boroughs.</p>
                 </div>
 
+                
                 <div className="buttons" >
-
-                <button className="splashbuttons"> <Link className="links" to="users/signup" > 
+                
+                <Link className="links" to="users/signup" >
+                    <button className="splashbuttons">  
                             Sign up
-                        </Link> 
-                </button>
+                    </button>
+                </Link> 
+                
                 <br/>
                 <br/>
-                <button className="splashbuttons" > <Link className="links" to="users/login" > 
+                
+                <Link className="links" to="users/login" > 
+                        <button className="splashbuttons" > 
                             Log In
-                        </Link> 
-                </button>
+                        </button>
+                </Link> 
                 </div>  
             </div>
             <div className="right-side" >

@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -45,17 +45,17 @@ class LoginForm extends React.Component {
   }
 
   // Render the session errors if there are any
-  renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {Object.keys(this.state.errors).map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {this.state.errors[error]}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
@@ -64,12 +64,16 @@ class LoginForm extends React.Component {
           <div className="login-form">
           <h1>Welcome back fellow Pigeon</h1>
         <form onSubmit={this.handleSubmit}>
+        <br/>
+        {this.state.errors["email"]}
+
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 placeholder="Email"
                 />
             <br/>
+            {this.state.errors["password"]}
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -77,7 +81,7 @@ class LoginForm extends React.Component {
                 />
             <br/>
             <input type="submit" value="Submit" />
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
         </form>
           </div>
         </div>

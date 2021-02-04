@@ -3,6 +3,7 @@
 .splashbuttons {
     width: 60px;
     height: 30px;
+    color: white;
     /* margin: 10px 30px; */
     /* padding: 10px 0px;  */
     font-size: 12px;
@@ -14,11 +15,14 @@
     border-radius: 7px;
     transition-duration: .5s;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .splashbuttons:hover {
     height: 40px;
     width: 75px;
+    background-color: firebrick;
+    color: white;
 }
 
 
@@ -46,7 +50,8 @@
 
 .left-side{
     /* background-color: darkseagreen; */
-    width: 35%;
+    margin-left: 5%;
+    width: 30%;
     height:500px;
     display: flex;
     flex-direction: column;

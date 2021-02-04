@@ -43,6 +43,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 form{
@@ -54,6 +55,30 @@ form{
 
 form input {
     padding: 5px 2px;
+}
+
+.formsubmit{
+    width: 100%;
+    height: 30px;
+    /* margin: 10px 30px; */
+    /* padding: 10px 0px;  */
+    /* font-size: 12px; */
+    border: none;
+    text-decoration: none;
+    /* text-align: center; */
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.formsubmit:hover{
+    height: 40px;
+    /* margin: 0 10px; */
+    width: 100%;
+    background-color: firebrick;
+    color: white;
 }
 
 .clickon {
@@ -74,10 +99,13 @@ form input {
 
 .clickon:hover {
     height: 40px;
-    width: 75px;
+    margin: 0 10px;
+    width: 90%;
+    background-color: firebrick;
+    color: white;
 }
-.clickon:focus {
+/* .clickon:focus {
     background-color:black;
     border: none;
-}
+} */
 
