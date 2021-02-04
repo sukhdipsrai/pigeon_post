@@ -34,6 +34,7 @@ import GapiForm from './task_form/gapi_form'
 
 const App = () => (
   <div className="app">
+    <Route exact={true} path="/gapidev" component={GapiForm} />
     <Modal />
     <NavbarContainer />
     <div className="inner-app">
