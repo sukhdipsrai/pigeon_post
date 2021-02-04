@@ -19,7 +19,7 @@ import { RECEIVE_ALL_TASKS,
                 return action.tasks.data;
             case RECEIVE_SINGLE_USER_TASKS:
                 // newState.user = action.tasks.data
-                debugger
+                // debugger
                 return action.tasks.data
             case RECEIVE_TASK:
                 // newState.new = action.task.data 

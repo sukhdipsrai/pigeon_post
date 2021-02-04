@@ -22,7 +22,7 @@ router.get('/user/:user_id', (req, res) => {
 });
 
 router.get('/driver/:driver_id', (req, res) => {
-    debugger
+    // debugger
     Task.find({ driver_id: req.params.driver_id })
         .then(tasks => res.json(tasks))
         .catch(err =>
@@ -78,7 +78,7 @@ router.delete(
 );
 
 router.put('/:id/edit', (req, res) => {
-    debugger
+    // debugger
     Task.findByIdAndUpdate(req.params.id, req.body)
         .then(task => {
             res.json(task)

@@ -6,7 +6,7 @@ export const getTasks = () => {
 }
 
 export const getUserTasks = id => {
-    debugger
+    // debugger
     return axios.get(`/api/tasks/user/${id}`)
 }
 
@@ -23,7 +23,7 @@ export const writeTask = data => {
 }
 
 export const editTask = data=> {
-    debugger
+    // debugger
     return axios.put(`/api/tasks/${data._id}/edit`, data)
 }
 

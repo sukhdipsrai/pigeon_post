@@ -16,7 +16,7 @@ class DeliveryTasksIndex extends React.Component {
 
 
     render() {
-        debugger
+        // debugger
         if(this.props.tasks.length > 0){
 
             let tasklist = this.props.tasks.map(task => {

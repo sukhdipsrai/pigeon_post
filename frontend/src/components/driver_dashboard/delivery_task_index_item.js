@@ -12,13 +12,13 @@ class DeliveryIndexItem extends React.Component {
         }
 
         handleClick() {
-                debugger
+                // debugger
                 console.log(this.state.currentTask.status)
                 this.state.currentTask.status = "In Process";
                 this.state.currentTask.driver_id = this.props.driverId
                 console.log(this.state.currentTask.status)
                 this.props.claimTask(this.state.currentTask).then(window.location.reload())
-                debugger
+                // debugger
         }
 
         render(){
