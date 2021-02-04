@@ -14,13 +14,11 @@ router.post('/image-upload', function(req, res) {
         var params = { Bucket: 'pigeon-task-package', Key: req.file.key };
         var promise = s3.getSignedUrlPromise('getObject', params)
         .then(function(url) {
-            console.log('The URL is', url);
+            // console.log('The URL is', url);
             return res.json({
             'imageUrl': url
+            })
         })
-        }, function (err) { return null });
-
-        
     });
 });
 
