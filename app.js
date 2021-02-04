@@ -50,10 +50,13 @@ app.listen(port, () => console.log(`Server is running on port ${port}`));
 const users = require("./routes/api/users");
 const tasks = require("./routes/api/tasks");
 const gapi = require("./routes/api/gapi");
+const fileRoutes = require('./routes/file-upload');
 
 app.use("/api/users", users);
 app.use("/api/tasks", tasks);
 app.use("/api/gapi", gapi)
+app.use("/api/", fileRoutes);
+
 
 
 const passport = require('passport');

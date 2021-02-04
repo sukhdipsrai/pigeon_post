@@ -46,7 +46,9 @@ const TaskSchema = new Schema({
         type: String,
         default: 'null'
     },
-
+    imageUrl: {
+    type: String,
+} 
 }, {
     timestamps: true
 })
