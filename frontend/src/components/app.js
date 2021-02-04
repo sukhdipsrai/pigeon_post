@@ -38,7 +38,11 @@ const App = () => (
     <Modal />
     <NavbarContainer />
     <div className="inner-app">
+<<<<<<< HEAD
       <SidebarContainer />
+=======
+      <SidebarContainer/>
+>>>>>>> fixing more merge conflicts
       <div className="routes">
 
         <Switch >
@@ -52,6 +56,7 @@ const App = () => (
           <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/history" component={CustomerHistoryContainer} />
+          <ProtectedRoute exact path="/users/delivery/create" component={GapiForm} />
 
           {/* driver routes  */}
           <ProtectedRoute exact path="/driver/deliveries" component={DeliverTasksIndexContainer} />

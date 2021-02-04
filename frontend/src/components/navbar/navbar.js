@@ -1,4 +1,8 @@
 import React from 'react'
+<<<<<<< HEAD
+=======
+
+>>>>>>> fixing more merge conflicts
 import '../../stylesheets/navbar.css'
 import logoblack from '../../images/pigeonpostblack.png'
 import logowhite from '../../images/pigeonpostwhite.png'
