@@ -6,9 +6,10 @@ const upload = require('../services/file-upload')
 const singleUpload = upload.single('image');
 
 router.post('/image-upload', function(req, res) {
-    debugger
     singleUpload(req, res, function(err){
-    debugger
+        if(err){
+            return res.status(422).json({errors: 'Please attach jpeg or png'})
+        }
         return res.json({'imageUrl': req.file.location})
     });
 });
