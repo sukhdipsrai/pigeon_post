@@ -34,6 +34,7 @@ import Modal from './modal/modal';
 
 // import Sidebar from './sidebar/sidebar';
 import GapiForm from './task_form/gapi_form'
+
 const App = () => (
   <div className="app">
 <<<<<<< HEAD
