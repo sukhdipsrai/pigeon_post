@@ -2,6 +2,8 @@ import React from 'react'
 import GapiAutoFillForm from './gapi'
 import { connect } from 'react-redux'
 import axios from 'axios';
+import '../../stylesheets/gapiform.css'
+
 class GapiForm extends React.Component {
     constructor(props) {
         super(props);
