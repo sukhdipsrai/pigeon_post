@@ -28,9 +28,10 @@ import GapiForm from './task_form/gapi_form'
 
 const App = () => (
   <div className="app">
-    <Modal />
+   <Modal />
     <NavbarContainer />
     <div className="inner-app">
+       
       <SidebarContainer/>
       <div className="routes">
 
