@@ -1,7 +1,7 @@
 .sidebar {
     height: 100%;
     width: 175px;
-    background-color: silver;
+    background-color: inherit;
 }
 
 .sidebar-links{ 
@@ -10,9 +10,31 @@
     flex-direction: column;
 }
 
-.sidebar-links li {
+.sidebar-links li, .sidebar-links button {
+    opacity: .5;
     /* margin: 5px; */
     padding: 10px;
     border-bottom: 1px solid black;
-    background-color: navy;
+    background-color: #4A5050;
+    border-radius: 10px;
+    margin-top: 1px;
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+    color:white;
+    text-align: left;
+    cursor: pointer;
+    z-index: 10;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.price-display-box{
+    align-items: center;
+    display: block;
+}
+
+
+.sidebar-links li:hover, .sidebar-links button:hover {
+    opacity: 1;
+    cursor: pointer;
 }
