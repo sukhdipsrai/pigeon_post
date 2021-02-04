@@ -6,7 +6,12 @@ export const getTasks = () => {
 }
 
 export const getUserTasks = id => {
+    debugger
     return axios.get(`/api/tasks/user/${id}`)
+}
+
+export const getDriverTasks = id => {
+    return axios.get(`/api/tasks/driver/${id}`)
 }
 
 export const getTask = id => {
@@ -18,7 +23,8 @@ export const writeTask = data => {
 }
 
 export const editTask = data=> {
-    return axios.put(`/api/tasks/${data.id}/edit`, data)
+    debugger
+    return axios.put(`/api/tasks/${data._id}/edit`, data)
 }
 
 export const removeTask = id => {

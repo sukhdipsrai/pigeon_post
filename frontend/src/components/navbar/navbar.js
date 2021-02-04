@@ -25,14 +25,14 @@ class Navbar extends React.Component {
         if(this.props.isloggedin){ 
 
             return (
-                <div className="navbar">
+                <div className="navbar-loggedin">
              <div className="top">
                 <img src={logowhite}  />
 
             {/* <h1 className="header-logo">Pigeon Post</h1> */}
             </div>
             <div className="dropdown">
-            {/* <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1> */}
+            <h1>Welcome, {this.props.currentUser.firstname} || {this.props.currentUser.usertype}</h1>
                     <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>email here▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a> : null}</button>
                 </div>
                 </div>
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
             return (
                 <div className="navbar">
                     <div className="top">
-                        <h1 className="header-logo">Pigeon Post</h1>
+                    <img src={logowhite}  />
                     </div>
                 </div>
             )    

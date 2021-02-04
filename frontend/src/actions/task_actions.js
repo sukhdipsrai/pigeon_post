@@ -45,20 +45,27 @@ export const fetchUserTasks = id => dispatch => {
     .catch(err => console.log(err))
 }
 
+export const fetchDriverTasks = id => dispatch => {
+    return TaskUtil.getDriverTasks(id)
+    .then(tasks => dispatch(receiveUserTasks(tasks)))
+    .catch(err => console.log(err))
+}
+
 export const createTask = task => dispatch => {
     return TaskUtil.writeTask(task)
     .then(task => dispatch(receiveTask(task)))
     .catch(err => console.log(err))
 }
 
-export const updateTask = task => dispatch => (
-    TaskUtil.editTask(task)
-        .then(task => (dispatch(receiveTask(task)))
+export const updateTask = task => dispatch => {
+    debugger
+    return TaskUtil.editTask(task)
+        .then(task => dispatch(receiveTask(task)))
         .catch(err => console.log(err))
-))
+}
 
-export const deleteTask = (taskId) => dispatch => (
-    TaskUtil.removeTask(taskId)
-        .then(task => (dispatch(removeTask(task.id)))
+export const deleteTask = (taskId) => dispatch => {
+    return TaskUtil.removeTask(taskId)
+        .then(task => dispatch(removeTask(task.id)))
         .catch (err => console.log(err))
-))
+}

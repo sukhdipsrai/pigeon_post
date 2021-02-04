@@ -1,19 +1,43 @@
 
 import React from 'react' 
-// import '../../stylesheets/customer_active_delivery_container.css'
+import DeliveryIndexItem from './delivery_task_index_item'
+import '../../stylesheets/driver_delivery_index.css'
+
+
 class DeliveryTasksIndex extends React.Component {
 
     constructor(props){
         super(props)
     }
 
+    componentDidMount(){
+        this.props.fetchTasks();
+    }
+
 
     render() {
-        return(
-            <div className="active-delivery-main">
-                <h1>This is where all active deliveries will be available to choose from.</h1>
-            </div>
-        )
+        debugger
+        if(this.props.tasks.length > 0){
+
+            let tasklist = this.props.tasks.map(task => {
+
+                // if(task.status === 'unfinished') {
+                    return <DeliveryIndexItem  driverId = {this.props.currentUser.id} claimTask={this.props.claimTask} task = {task} />
+                // }
+            })
+
+            return (
+                    <div className="active-delivery-main">
+                        <h1>This is where all active deliveries will be available to choose from.</h1>
+                           <h2></h2>
+                            <div className="inner-delivery-main">
+                                {tasklist}  
+                            </div>
+                    </div>
+            )
+        } else {
+        return null;
+    }
     }
 }
 

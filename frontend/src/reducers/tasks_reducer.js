@@ -16,10 +16,11 @@ import { RECEIVE_ALL_TASKS,
         switch (action.type) {
             case RECEIVE_ALL_TASKS:
                 // newState.all = action.tasks.data
-                return action.tasks;
+                return action.tasks.data;
             case RECEIVE_SINGLE_USER_TASKS:
                 // newState.user = action.tasks.data
-                return action.tasks
+                debugger
+                return action.tasks.data
             case RECEIVE_TASK:
                 // newState.new = action.task.data 
                 return Object.assign({}, oldState, action.task)

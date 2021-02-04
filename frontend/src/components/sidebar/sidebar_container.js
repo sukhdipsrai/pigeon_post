@@ -2,7 +2,7 @@ import {connect} from 'react-redux'
 import Sidebar from './sidebar'
 const mSTP = (state, ownProps) => {
     return {
-        currentUser: state.session.user,
+        currentUser: Object.values(state.entities.user)[0],
         isloggedin: state.session.isAuthenticated
     }
 }

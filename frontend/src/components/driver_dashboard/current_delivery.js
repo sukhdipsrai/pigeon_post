@@ -8,6 +8,10 @@ class CurrentDelivery extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchDriverTasks(this.props.currentUser.id);
+    }
+
 
     render() {
         return(
