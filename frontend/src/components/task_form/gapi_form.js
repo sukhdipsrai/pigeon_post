@@ -166,6 +166,7 @@ class GapiForm extends React.Component {
         if (this.state.price !== null && this.state.errors === null) {
             submitButtonValue = "Confirm and Submit";
             priceDisplay =
+<<<<<<< HEAD
                 <div className="price-display-box">
                     <p>Price Determined {price}</p>
                     <p>Based on Distance: {distance}</p>
@@ -177,6 +178,18 @@ class GapiForm extends React.Component {
                     <p>{this.props.user.id}</p>
                     <button className='task-form-button' onClick={() => this.props.closeModal()} value="Cancel"></button>
                 </div>
+=======
+            <div className="price-display-box">
+                <p>Price Determined {price}</p>
+                <p>Based on Distance: {distance}</p>
+                <p>Based on Route Duration: {duration}</p>
+                <p>Based on Estimated Weight: {weight}</p>
+                <p>Start Location: {pickup_loc}</p>
+                <p>Dropoff Location: {dropoff_loc}</p>
+                <p>Conact number for Delivery: {drop_off_number}</p>
+                <p>{this.props.user.id}</p>
+            </div>
+>>>>>>> reworked some form styling and flow
         } else {
             priceDisplay = null;
         }
@@ -211,6 +224,8 @@ class GapiForm extends React.Component {
                     {this.state.errors}
                     {priceDisplay}
                     <input type="submit" value={submitButtonValue} className='task-form-button' />
+                    <button className='task-form-button' onClick={()=>this.props.closeModal() }>Cancel</button>
+
                 </form>
 
             </div>
