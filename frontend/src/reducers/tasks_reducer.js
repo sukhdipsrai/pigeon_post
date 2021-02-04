@@ -23,7 +23,7 @@ import { RECEIVE_ALL_TASKS,
                 return action.tasks.data
             case RECEIVE_TASK:
                 // newState.new = action.task.data 
-                return Object.assign({}, oldState, action.task)
+                return Object.assign({}, {[action.task.data._id]:action.task.data})
             case REMOVE_TASK:
                 delete newState[action.task._id];
                 return newState     

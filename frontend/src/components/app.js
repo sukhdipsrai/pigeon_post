@@ -19,6 +19,9 @@ import DeliverTasksIndexContainer from './driver_dashboard/delivery_tasks_contai
 import CurrentDeliveryContainer from './driver_dashboard/current_delivery_container'
 import DriverHistoryContainer from './driver_dashboard/driver_history_container'
 
+import TaskShowPageContainer from './task_show_container'
+
+
 import '../stylesheets/app.css'
 import Sidebar from './sidebar/sidebar';
 import Modal from './modal/modal';
@@ -28,9 +31,10 @@ import GapiForm from './task_form/gapi_form'
 
 const App = () => (
   <div className="app">
-    <Modal />
+   <Modal />
     <NavbarContainer />
     <div className="inner-app">
+       
       <SidebarContainer/>
       <div className="routes">
 
@@ -40,6 +44,8 @@ const App = () => (
           <AuthRoute exact path="/users/signup" component={SignUpFormContainer} />
           <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
           {/* <ProtectedRoute exact path="users/delivery/new" component={DashboardContainer} /> */}
+
+          <ProtectedRoute exact path="/tasks/:taskId" component={TaskShowPageContainer} />
 
           {/* customer routes  */}
           <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
@@ -52,7 +58,6 @@ const App = () => (
           <ProtectedRoute exact path="/driver/currentdelivery" component={CurrentDeliveryContainer} />
           <ProtectedRoute exact path="/driver/history" component={DriverHistoryContainer} />
         </Switch>
-        <Route exact={true} path="/gapidev" component={GapiForm} />
         {/* <NavbarContainer /> */}
       </div>
     </div>

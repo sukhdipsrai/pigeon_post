@@ -11,7 +11,7 @@ const RootReducer = combineReducers({
     entities,
     errors,
     ui,
-    tasks,
+    // tasks,
     task_form
 });
 

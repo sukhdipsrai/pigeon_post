@@ -6,6 +6,9 @@ class CustomerActiveDelivery extends React.Component {
     constructor(props){
         super(props)
     }
+    componentDidMount(){
+        this.props.fetchUserTasks(this.props.currentUser.id)
+    }
 
 
     render() {

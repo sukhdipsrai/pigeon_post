@@ -1,0 +1,34 @@
+.taskshow-main {
+    height: 500px;
+    background-color: seagreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-holder{
+    background-color: red;
+    padding: 5px;
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.graphics{
+    background-color: seashell;
+    height: 45%
+}
+
+.directions{ 
+    background-color: blue;
+    height: 35%
+}
+
+.price-accept{
+    background-color: grey;
+    height: 20%
+}

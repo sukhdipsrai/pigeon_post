@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class DeliveryIndexItem extends React.Component {
 // const DeliveryIndexItem = ({ claimTask, task }) => (
@@ -23,6 +24,7 @@ class DeliveryIndexItem extends React.Component {
 
         render(){
             return(
+                <Link className="links" to={`/tasks/${this.props.task._id}`}>
 
                       <div className="index-item">
                           <div className="addresses">
@@ -35,7 +37,7 @@ class DeliveryIndexItem extends React.Component {
                             {/* <h1>{this.state.currentTask.status}</h1> */}
                             {/* <h1>{this.state.currentTask.driver_id}</h1> */}
                             <div className="distance">
-                                <h1>{this.state.currentTask.distance}</h1>
+                            <h1>{(this.state.currentTask.distance/1609.0).toFixed(1)}</h1>
                                 <p>Mi</p>
                             </div>
                             
@@ -52,6 +54,7 @@ class DeliveryIndexItem extends React.Component {
                         <br/>
                         <br/>
                      </div>
+                     </Link>
                 )
         }
 
