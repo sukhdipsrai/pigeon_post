@@ -20,7 +20,7 @@ class UnclaimedDelivery extends React.Component {
             let tasklist = this.props.tasks.map(task => {
 
                 if(task.driver_id === "null") {
-                    return <UnclaimedDeliveryItem  userId = {this.props.currentUser.id} task = {task} />
+                    return <UnclaimedDeliveryItem  userId = {this.props.currentUser.id} task = {task} deleteTask={this.props.deleteTask} />
                 }
             })
 
