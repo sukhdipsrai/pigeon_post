@@ -34,31 +34,31 @@ Make sure to update the redux states with no perceptible delay for interactions 
 
 
 ### Map shows when user login
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/history.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/map.gif)
 
 
 ### Showing tasks which driver can claim
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/claim.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/claim.gif)
 
 
 ### Showing customer's in-progress tasks
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/progress.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/progess.gif)
 
 
 ### Changing task status when delivery is done
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/status.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/status.gif)
 
 
 ### Uploading package image by user
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/upload.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/upload.gif)
 
 
 ### Showing user's task history/ driver's past delivery
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/history.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/history.gif)
 
 
 ### Posting task by real address; Calculating price automatically; Giving alert messages to user about task post.
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/post.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/post.gif)
 
 
 ## Technical Challenges:
