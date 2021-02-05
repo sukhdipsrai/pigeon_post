@@ -5,8 +5,6 @@ import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 export class MapContainer extends React.Component {
   constructor(props) {
     super(props);
-    if(this.props.data!==null)
-    this.state.data = this.props.data;
   }
 
   addressToCord(address) {
@@ -20,36 +18,37 @@ export class MapContainer extends React.Component {
   }
 
   componentDidMount() {
-    debugger;   
+
   }
   render() {
-    let { data } = this.props
-    let displayTasks = null;
-    let that = this;
     const style = {
       width: '75%',
       height: '75vh'
     }
-    if (data !== null) {
-      displayTasks = data.map(task => {
-        <Marker>
-          key={task.id}
-          position={() => this.addressToCord(task.loc)}
-          name={task.id}
-        </Marker>
-      })
-    }
-
     return (
+
       <Map
         google={this.props.google}
         style={style}
-        zoom={14}
+        zoom={10}
         initialCenter={{
           lat: 40.754885,
-          lng: -74.081807
+          lng: -73.91223907
         }}
       >
+        <Marker
+          position={{ lat: 40.69677842, lng: -73.91223907 }} />
+        {/* <Marker
+          position={{ lat: 37.759703, lng: -72.428093 }} /> */}
+        <Marker
+          position={{ lat: 40.69807989, lng: -73.93987656 }} />
+        <Marker
+          position={{ lat: 40.68402262, lng: -73.81387711 }} />
+        <Marker
+          position={{ lat: 40.73503114, lng: -73.8574791 }} />
+        <Marker
+          position={{ lat: 40.8234226, lng: -73.86949539 }} />
+
 
       </Map>
     );

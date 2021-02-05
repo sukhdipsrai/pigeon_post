@@ -49,11 +49,11 @@ class Dashboard extends React.Component {
         return (
             <div className="dashboard-main">
                 <div className="dashboard-map">
-                <div>
+            
                     <MapContainer
                         data={smallData}
                     />
-                </div>
+                
                 </div>
             </div>
 
