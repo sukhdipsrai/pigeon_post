@@ -1,10 +1,10 @@
 
 
-import React from 'react' 
+import React from 'react'
 import CurrentDeliveryItem from './current_delivery_item';
 class CurrentDelivery extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
@@ -15,28 +15,31 @@ class CurrentDelivery extends React.Component {
 
     render() {
 
-        if(this.props.tasks.length > 0){
+        if (this.props.tasks.length > 0) {
 
-        let tasklist = this.props.tasks.map(task => {
+            let tasklist = this.props.tasks.map(task => {
 
-            if(task.status === 'In Process') {
-                return <CurrentDeliveryItem  driverId = {this.props.currentUser.id} completeTask={this.props.completeTask} task = {task} />
-            }
-        })
-        return(
-            <div className="current-delivery-container">
+                if (task.status === 'In Process') {
+                    return <CurrentDeliveryItem driverId={this.props.currentUser.id} completeTask={this.props.completeTask} task={task} />
+                }
+            })
+            return (
+                <div className="current-delivery-container">
+                    <div className="current-delivery-main" >
 
-                <h1>Current Delivery</h1>
 
-                {tasklist}  
+                        <h1>Current Delivery</h1>
 
-            </div>
-        )
-    } else {
-        return (
+                        {tasklist}
 
-            <h1>This is where your current delivery is located.</h1>
-        )
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+
+                <h1>This is where your current delivery is located.</h1>
+            )
         }
     }
 }
