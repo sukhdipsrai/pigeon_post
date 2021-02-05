@@ -24,7 +24,6 @@ class TaskShowPage extends React.Component {
     }
 
     render(){
-<<<<<<< HEAD
         // debugger
         if(this.props.tasks !== undefined) {
             return (
@@ -36,21 +35,6 @@ class TaskShowPage extends React.Component {
                     </form>
                     <br/>
                     <img className='task-image' src={this.props.tasks.imageUrl}/>
-=======
-
-        let imgUpload = <form type='form-data' onSubmit={(e) => this.handleImageUpload(e)}>
-                        <input type="file"
-                                            />
-                        <button>submit</button>
-                        </form>
-        debugger
-        if(this.props.tasks !== undefined) {
-            return (
-                <div className="taskshow-main">
-
-                   { this.props.currentUser.usertype === 'Driver' ? null : imgUpload }
-
->>>>>>> Styling and containers done
                 <h1>this is the tasks show page</h1>
 
                 <div className="task-holder">
