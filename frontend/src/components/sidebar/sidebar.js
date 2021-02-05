@@ -34,7 +34,7 @@ class Sidebar extends React.Component {
                 return (
                     <div className="sidebar">
                         <ul className="sidebar-links">
-                            <Link className="links" to="/dashboard" > <li> Home </li></Link>
+                            {/* <Link className="links" to="/dashboard" > <li> Home </li></Link> */}
                             <Link className="links" to="/users/delivery/active"><li> In Progress </li></Link>
                             <Link className="links" to="/users/delivery/unclaimed" ><li> Unclaimed </li></Link>
                             <Link className="links" to="/users/delivery/history" ><li>History/Receipts</li></Link>

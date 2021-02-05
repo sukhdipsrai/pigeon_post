@@ -30,7 +30,7 @@ class Navbar extends React.Component {
         debugger
         const logStatus = this.props.currentUser ? (<div className="navbar-loggedin">
             <div className="top">
-                <img src={logowhite} />
+                <Link to="/dashboard" ><img src={logowhite}/></Link>
 
                 {/* <h1 className="header-logo">Pigeon Post</h1> */}
             </div>
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
             </div>
         </div>) : (<div className="navbar">
             <div className="top">
-                <img src={logowhite} />
+                <Link to="/"><img src={logowhite} /></Link>
             </div>
         </div>)
         return (

@@ -1,6 +1,6 @@
 import React from 'react'
 // import '../../stylesheets/dashboard.css'
-
+import MapContainer from "../google_maps/map_container"
 class Dashboard extends React.Component {
     constructor(props) {
         // debugger
@@ -21,8 +21,9 @@ class Dashboard extends React.Component {
 
         return (
             <div className="dashboard-main">
-                <h1>this is the Dashboard</h1>
-                
+                <div className="dashboard-map">
+                    <MapContainer />
+                </div>
             </div>
 
         )
