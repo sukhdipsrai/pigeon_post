@@ -48,13 +48,13 @@ class GapiForm extends React.Component {
             }).then(() => this.validateForm())
             .catch(err => {
                 console.log(err)
-                that.setState({errors:err})
+                that.setState({ errors: err })
             });
     }
 
     handleSubmit() {
         let errors = null;
-        let that=this;
+        let that = this;
         const { pickup_loc, dropoff_loc } = this.props.form;
         if (pickup_loc === null || dropoff_loc === null) {
             errors = "Please Choose a Pickup AND Drop-off Address"
@@ -74,7 +74,7 @@ class GapiForm extends React.Component {
             debugger;
             console.log(ori);
             console.log(dist);
-            this.getDist(ori,dist);
+            this.getDist(ori, dist);
 
         }
     }
@@ -123,14 +123,9 @@ class GapiForm extends React.Component {
                 debugger;
                 that.props.resetTaskForm();
                 that.setState({ price: null });
+                that.props.closeModal();
                 alert("Task Created!")
             })
-            .then(() => {
-                debugger;
-                that.props.closeModal()
-                // that.props.history.push("/customer_dashboard/unclaimed_delivery_container");
-            }
-            );
     }
 
     createPost() {
@@ -144,7 +139,7 @@ class GapiForm extends React.Component {
             price: price,
             status: status,
             customer_id: customer_id,
-            imageUrl: 'https://pigeon-task-package.s3.us-east-2.amazonaws.com/1612488613360.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210205%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210205T013013Z&X-Amz-Expires=900&X-Amz-Signature=8777b55c120661a7af7de0e75fd470b5c040d864b16ff03babbd18bdccbe3067&X-Amz-SignedHeaders=host'
+            imageUrl: 'https://pigeon-task-package.s3.us-east-2.amazonaws.com/1612491086877.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210205%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210205T021127Z&X-Amz-Expires=900&X-Amz-Signature=e6e1f05f5989ba7fc6218769ffaae14aa72d3f622d00b8a68b66af879040ca51&X-Amz-SignedHeaders=host'
         }
         this.props.createTask(data);
         return new Promise(function (resolve, reject) {
@@ -164,18 +159,18 @@ class GapiForm extends React.Component {
         let submitButtonValue = "Submit"
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id, duration } = this.state;
         if (this.state.price !== null && this.state.errors === null) {
-            submitButtonValue = "Confirm and Submit";
+            submitButtonValue = "Confirm";
             priceDisplay =
-            <div className="price-display-box">
-                <p>Price Determined {price}</p>
-                <p>Based on Distance: {distance}</p>
-                <p>Based on Route Duration: {duration}</p>
-                <p>Based on Estimated Weight: {weight}</p>
-                <p>Start Location: {pickup_loc}</p>
-                <p>Dropoff Location: {dropoff_loc}</p>
-                <p>Conact number for Delivery: {drop_off_number}</p>
-                <p>{this.props.user.id}</p>
-            </div>
+                <div className="price-display-box">
+                    <p>Price Determined {price}</p>
+                    <p>Based on Distance: {distance}</p>
+                    <p>Based on Route Duration: {duration}</p>
+                    <p>Based on Estimated Weight: {weight}</p>
+                    <p>Start Location: {pickup_loc}</p>
+                    <p>Dropoff Location: {dropoff_loc}</p>
+                    <p>Conact number for Delivery: {drop_off_number}</p>
+                    <p>{this.props.user.id}</p>
+                </div>
         } else {
             priceDisplay = null;
         }
@@ -210,7 +205,7 @@ class GapiForm extends React.Component {
                     {this.state.errors}
                     {priceDisplay}
                     <input type="submit" value={submitButtonValue} className='task-form-button' />
-                    <button className='task-form-button' onClick={()=>this.props.closeModal() }>Cancel</button>
+                    <button className='task-form-button' onClick={() => this.props.closeModal()}>Cancel</button>
 
                 </form>
 
