@@ -13,29 +13,57 @@
     overflow-y: scroll;
 }
 
+
+
 .task-list-holder {
     width: 90%;
     /* height: 1000px; */
     
 }
 
-.unclaimed-delivery-item{
+.unclaimed-delivery-item {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+}
+.unclaimed-main{
     background-color: teal;
     /* border-bottom: 1px solid black; */
     padding: 5px;
     margin: 5px;
     border-radius: 7px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    justify-content: center;
     transition: .2s;
     color: black;
 }
 
-.unclaimed-delivery-item:hover{
+.unclaimed-main:hover{
     background-color: slateblue;
     padding: 15px;
     margin: 7px;
     color:white;
+}
+
+.cancel-delivery {
+    display: none;
+    cursor: pointer;
+    width: 0;
+}
+/* .unclaimed-main {
+    background-color: tan;
+} */
+
+.unclaimed-main:hover > .cancel-delivery {
+    border:none;
+    color: white;
+    background-color: maroon;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    height: 20px;
+    transition: .5s;
 }
 .addresses {
     width: 50%;

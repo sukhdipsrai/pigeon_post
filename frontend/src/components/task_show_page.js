@@ -37,19 +37,34 @@ class TaskShowPage extends React.Component {
                         <button>submit</button>
                     </form>
                     <br/>
-                    <img className='task-image' src={this.props.tasks.imageUrl}/>
                 <h1>this is the tasks show page</h1>
 
                 <div className="task-holder">
                     <div className="graphics">
+                        <div className="image" >
+                            <img className='task-image' src={this.props.tasks.imageUrl}/>
+                        </div>
+                        <div className="map-holder" >
+                                map here
+                        </div>
 
                     </div>
                     <div className="directions">
-                        {this.props.tasks.weight}
-                        {this.props.tasks.pickup_loc}
-                        {this.props.tasks.dropoff_loc}
+                       <p>total weight: {this.props.tasks.weight} lbs</p>
+                       <p> from: {this.props.tasks.pickup_loc}</p>
+                       <p>to: {this.props.tasks.dropoff_loc}</p>
+                       {/* <p>{this.props.tasks.weight} lbs</p> */}
+                       <p>total distance: {this.props.tasks.distance}</p>
                     </div>
                     <div className="price-accept">
+                       <p>total price: </p> 
+                        <p>$</p>
+                       <div className="price">
+                        <h1>
+                            {this.props.tasks.price}
+                            </h1>
+
+                       </div>
 
                     </div>
                     
