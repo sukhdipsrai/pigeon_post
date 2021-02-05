@@ -20,7 +20,7 @@
 
 .login-form {
     width: 100%;
-    height: 200px;
+    height: 25vh;
     background-color: #4a5050;
     border-radius: 15px;
 
@@ -36,4 +36,38 @@
 .login-form form {
     width: 90%;
     padding: 5px;
+    padding-bottom: 30px;
+}
+
+.login-button{
+    background-color: #687C96;
+    box-shadow: 0;
+    border-radius: 5px;
+    border:0;
+    opacity: .5;
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 125px;
+    height: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: center;    
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    transition: .5s;
+}
+
+.login-button:hover{
+    opacity: 1;
+    cursor: pointer;
+    width: 200px;
+    background: firebrick;
+    padding: 11px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+:focus{
+    outline: none;
 }
