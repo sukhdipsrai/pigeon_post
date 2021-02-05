@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../stylesheets/current_delivery.css'
+// import '../../stylesheets/current_delivery.css'
 import {Link} from 'react-router-dom'
 class UnclaimedDeliveryItem extends React.Component {
 // const DeliveryIndexItem = ({ claimTask, task }) => (

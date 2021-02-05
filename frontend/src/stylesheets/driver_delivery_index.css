@@ -16,16 +16,51 @@
     
 }
 
+.index-item-holder {
+    background-color: teal;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
 .index-item{
     background-color: darkslateblue;
     border-bottom: 1px solid black;
     padding: 5px;
+    margin: 5px;
     border-radius: 7px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.index-item:hover{
+    padding: 12px;
+    margin: 7px;
+}
+
+.index-item:hover > .claim-delivery {
+    border:none;
+    color: white;
+    background-color: maroon;
+    margin-top: 5px;
+    display: block;
+    width: 90%;
+    height: 20px;
+    transition: .5s;
+}
+.claim-delivery {
+    display: none;
+    font-size: 12px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
 }
 .addresses {
-    width: 50%;
+    width: 55%;
     background-color: royalblue;
     display: flex;
     flex-direction: column;
@@ -38,7 +73,7 @@
     
 }
 .right-side {
-    width: 50%;
+    width: 45%;
     height: 50px;
     background-color: maroon;
     display: flex;
@@ -47,12 +82,13 @@
 }
 
 .payout {
+    background-color: royalblue;
     display: flex;
     flex-direction: column;
 
 }
 .money {
-    background-color: royalblue;
+    /* background-color: royalblue; */
     /* width: 120px; */
     display: flex;
     flex-direction: row;
@@ -67,13 +103,13 @@
 
 .payout span{
     margin-top: -5px;
-    margin-left: 0px;
+    /* margin-left: 67%; */
     font-size: 13px;
     /* background-color: rosybrown; */
 }
 
 .distance {
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
     width: 75px;
     font-size: 40px;
 }
@@ -86,3 +122,4 @@
     margin-top: -5px;
     font-size: 13px;
 }
+

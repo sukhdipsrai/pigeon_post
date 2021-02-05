@@ -26,6 +26,11 @@
     border-radius: 7px;
     display: flex;
     /* flex-direction: column; */
+    transition: .2s;
+}
+.unclaimed-delivery-item:hover{
+    padding: 15px;
+    margin: 7px;
 }
 .addresses {
     width: 50%;
