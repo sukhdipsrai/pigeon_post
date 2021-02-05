@@ -6,7 +6,7 @@ import { createTask } from '../../actions/task_actions'
 import * as gActions from '../../actions/gapi_actions'
 import '../../stylesheets/gapiform.css'
 import { closeModal } from '../../actions/modal_actions'
-import { Collection } from 'mongoose';
+const gDistance = require('google-distance-matrix');
 
 class GapiForm extends React.Component {
     constructor(props) {
@@ -30,12 +30,27 @@ class GapiForm extends React.Component {
         this.calcPrice = this.calcPrice.bind(this);
     }
 
+    frontEndDistanceMatrix(body){
+        return new Promise (function(Resolve, Reject){
+            let that=this;
+            const { ori, dist } = body;
+            let res={};
+            gDistance.key('AIzaSyAGCbX3hgsPnsWfUJwle8aco46J2G_P9I0');
+            gDistance.matrix(ori,dist, "DRIVING", (err, distances)=>{
+                if (!err)  Resolve(distances.rows)
+                else Reject(err,"Matrix Api Error");
+            })
+        })
+    }
+
     getDist(ori, dist) {
         let that = this;
-        axios.post('/api/gapi/distance', { ori, dist })
+
+        // axios.post('/api/gapi/distance', 
+        this.frontEndDistanceMatrix({ ori, dist })
             .then(res => {
                 console.log(res)
-                const json = res.data[0].elements[0]
+                const json = res[0].elements[0]
                 const distance = json.distance.value;
                 const duration = json.duration.value;
                 const weight = that.state.weight;
@@ -104,7 +119,6 @@ class GapiForm extends React.Component {
     }
 
     calcPrice(tips, weight, distance, duration) {
-        console.log(weight instanceof String);
         if (weight instanceof String) weight = Number(weight);
         if (weight < 1) weight = 1;
         // distanc is always in meters, time is in seconds..
