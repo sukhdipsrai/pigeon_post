@@ -7,7 +7,8 @@ import * as gActions from '../../actions/gapi_actions'
 import '../../stylesheets/gapiform.css'
 import { closeModal } from '../../actions/modal_actions'
 const gDistance = require('google-distance-matrix');
-
+const GOOGLE_API_KEY_EXP = require('../../config/keys').googlekeyS
+const GOOGLE_API_KEY = require('../../config/keys').googlekey
 class GapiForm extends React.Component {
     constructor(props) {
         super(props);
@@ -35,7 +36,7 @@ class GapiForm extends React.Component {
             let that=this;
             const { ori, dist } = body;
             let res={};
-            gDistance.key('AIzaSyAGCbX3hgsPnsWfUJwle8aco46J2G_P9I0');
+            gDistance.key(GOOGLE_API_KEY_EXP);
             gDistance.matrix(ori,dist, "DRIVING", (err, distances)=>{
                 if (!err)  Resolve(distances.rows)
                 else Reject(err,"Matrix Api Error");
@@ -50,7 +51,7 @@ class GapiForm extends React.Component {
         // this.frontEndDistanceMatrix({ ori, dist })
             .then(res => {
                 console.log(res)
-                const json = res[0].elements[0]
+                const json = res.data.rows[0].elements[0];
                 const distance = json.distance.value;
                 const duration = json.duration.value;
                 const weight = that.state.weight;
@@ -80,12 +81,13 @@ class GapiForm extends React.Component {
                 pickup_loc: pickup_loc.address,
                 dropoff_loc: dropoff_loc.address,
             });
-            // let ori = pickup_loc.latLng;
-            // let dist = dropoff_loc.latLng;
+            let ori = pickup_loc.latLng;
+            let dist = dropoff_loc.latLng;
             // dist = { lat: 40.7198865, lng: -73.6522537 }
             // ori = { lat: 40.7121554, lng: -73.8264545 }
-            let ori = [`${pickup_loc.latLng.lat},${pickup_loc.latLng.lng}`]
-            let dist = [`${dropoff_loc.latLng.lat},${dropoff_loc.latLng.lng}`]
+            // use below for gmatrix package
+            // let ori = [`${pickup_loc.latLng.lat},${pickup_loc.latLng.lng}`]
+            // let dist = [`${dropoff_loc.latLng.lat},${dropoff_loc.latLng.lng}`]
             debugger;
             console.log(ori);
             console.log(dist);

@@ -1,7 +1,8 @@
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React from 'react'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-
+import { googlekey } from '../../config/keys';
+const GOOGLE_API_KEY = require('../../config/keys').googlekeyS
 export class MapContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -57,5 +58,5 @@ export class MapContainer extends React.Component {
 
 
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyAGCbX3hgsPnsWfUJwle8aco46J2G_P9I0')
+  apiKey: (GOOGLE_API_KEY)
 })(MapContainer)
