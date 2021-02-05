@@ -15,6 +15,11 @@ class ActiveTaskItem extends React.Component {
             weight (lb): {this.props.task.weight}
             <br/>
             dropoff: {this.props.task.dropoff_loc}
+            <div className="text-div">
+                <p>
+                    Contact pigeon
+                    </p>
+            </div>
         </div>
             )
     }

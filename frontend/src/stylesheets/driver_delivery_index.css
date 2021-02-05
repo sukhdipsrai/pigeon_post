@@ -16,13 +16,45 @@
     
 }
 
+.index-item-holder {
+    background-color: teal;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
 .index-item{
     background-color: darkslateblue;
     border-bottom: 1px solid black;
     padding: 5px;
+    margin: 5px;
     border-radius: 7px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.index-item:hover{
+    padding: 12px;
+    margin: 7px;
+}
+
+.index-item:hover > .claim-delivery {
+    margin-top: 5px;
+    display: block;
+    width: 90%;
+    height: 20px;
+    transition: .5s;
+}
+.claim-delivery {
+    display: none;
+    font-size: 11px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
 }
 .addresses {
     width: 50%;
@@ -86,3 +118,4 @@
     margin-top: -5px;
     font-size: 13px;
 }
+

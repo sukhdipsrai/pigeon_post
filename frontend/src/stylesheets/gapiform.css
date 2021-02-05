@@ -3,10 +3,24 @@ input{
     width: 300px;
 }
 
+@keyframes modalFade {
+    from {
+        transform: translateY(-100%);
+        padding: 0;
+        opacity: 0;
+    }
+    to {
+        /* transform: translateY(0);opacity: 1; */
+    }
+  }
+
 .modal-child{
-    padding: 40px;
+    padding: 30px;
     background-color: #4A5050 ;
-    border-radius: 10px;;
+    border-radius: 10px;
+    animation-name: modalFade;
+    animation-duration: .7s;
+    /* transition: .3s; */
 }
 
 

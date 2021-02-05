@@ -1,6 +1,7 @@
 .active-delivery-main {
     height: 80vh;
     background-color: black;
+    border-radius: 10px;
 }
 .active-deliveries-holder {
     width: 80%;
@@ -16,4 +17,23 @@
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
+    transition: .3s;
+}
+
+.text-div {
+    display: none;
+    height:1px;
+    color: transparent;
+    transition: 5s;
+}
+
+.active-task-item:hover {
+    padding-bottom: 25px;
+}
+.active-task-item:hover > .text-div {
+    padding-top: 5px;
+    display: block;
+    color: tomato;
+    cursor: pointer;
+    /* height: 10px; */
 }
