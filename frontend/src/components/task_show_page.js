@@ -8,7 +8,7 @@ class TaskShowPage extends React.Component {
         this.handleImageUpload = this.handleImageUpload.bind(this)
     }
     handleImageUpload = event => {
-        debugger
+        // debugger
         const files = event.target[0].files
         const formData = new FormData()
         formData.append('image', files[0])
@@ -23,7 +23,7 @@ class TaskShowPage extends React.Component {
     }
 
     render(){
-        debugger
+        // debugger
         if(this.props.tasks !== undefined) {
             return (
                 <div className="taskshow-main">

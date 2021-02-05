@@ -6,7 +6,7 @@ import { createTask } from '../../actions/task_actions'
 import * as gActions from '../../actions/gapi_actions'
 import '../../stylesheets/gapiform.css'
 import { closeModal } from '../../actions/modal_actions'
-import { withAlert } from 'react-alert'
+import { Collection } from 'mongoose';
 
 class GapiForm extends React.Component {
     constructor(props) {
@@ -35,29 +35,26 @@ class GapiForm extends React.Component {
         axios.post('/api/gapi/distance', { ori, dist })
             .then(res => {
                 console.log(res)
-                const json = res.data.rows[0].elements[0]
+                const json = res.data[0].elements[0]
                 const distance = json.distance.value;
                 const duration = json.duration.value;
                 const weight = that.state.weight;
-                debugger;
                 that.setState({
                     apiCall: json,
-
                     distance,
                     duration,
                     price: this.calcPrice(0, weight, distance, duration)
-
-
                 })
-            })
-            .catch(err => that.setState({ errors: err }))
-        return new Promise(function (resolve, reject) {
-            resolve("Fetch Final Data.")
-        })
+            }).then(() => this.validateForm())
+            .catch(err => {
+                console.log(err)
+                that.setState({errors:err})
+            });
     }
 
     handleSubmit() {
         let errors = null;
+        let that=this;
         const { pickup_loc, dropoff_loc } = this.props.form;
         if (pickup_loc === null || dropoff_loc === null) {
             errors = "Please Choose a Pickup AND Drop-off Address"
@@ -72,8 +69,13 @@ class GapiForm extends React.Component {
             // let dist = dropoff_loc.latLng;
             // dist = { lat: 40.7198865, lng: -73.6522537 }
             // ori = { lat: 40.7121554, lng: -73.8264545 }
-            this.getDist(pickup_loc.latLng, dropoff_loc.latLng).
-                then(() => this.validateForm());
+            let ori = [`${pickup_loc.latLng.lat},${pickup_loc.latLng.lng}`]
+            let dist = [`${dropoff_loc.latLng.lat},${dropoff_loc.latLng.lng}`]
+            debugger;
+            console.log(ori);
+            console.log(dist);
+            this.getDist(ori,dist);
+
         }
     }
 
@@ -102,7 +104,6 @@ class GapiForm extends React.Component {
     }
 
     calcPrice(tips, weight, distance, duration) {
-        debugger;
         console.log(weight instanceof String);
         if (weight instanceof String) weight = Number(weight);
         if (weight < 1) weight = 1;
@@ -162,22 +163,21 @@ class GapiForm extends React.Component {
         let submitButtonValue = "Submit"
         const { pickup_loc, dropoff_loc, drop_off_number, weight, distance, price, status, customer_id, duration } = this.state;
         if (this.state.price !== null && this.state.errors === null) {
-            submitButtonValue ="Confirm and Submit";
+            submitButtonValue = "Confirm and Submit";
             priceDisplay =
-            <div className="price-display-box">
-                <p>Price Determined {price}</p>
-                <p>Based on Distance: {distance}</p>
-                <p>Based on Route Duration: {duration}</p>
-                <p>Based on Estimated Weight: {weight}</p>
-                <p>Start Location: {pickup_loc}</p>
-                <p>Dropoff Location: {dropoff_loc}</p>
-                <p>Conact number for Delivery: {drop_off_number}</p>
-                <p>{this.props.user.id}</p>
-                <button className='task-form-button' onClick={()=>this.props.closeModal() }value="Cancel"></button>
-            </div>
+                <div className="price-display-box">
+                    <p>Price Determined {price}</p>
+                    <p>Based on Distance: {distance}</p>
+                    <p>Based on Route Duration: {duration}</p>
+                    <p>Based on Estimated Weight: {weight}</p>
+                    <p>Start Location: {pickup_loc}</p>
+                    <p>Dropoff Location: {dropoff_loc}</p>
+                    <p>Conact number for Delivery: {drop_off_number}</p>
+                    <p>{this.props.user.id}</p>
+                    <button className='task-form-button' onClick={() => this.props.closeModal()} value="Cancel"></button>
+                </div>
         } else {
             priceDisplay = null;
-            debugger
         }
         return (
             <div className="task-form-container">
@@ -218,7 +218,6 @@ class GapiForm extends React.Component {
 }
 
 const mstp = (state, ownProps) => {
-    debugger
     return {
         form: state.task_form,
         user: state.entities.user

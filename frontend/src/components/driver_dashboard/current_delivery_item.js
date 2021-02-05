@@ -12,13 +12,13 @@ class CurrentDeliveryItem extends React.Component {
         }
 
         handleClick() {
-                debugger
+                // debugger
                 console.log(this.state.currentTask.status)
                 this.state.currentTask.status = "Finished";
                 this.state.currentTask.driver_id = this.props.driverId
                 console.log(this.state.currentTask.status)
                 this.props.completeTask(this.state.currentTask).then(window.location.reload())
-                debugger
+                // debugger
         }
 
         render(){
