@@ -17,7 +17,7 @@
 }
 
 .index-item-holder {
-    background-color: teal;
+    /* background-color: teal; */
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -25,7 +25,7 @@
 }
 
 .index-item{
-    background-color: darkslateblue;
+    background-color: teal;
     border-bottom: 1px solid black;
     padding: 5px;
     margin: 5px;
@@ -38,6 +38,7 @@
 }
 
 .index-item:hover{
+    background-color: slateblue;
     padding: 12px;
     margin: 7px;
 }
@@ -46,7 +47,7 @@
     border:none;
     color: white;
     background-color: maroon;
-    margin-top: 5px;
+    margin-top: 10px;
     display: block;
     width: 90%;
     height: 20px;
@@ -61,7 +62,7 @@
 }
 .addresses {
     width: 55%;
-    background-color: royalblue;
+    /* background-color: royalblue; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,14 +76,14 @@
 .right-side {
     width: 45%;
     height: 50px;
-    background-color: maroon;
+    /* background-color: maroon; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .payout {
-    background-color: royalblue;
+    /* background-color: royalblue; */
     display: flex;
     flex-direction: column;
 
