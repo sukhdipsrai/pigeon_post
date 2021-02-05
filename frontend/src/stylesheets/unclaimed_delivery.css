@@ -6,7 +6,8 @@
     /* justify-content: space-around; */
     flex-direction: column;
     align-items: center;
-    height: 500px;
+    height: 75vh;
+
     /* overflow: hidden; */
     overflow-y: scroll;
 }
