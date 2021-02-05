@@ -46,8 +46,8 @@ class GapiForm extends React.Component {
     getDist(ori, dist) {
         let that = this;
 
-        // axios.post('/api/gapi/distance', 
-        this.frontEndDistanceMatrix({ ori, dist })
+        axios.post('/api/gapi/distance', {ori,dist} )
+        // this.frontEndDistanceMatrix({ ori, dist })
             .then(res => {
                 console.log(res)
                 const json = res[0].elements[0]
