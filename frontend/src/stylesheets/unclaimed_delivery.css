@@ -1,5 +1,6 @@
 .unclaimed-delivery-main {
-
+    padding: 10px;
+    box-sizing: border-box;
     background-color: black;
     display: flex;
     /* justify-content: space-around; */
@@ -20,6 +21,7 @@
     background-color: darkslateblue;
     border-bottom: 1px solid black;
     padding: 5px;
+    margin: 5px;
     border-radius: 7px;
     display: flex;
     /* flex-direction: column; */

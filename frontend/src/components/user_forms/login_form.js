@@ -82,7 +82,7 @@ class LoginForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <br/>
         {this.state.errors["email"]}
-
+        {this.state.errors['handle']}
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}

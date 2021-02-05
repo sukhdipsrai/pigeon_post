@@ -7,6 +7,7 @@ const mSTP = (state, ownProps) => {
     return {
         taskId,
         tasks: Object.values(state.entities.tasks)[0],
+        currentUser: Object.values(state.entities.user)[0]
     }
 }
 

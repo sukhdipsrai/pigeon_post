@@ -20,7 +20,7 @@ import CurrentDeliveryContainer from './driver_dashboard/current_delivery_contai
 import DriverHistoryContainer from './driver_dashboard/driver_history_container'
 
 import TaskShowPageContainer from './task_show_container'
-
+import PackageHistoryContainer from './shared/package_history_container'
 
 import '../stylesheets/app.css'
 import Sidebar from './sidebar/sidebar';
@@ -50,13 +50,13 @@ const App = () => (
           {/* customer routes  */}
           <ProtectedRoute exact path="/users/delivery/active" component={CustomerActiveDeliveryContainer} />
           <ProtectedRoute exact path="/users/delivery/unclaimed" component={UnclaimedDeliveryContainer} />
-          <ProtectedRoute exact path="/users/delivery/history" component={CustomerHistoryContainer} />
+          <ProtectedRoute exact path="/users/delivery/history" component={PackageHistoryContainer} />
           {/* <ProtectedRoute exact path="/users/delivery/create" component={GapiForm} /> */}
 
           {/* driver routes  */}
           <ProtectedRoute exact path="/driver/deliveries" component={DeliverTasksIndexContainer} />
           <ProtectedRoute exact path="/driver/currentdelivery" component={CurrentDeliveryContainer} />
-          <ProtectedRoute exact path="/driver/history" component={DriverHistoryContainer} />
+          <ProtectedRoute exact path="/driver/history" component={PackageHistoryContainer} />
         </Switch>
         {/* <NavbarContainer /> */}
       </div>
