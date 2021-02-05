@@ -3,6 +3,7 @@
     box-sizing: border-box;
     background-color: black;
     display: flex;
+    border-radius: 10px;
     /* justify-content: space-around; */
     flex-direction: column;
     align-items: center;
@@ -19,22 +20,27 @@
 }
 
 .unclaimed-delivery-item{
-    background-color: darkslateblue;
-    border-bottom: 1px solid black;
+    background-color: teal;
+    /* border-bottom: 1px solid black; */
     padding: 5px;
     margin: 5px;
     border-radius: 7px;
     display: flex;
     /* flex-direction: column; */
     transition: .2s;
+    color: black;
 }
+
 .unclaimed-delivery-item:hover{
+    background-color: slateblue;
     padding: 15px;
     margin: 7px;
+    color:white;
 }
 .addresses {
     width: 50%;
-    background-color: royalblue;
+    color:inherit;
+    /* background-color: royalblue; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,7 +54,7 @@
 .right-side {
     width: 50%;
     height: 50px;
-    background-color: maroon;
+    /* background-color: maroon; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -60,7 +66,7 @@
 
 }
 .money {
-    background-color: royalblue;
+    /* background-color: royalblue; */
     /* width: 120px; */
     display: flex;
     flex-direction: row;
@@ -81,7 +87,7 @@
 }
 
 .location {
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
     /* width: 75px; */
     font-size: 40px;
 }
