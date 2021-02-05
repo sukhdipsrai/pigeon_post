@@ -42,7 +42,7 @@ Make sure to update the redux states with no perceptible delay for interactions 
 
 
 ### Showing customer's in-progress tasks
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/progess.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/progress.gif)
 
 
 ### Changing task status when delivery is done
