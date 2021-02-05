@@ -28,7 +28,7 @@ class UnclaimedDelivery extends React.Component {
             <div className="unclaimed-delivery-main">
                 <h1>This is where your Unclaimed deliveries will be shown</h1>
                 <div className="task-list-holder">
-                {tasklist}
+                {tasklist.reverse()}
 
                 </div>
             </div>

@@ -4,6 +4,7 @@ import axios from 'axios';
 
 class TaskShowPage extends React.Component {
     constructor(props){
+        debugger
         super(props)
         this.handleImageUpload = this.handleImageUpload.bind(this)
     }
@@ -32,7 +33,8 @@ class TaskShowPage extends React.Component {
                         />
                         <button>submit</button>
                     </form>
-
+                    <br/>
+                    <img className='task-image' src={this.props.tasks.imageUrl}/>
                 <h1>this is the tasks show page</h1>
 
                 <div className="task-holder">

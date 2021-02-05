@@ -54,9 +54,11 @@ router.post('/create',
             drop_off_number: req.body.drop_off_number,
             weight: req.body.weight,
             distance: req.body.distance,
+            phone: req.body.phone,
             price: req.body.price,
             status: req.body.status,
             customer_id: req.user.id,
+            imageUrl: req.body.imageUrl
         });
 
         newTask.save().then(task => res.json(task));

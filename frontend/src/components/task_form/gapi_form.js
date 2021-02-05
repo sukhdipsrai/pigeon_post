@@ -143,7 +143,8 @@ class GapiForm extends React.Component {
             distance: distance,
             price: price,
             status: status,
-            customer_id: customer_id
+            customer_id: customer_id,
+            imageUrl: 'https://pigeon-task-package.s3.us-east-2.amazonaws.com/1612488613360.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210205%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210205T013013Z&X-Amz-Expires=900&X-Amz-Signature=8777b55c120661a7af7de0e75fd470b5c040d864b16ff03babbd18bdccbe3067&X-Amz-SignedHeaders=host'
         }
         this.props.createTask(data);
         return new Promise(function (resolve, reject) {
