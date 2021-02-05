@@ -59,7 +59,6 @@ class GapiAutoFillForm extends React.Component {
                                     const className = suggestion.active
                                         ? 'suggestion-item--active'
                                         : 'suggestion-item';
-                                    // inline style for demonstration purpose
                                     const style = suggestion.active
                                         ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                                         : { backgroundColor: '#ffffff', cursor: 'pointer' };
