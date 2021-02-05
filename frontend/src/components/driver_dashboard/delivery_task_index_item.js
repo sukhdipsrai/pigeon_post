@@ -50,8 +50,8 @@ class DeliveryIndexItem extends React.Component {
                                         <p>$</p>
                                         <h1>{this.props.task.price.toFixed(2)}</h1>
                                     {/* </div> */}
-                                    <span>payout</span>
                             </div>
+                                    <span>payout</span>
                           </div>
                           </div>
                         {/* <br/> */}
