@@ -44,7 +44,8 @@
 }
 
 .index-item:hover > .claim-delivery {
-    border:none;
+    border: none;
+    border-radius: 10px; 
     color: white;
     background-color: maroon;
     margin-top: 10px;

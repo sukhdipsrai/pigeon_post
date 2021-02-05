@@ -28,7 +28,7 @@ class UnclaimedDeliveryItem extends React.Component {
         }
         render(){
             return(
-              <div>
+              <div className="unclaimed-main" >
                           <Link className="links" to={`/tasks/${this.props.task._id}`}>
                 <div className="unclaimed-delivery-item">
                           <div className="unclaimed-holder">
@@ -72,7 +72,7 @@ class UnclaimedDeliveryItem extends React.Component {
                         <br/>
                      </div>
                             </Link>
-                            <button onClick={this.handleClick}  >Cancel</button>
+                     <button className="cancel-delivery" onClick={this.handleClick}  >Cancel this delivery</button>
               </div> 
                 )
         }
