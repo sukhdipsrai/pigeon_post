@@ -81,3 +81,19 @@
     height: 600px;
     margin-top: -50px;
 }
+
+.div-foot{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px 0px;
+}
+
+.account-link{
+    color:sandybrown;
+    list-style: none;
+    padding: 10px;
+}
+
+.account-link img{
+    height:40px;
+}
