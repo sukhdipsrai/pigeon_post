@@ -16,7 +16,10 @@ class TaskShowPage extends React.Component {
 
         axios.post('/api/image-upload', formData)
             .then(res => {
-                console.log(res.data.imageUrl)
+                debugger
+                this.props.tasks.imageUrl = res.data.imageUrl;
+                this.props.uploadImage(this.props.tasks)
+                .then(window.location.reload())
             })
     }
     componentDidMount(){
