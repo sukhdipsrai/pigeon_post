@@ -36,6 +36,7 @@ class CurrentDeliveryItem extends React.Component {
                             <h1>{this.state.currentTask.driver_id}</h1>
                             {/* <div className="distance"> */}
                                 <h1>{this.state.currentTask.distance}</h1>
+                                <h1>{this.state.currentTask.weight}</h1>
                                 <p>Mi</p>
                             {/* </div> */}
                             

@@ -21,9 +21,9 @@ class DeliveryTasksIndex extends React.Component {
 
             let tasklist = this.props.tasks.map(task => {
 
-                // if(task.status === 'unfinished') {
+                if(task.driver_id === "null") {
                     return <DeliveryIndexItem  driverId = {this.props.currentUser.id} claimTask={this.props.claimTask} task = {task} />
-                // }
+                }
             })
 
             return (

@@ -1,4 +1,19 @@
 .active-delivery-main {
-    height: 500px;
+    height: 80vh;
     background-color: black;
+}
+.active-deliveries-holder {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.active-task-item {
+    font-weight: 100px;
+    width: 65%;
+    background-color: #002D62 ;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }

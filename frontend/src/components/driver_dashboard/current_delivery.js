@@ -19,9 +19,9 @@ class CurrentDelivery extends React.Component {
 
         let tasklist = this.props.tasks.map(task => {
 
-            // if(task.status === 'unfinished') {
+            if(task.status === 'In Process') {
                 return <CurrentDeliveryItem  driverId = {this.props.currentUser.id} completeTask={this.props.completeTask} task = {task} />
-            // }
+            }
         })
         return(
             <div className="current-delivery-container">

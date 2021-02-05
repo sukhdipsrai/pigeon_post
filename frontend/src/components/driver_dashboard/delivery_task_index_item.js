@@ -24,7 +24,7 @@ class DeliveryIndexItem extends React.Component {
 
         render(){
             return(
-                <Link className="links" to={`/tasks/${this.props.task._id}`}>
+                // <Link className="links" to={`/tasks/${this.props.task._id}`}>
 
                       <div className="index-item">
                           <div className="addresses">
@@ -49,12 +49,12 @@ class DeliveryIndexItem extends React.Component {
                                     </div>
                                     <span>payout</span>
                             </div>
-                            {/* <button onClick={() => this.handleClick()} >Claim this delivery</button> */}
+                            <button onClick={() => this.handleClick()} >Claim this delivery</button>
                           </div>
                         <br/>
                         <br/>
                      </div>
-                     </Link>
+                    //  {/* </Link> */}
                 )
         }
 

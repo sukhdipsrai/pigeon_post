@@ -1,0 +1,28 @@
+.history-container{
+    padding: 10px;
+    background-color: darkslategrey;
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+
+}
+
+.inner-history-container {
+    /* background-color: indigo; */
+}
+
+.package-history-item {
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.package-history-item > * {
+        margin: 1px;
+}
