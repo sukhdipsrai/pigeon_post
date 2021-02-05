@@ -25,3 +25,4 @@ yarn-error.log*
 # keys
 /src/config/keys_dev.js
 .eslintcache
+/public/readme
