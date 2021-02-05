@@ -34,7 +34,7 @@ Make sure to update the redux states with no perceptible delay for interactions 
 
 
 ### Map shows when user login
-![alt text](https://github.com/sukhdipsrai/pigeon_post/frontend/src/images/map.gif)
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/history.gif)
 
 
 ### Showing tasks which driver can claim
