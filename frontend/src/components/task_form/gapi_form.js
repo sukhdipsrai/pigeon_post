@@ -6,9 +6,7 @@ import { createTask } from "../../actions/task_actions";
 import * as gActions from "../../actions/gapi_actions";
 import "../../stylesheets/gapiform.css";
 import { closeModal } from "../../actions/modal_actions";
-const gDistance = require("google-distance-matrix");
-const GOOGLE_API_KEY_EXP = require("../../config/keys").googlekeyS;
-const GOOGLE_API_KEY = require("../../config/keys").googlekey;
+
 class GapiForm extends React.Component {
   constructor(props) {
     super(props);
@@ -25,22 +23,10 @@ class GapiForm extends React.Component {
       price: null,
       apiCall: null,
       duration: "",
+      matrixError: null,
     };
     this.getDist = this.getDist.bind(this);
     this.calcPrice = this.calcPrice.bind(this);
-  }
-
-  frontEndDistanceMatrix(body) {
-    return new Promise(function (Resolve, Reject) {
-      let that = this;
-      const { ori, dist } = body;
-      let res = {};
-      gDistance.key(GOOGLE_API_KEY_EXP);
-      gDistance.matrix(ori, dist, "DRIVING", (err, distances) => {
-        if (!err) Resolve(distances.rows);
-        else Reject(err, "Matrix Api Error");
-      });
-    });
   }
 
   getDist(ori, dist) {
@@ -48,24 +34,30 @@ class GapiForm extends React.Component {
 
     axios
       .post("/api/gapi/distance", { ori, dist })
-      // this.frontEndDistanceMatrix({ ori, dist })
       .then((res) => {
         console.log(res);
         const json = res.data.rows[0].elements[0];
-        const distance = json.distance.value;
-        const duration = json.duration.value;
-        const weight = that.state.weight;
-        that.setState({
-          apiCall: json,
-          distance,
-          duration,
-          price: this.calcPrice(0, weight, distance, duration),
-        });
+        debugger;
+        if (json.status === "ZERO_RESULTS") {
+          that.setState({
+            errors: "Invalid Address Pair, Select a New Address",
+          });
+        } else {
+          const distance = json.distance.value;
+          const duration = json.duration.value;
+          const weight = that.state.weight;
+          that.setState({
+            apiCall: json,
+            distance,
+            duration,
+            price: this.calcPrice(0, weight, distance, duration),
+          });
+        }
       })
       .then(() => this.validateForm())
       .catch((err) => {
         console.log(err);
-        that.setState({ errors: err });
+        that.setState({ matrixError: err });
       });
   }
 
@@ -80,6 +72,7 @@ class GapiForm extends React.Component {
       this.setState({
         pickup_loc: pickup_loc.address,
         dropoff_loc: dropoff_loc.address,
+        errors: null,
       });
       let ori = pickup_loc.latLng;
       let dist = dropoff_loc.latLng;
@@ -138,6 +131,9 @@ class GapiForm extends React.Component {
       that.setState({ price: null });
       that.props.closeModal();
       alert("Task Created!");
+      window.location.reload();
+      // fire off an action or update redux state
+      //TODO: rework reducer
     });
   }
 
@@ -236,6 +232,7 @@ class GapiForm extends React.Component {
             <GapiAutoFillForm type={"Destination"} field="Drop Off Location" />
             <br></br>
             {this.state.errors}
+            {this.state.matrixError}
             {priceDisplay}
             <input
               type="submit"

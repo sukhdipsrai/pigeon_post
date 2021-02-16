@@ -8,10 +8,9 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "axios": "^0.21.1",
-    "google-distance-matrix": "^1.1.1",
     "jwt-decode": "^3.1.2",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
-    "react-alert": "^7.0.2",
     "react-async-script-loader": "^0.3.0",
     "react-dom": "^17.0.1",
     "react-places-autocomplete": "^7.3.0",
@@ -21,6 +20,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.32.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
