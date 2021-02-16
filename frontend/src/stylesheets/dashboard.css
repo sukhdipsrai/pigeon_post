@@ -1,3 +1,5 @@
-.dashboard-map div{
-    width: 20vww;
+#root>div>div.inner-app>div.routes>div>div>div>div:nth-child(1) {
+    max-width: calc(60% - 140px);
+    max-height: 600px;
+    min-width: 550px;
 }
