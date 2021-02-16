@@ -1,5 +1,6 @@
 .taskshow-main {
-    height: 500px;
+    /* height: 500px; */
+    padding: 10px;
     background-color: seagreen;
     display: flex;
     flex-direction: column;
@@ -13,7 +14,7 @@
     border-radius: 7px;
     padding: 5px;
     width: 80%;
-    height: 400px;
+    /* height: 400px; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -24,14 +25,17 @@
     background-color: seashell;
     height: 45%;
     width: 90%;
+    /* height: 100%;
+    width: 50%; */
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* align-items: center;
+    justify-content: center; */
 }
 
 .image {
-    height: 100%;
-    width: 50%;
+    height: 350px;
+    width: 350px;
     background-color: red;
     display: flex;
     justify-content: space-around;
@@ -87,7 +91,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     font-size: 14px;
 }
 
@@ -95,9 +99,10 @@
     padding: 7px;
     border-radius: 7px;
     background-color: grey;
-    width: 20%;
-    min-width: 175px;
-    height: 10%;
+    width: 50%;
+    box-sizing: border-box;
+    /* min-width: 175px; */
+    /* height: 10%; */
     display: flex;
     justify-content: space-between;
 }
@@ -107,10 +112,34 @@
     font-weight: 100;
 }
 
-.price {
-    /* background-color: darkslateblue; */
+.task-show-right {
+    background-color: brown;
+    height: 300px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .price-accept p {
     margin-top: 5px;
+}
+
+@media (max-width:1300px) {
+    .task-holder {
+        /* background-color: brown; */
+        flex-direction: column;
+    }
+
+    .graphics {
+        width: 100%;
+    }
+
+    .task-show-right {
+        width: 100%;
+        align-items: center;
+    }
+
+    
 }

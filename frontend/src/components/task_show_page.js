@@ -61,7 +61,10 @@ class TaskShowPage extends React.Component {
                   <MapContainer />
                 </div>
               </div>
+              {/* <div className="map-holder">map here</div> */}
             </div>
+            <div className="task-show-right">
+
             <div className="directions">
               <p>total weight: {this.props.tasks.weight} lbs</p>
               <p> from: {this.props.tasks.pickup_loc}</p>
@@ -87,6 +90,8 @@ class TaskShowPage extends React.Component {
                 Delete Task
               </button>
             </div>
+            </div>
+
             {/* <br/> */}
             {/* <br/> */}
           </div>
