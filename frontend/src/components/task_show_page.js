@@ -25,21 +25,26 @@ class TaskShowPage extends React.Component {
   }
 
   render() {
+    let imageUpload = null
+    
+    if(this.props.currentUser.usertype === "Customer") {
+      imageUpload = <form className="image-upload" type="form-data" onSubmit={(e) => this.handleImageUpload(e)}>
+                        <input type="file" />
+                        <button>submit</button>
+                    </form>
+
+    }
     // debugger
     if (this.props.tasks !== undefined) {
       return (
-        <div className="taskshow-main">
-          <form type="form-data" onSubmit={(e) => this.handleImageUpload(e)}>
-            <input type="file" />
-            <button>submit</button>
-          </form>
-          <br />
+        <div className="taskshow-main">          
           <h1>this is the tasks show page</h1>
+          <br />
 
           <div className="task-holder">
             <div className="graphics">
               <div className="image">
-                <img className="task-image" src={this.props.tasks.imageUrl} />
+              {imageUpload || <img className="task-image" src={this.props.tasks.imageUrl} /> }
               </div>
               <div className="map-holder">map here</div>
             </div>

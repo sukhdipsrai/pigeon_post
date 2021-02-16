@@ -26,6 +26,7 @@
     width:90%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .image {
@@ -38,7 +39,12 @@
 }
 
 .image img {
-    height: 100%;
+    /* height: 100%; */
+}
+
+.image-upload {
+    background-color: black;
+    /* width: 50%; */
 }
 
 .map-holder {
