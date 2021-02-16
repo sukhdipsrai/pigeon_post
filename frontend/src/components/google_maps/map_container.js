@@ -2,6 +2,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import React from "react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import { googlekey } from "../../config/keys";
+import '../../stylesheets/dashboard.css'
 const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
 export class MapContainer extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ export class MapContainer extends React.Component {
       height: "100%",
     };
     return (
+      // <div className="map-component-holder">
+        
       <Map
         google={this.props.google}
         style={style}
@@ -33,7 +36,7 @@ export class MapContainer extends React.Component {
           lat: 40.754885,
           lng: -73.91223907,
         }}
-      >
+        >
         <Marker position={{ lat: 40.69677842, lng: -73.91223907 }} />
         {/* <Marker
           position={{ lat: 37.759703, lng: -72.428093 }} /> */}
@@ -42,6 +45,7 @@ export class MapContainer extends React.Component {
         <Marker position={{ lat: 40.73503114, lng: -73.8574791 }} />
         <Marker position={{ lat: 40.8234226, lng: -73.86949539 }} />
       </Map>
+// {/* </div> */}
     );
   }
 }

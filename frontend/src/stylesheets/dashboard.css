@@ -1,5 +1,29 @@
-#root>div>div.inner-app>div.routes>div>div>div>div:nth-child(1) {
+/* .dashboard-map {
+    width: 100%;
     max-width: calc(60% - 140px);
     max-height: 600px;
     min-width: 550px;
+} */
+
+.dashboard-main {
+    background-color: black;
+    width: 100%;
+    position: relative;
 }
+
+
+.dashboard-map{
+    background-color: brown;
+    /* width: 10%; */
+    height: 500px;
+    /* display: flex;
+    justify-content: center; */
+    
+}
+
+.map-component-holder {
+    width: 50%;
+    background-color: brown;
+}
+
+/* #root > div > div.inner-app > div.routes > div > div > div > div.map-component-holder > div > div > div > div > div:nth-child(1) > div:nth-child(3) */
