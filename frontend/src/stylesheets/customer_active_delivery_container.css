@@ -3,6 +3,7 @@
     background-color: black;
     border-radius: 10px;
 }
+
 .active-deliveries-holder {
     width: 80%;
     display: flex;
@@ -13,7 +14,7 @@
 .active-task-item {
     font-weight: 100px;
     width: 65%;
-    background-color: #002D62 ;
+    background-color: #002D62;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
@@ -22,15 +23,20 @@
 
 .text-div {
     display: none;
-    height:1px;
+    height: 1px;
     color: transparent;
     transition: 5s;
+}
+
+.text-div p:hover {
+    cursor: auto;
 }
 
 .active-task-item:hover {
     padding-bottom: 25px;
 }
-.active-task-item:hover > .text-div {
+
+.active-task-item:hover>.text-div {
     padding-top: 5px;
     display: block;
     color: tomato;

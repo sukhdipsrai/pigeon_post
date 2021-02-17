@@ -1,4 +1,3 @@
-
 .splashbuttons {
     width: 60px;
     height: 30px;
@@ -24,18 +23,16 @@
     color: white;
 }
 
-
 .buttons {
-    margin-top:-170px;
+    margin-top: -170px;
     background-color: seashell;
     width: 200px;
     display: flex;
     justify-content: space-between;
     border-radius: 7px;
     padding: 20px;
-
+    z-index: 1;
 }
-
 
 .splashpage-main {
     background-color: silver;
@@ -47,11 +44,11 @@
     border-radius: 10px;
 }
 
-.left-side{
+.left-side {
     /* background-color: darkseagreen; */
     margin-left: 5%;
     width: 30%;
-    height:500px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -82,18 +79,20 @@
     margin-top: -50px;
 }
 
-.div-foot{
+.div-foot {
     display: flex;
+    bottom: 0;
+    position: fixed;
     flex-direction: row;
     padding: 0px 20px 0px;
 }
 
-.account-link{
-    color:sandybrown;
+.account-link {
+    color: sandybrown;
     list-style: none;
     padding: 10px;
 }
 
-.account-link img{
-    height:40px;
+.account-link img {
+    height: 40px;
 }

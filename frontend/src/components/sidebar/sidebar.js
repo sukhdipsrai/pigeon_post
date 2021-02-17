@@ -22,7 +22,9 @@ class Sidebar extends React.Component {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              {/* <Link className="links" to="/dashboard" > <li> Home </li></Link> */}
+              <Link className="links" to="/dashboard">
+                <li> Dashboard </li>
+              </Link>
               <Link className="links" to="/driver/deliveries">
                 <li> Open Delivieries </li>
               </Link>
@@ -39,7 +41,9 @@ class Sidebar extends React.Component {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              {/* <Link className="links" to="/dashboard" > <li> Home </li></Link> */}
+              <Link className="links" to="/dashboard">
+                <li> Dashboard </li>
+              </Link>
               <Link className="links" to="/users/delivery/active">
                 <li> In Progress </li>
               </Link>

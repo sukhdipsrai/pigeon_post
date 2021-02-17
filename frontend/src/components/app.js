@@ -20,7 +20,7 @@ import DriverHistoryContainer from "./driver_dashboard/driver_history_container"
 
 import TaskShowPageContainer from "./task_show_container";
 import PackageHistoryContainer from "./shared/package_history_container";
-
+import Footer from "./foot";
 import "../stylesheets/app.css";
 import Modal from "./modal/modal";
 
@@ -86,9 +86,11 @@ const App = () => (
             component={PackageHistoryContainer}
           />
         </Switch>
+
         {/* <NavbarContainer /> */}
       </div>
     </div>
+    <Footer></Footer>
   </div>
 );
 
