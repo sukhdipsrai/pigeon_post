@@ -1,4 +1,4 @@
-input{
+input {
     color: black;
     width: 300px;
 }
@@ -12,30 +12,28 @@ input{
     to {
         /* transform: translateY(0);opacity: 1; */
     }
-  }
+}
 
-.modal-child{
+.modal-child {
     padding: 30px;
-    background-color: #4A5050 ;
+    background-color: #4A5050;
     border-radius: 10px;
     animation-name: modalFade;
     animation-duration: .7s;
     /* transition: .3s; */
 }
 
-
-.location-search-input{
-    color:black;
-
+.location-search-input {
+    color: black;
 }
 
-.autocomplete-dropdown-container{
-    color:black;
+.autocomplete-dropdown-container {
+    color: black;
 }
 
-.task-form-button{
-    width:80px;
-    height:30px;
+.task-form-button {
+    width: 80px;
+    height: 30px;
     padding-bottom: 25px;
     display: flex;
     justify-content: center;
@@ -54,21 +52,22 @@ input{
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: 500;
     color: black;
+    margin-top: 5px;
 }
-.task-form-button:hover{
+
+.task-form-button:hover {
     opacity: .3;
 }
 
-
-:focus{
+:focus {
     outline: none;
 }
 
-.task-form-container{
-    border:0;
+.task-form-container {
+    border: 0;
     padding: 0;
     margin: 0;
-    width:300px;
+    width: 300px;
     align-content: center;
     display: flex;
 }
