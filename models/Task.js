@@ -46,6 +46,9 @@ const TaskSchema = new Schema({
         type: String,
         default: 'null'
     },
+    api: {
+        type: Object
+    },
     imageUrl: {
     type: String,
 } 

@@ -16,7 +16,8 @@ router.post('/image-upload', function(req, res) {
         .then(function(url) {
             // console.log('The URL is', url);
             return res.json({
-            'imageUrl': url
+            'imageUrl': url,
+            'api': params
             })
         })
     });
