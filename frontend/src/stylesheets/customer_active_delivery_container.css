@@ -13,8 +13,10 @@
 
 .active-task-item {
     font-weight: 100px;
+    letter-spacing: 1.5px;
     width: 65%;
-    background-color: #002D62;
+    /* height: 250px; */
+    background-color: #002D62 ;
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
