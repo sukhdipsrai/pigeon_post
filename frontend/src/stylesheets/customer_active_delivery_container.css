@@ -13,13 +13,17 @@
 
 .active-task-item {
     font-weight: 100px;
+    letter-spacing: 1.5px;
     width: 65%;
-    background-color: #002D62;
+    /* height: 250px; */
+    background-color: #002e629d ;
+    /* opacity: .5; */
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
     transition: .3s;
 }
+
 
 .text-div {
     display: none;
@@ -34,6 +38,7 @@
 
 .active-task-item:hover {
     padding-bottom: 25px;
+    background-color: #002D62;
 }
 
 .active-task-item:hover>.text-div {
