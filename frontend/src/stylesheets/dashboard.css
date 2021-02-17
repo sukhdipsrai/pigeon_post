@@ -11,14 +11,12 @@
     position: relative;
 }
 
-
-.dashboard-map{
+.dashboard-map {
     background-color: brown;
     /* width: 10%; */
     height: 500px;
     /* display: flex;
     justify-content: center; */
-    
 }
 
 .map-component-holder {

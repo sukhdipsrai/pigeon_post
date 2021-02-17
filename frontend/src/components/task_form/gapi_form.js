@@ -37,7 +37,6 @@ class GapiForm extends React.Component {
       .then((res) => {
         console.log(res);
         const json = res.data.rows[0].elements[0];
-        debugger;
         if (json.status === "ZERO_RESULTS") {
           that.setState({
             errors: "Invalid Address Pair, Select a New Address",
