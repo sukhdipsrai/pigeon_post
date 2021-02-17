@@ -157,6 +157,11 @@ class GapiForm extends React.Component {
       price: price,
       status: status,
       customer_id: customer_id,
+      api: {
+        Bucket: 'pigeon-task-package',
+        Key: '1613521743984.jpg',
+        Expires: 604800
+      },
       imageUrl:
         "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1612498014692.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210205%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210205T040654Z&X-Amz-Expires=604800&X-Amz-Signature=db9b795b34bda9a43354f28c6a4fd0168821e1125563b600c4febff1aad2e18b&X-Amz-SignedHeaders=host",
     };
