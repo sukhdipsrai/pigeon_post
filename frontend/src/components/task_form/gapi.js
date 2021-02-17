@@ -12,7 +12,6 @@ class GapiAutoFillForm extends React.Component {
     this.state = { address: "" };
     let bootstrapAddr = "";
     try {
-      debugger;
       if (this.props.type === "Origin")
         bootstrapAddr = this.props.form.pickup_loc.address;
       else bootstrapAddr = this.props.form.dropoff_loc.address;

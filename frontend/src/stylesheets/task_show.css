@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.task-holder{
+.task-holder {
     background-color: darkslateblue;
     padding: 10px;
     border-radius: 7px;
@@ -20,10 +20,10 @@
     align-items: center;
 }
 
-.graphics{
+.graphics {
     background-color: seashell;
     height: 45%;
-    width:90%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -47,17 +47,38 @@
     /* width: 50%; */
 }
 
-.map-holder {
+.delete-button {
+    display: flex;
+    float: left;
+    position: relative;
+    justify-content: left;
+    justify-self: left;
+}
+
+/* .map-holder {
     height: 100%;
     width: 50%;
     background-color: green;
     display: flex;
     justify-content: space-around;
     align-items: center;
+} */
+
+.task-main-map {
+    background-color: black;
+    width: 100%;
+    position: relative;
 }
 
+.task-map {
+    background-color: brown;
+    /* width: 10%; */
+    /* height: 500px; */
+    /* display: flex;
+    justify-content: center; */
+}
 
-.directions{ 
+.directions {
     background-color: grey;
     height: 35%;
     width: 90%;
@@ -70,7 +91,7 @@
     font-size: 14px;
 }
 
-.price-accept{
+.price-accept {
     padding: 7px;
     border-radius: 7px;
     background-color: grey;

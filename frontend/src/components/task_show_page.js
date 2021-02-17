@@ -1,6 +1,7 @@
 import React from "react";
 import "../stylesheets/task_show.css";
 import axios from "axios";
+import MapContainer from "./google_maps/map_container";
 
 class TaskShowPage extends React.Component {
   constructor(props) {
@@ -23,31 +24,43 @@ class TaskShowPage extends React.Component {
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
+    debugger;
   }
 
   render() {
-    let imageUpload = null
-    
-    if(this.props.currentUser.usertype === "Customer") {
-      imageUpload = <form className="image-upload" type="form-data" onSubmit={(e) => this.handleImageUpload(e)}>
-                        <input type="file" />
-                        <button>submit</button>
-                    </form>
+    let imageUpload = null;
 
+    if (this.props.currentUser.usertype === "Customer") {
+      imageUpload = (
+        <form
+          className="image-upload"
+          type="form-data"
+          onSubmit={(e) => this.handleImageUpload(e)}
+        >
+          <input type="file" />
+          <button>submit</button>
+        </form>
+      );
     }
     // debugger
     if (this.props.tasks !== undefined) {
       return (
-        <div className="taskshow-main">          
+        <div className="taskshow-main">
           <h1>this is the tasks show page</h1>
           <br />
 
           <div className="task-holder">
             <div className="graphics">
               <div className="image">
-              {imageUpload || <img className="task-image" src={this.props.tasks.imageUrl} /> }
+                {imageUpload || (
+                  <img className="task-image" src={this.props.tasks.imageUrl} />
+                )}
               </div>
-              <div className="map-holder">map here</div>
+              <div className="task-main-map">
+                <div className="task-map">
+                  <MapContainer />
+                </div>
+              </div>
             </div>
             <div className="directions">
               <p>total weight: {this.props.tasks.weight} lbs</p>
@@ -63,7 +76,17 @@ class TaskShowPage extends React.Component {
                 <h1>{this.props.tasks.price}</h1>
               </div>
             </div>
-
+            <div className="delete-button">
+              <button
+                onClick={() =>
+                  this.props
+                    .deleteTask(this.props.tasks._id)
+                    .then(this.props.history.push("/users/delivery/unclaimed"))
+                }
+              >
+                Delete Task
+              </button>
+            </div>
             {/* <br/> */}
             {/* <br/> */}
           </div>
