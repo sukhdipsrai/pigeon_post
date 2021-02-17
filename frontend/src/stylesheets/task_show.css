@@ -69,7 +69,9 @@
     width: 100%;
     position: relative;
 }
-
+.task-image{
+    height: 100%;
+}
 .task-map {
     background-color: brown;
     /* width: 10%; */
