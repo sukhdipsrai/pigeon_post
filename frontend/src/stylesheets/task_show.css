@@ -43,10 +43,14 @@
 }
 
 .image-upload {
-    background-color: black;
-    /* width: 50%; */
+    /* background-color: black; */
+    display: contents;
+    width: 23%;
 }
 
+.image-upload input{
+    color:aliceblue;
+}
 .delete-button {
     display: flex;
     float: left;

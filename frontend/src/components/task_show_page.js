@@ -24,7 +24,7 @@ class TaskShowPage extends React.Component {
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
-    debugger;
+    // debugger;
   }
 
   render() {
@@ -52,9 +52,9 @@ class TaskShowPage extends React.Component {
           <div className="task-holder">
             <div className="graphics">
               <div className="image">
-                {imageUpload || (
+                
                   <img className="task-image" src={this.props.tasks.imageUrl} />
-                )}
+              
               </div>
               <div className="task-main-map">
                 <div className="task-map">
@@ -77,6 +77,7 @@ class TaskShowPage extends React.Component {
               </div>
             </div>
             <div className="delete-button">
+              {imageUpload}
               <button
                 onClick={() =>
                   this.props
@@ -86,7 +87,9 @@ class TaskShowPage extends React.Component {
               >
                 Delete Task
               </button>
+              
             </div>
+            
             {/* <br/> */}
             {/* <br/> */}
           </div>
