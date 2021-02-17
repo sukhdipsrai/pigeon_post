@@ -81,6 +81,8 @@
 
 .div-foot {
     display: flex;
+    bottom: 0;
+    position: fixed;
     flex-direction: row;
     padding: 0px 20px 0px;
 }
