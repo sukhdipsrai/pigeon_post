@@ -24,6 +24,7 @@ class TaskShowPage extends React.Component {
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
+    
     // debugger;
   }
 

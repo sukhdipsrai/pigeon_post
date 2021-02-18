@@ -8,7 +8,7 @@ class UnclaimedDeliveryItem extends React.Component {
     this.state = {
       currentTask: props.task,
     };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
     // this.handleClick = this.handleClick.bind(this)
   }
 
@@ -21,10 +21,10 @@ class UnclaimedDeliveryItem extends React.Component {
   //         this.props.completeTask(this.state.currentTask).then(window.location.reload())
   //         debugger
   // }
-  handleClick() {
-    // debugger
-    this.props.deleteTask(this.props.task._id).then(window.location.reload());
-  }
+  // handleClick() {
+  //   // debugger
+  //   this.props.deleteTask(this.props.task._id).then(window.location.reload());
+  // }
   render() {
     return (
       <div className="unclaimed-main">
@@ -66,7 +66,7 @@ class UnclaimedDeliveryItem extends React.Component {
             <br />
           </div>
         </Link>
-        <button className="cancel-delivery" onClick={this.handleClick}>
+        <button className="cancel-delivery" onClick={() => this.props.deleteTask(this.props.task._id)}>
           Cancel this delivery
         </button>
       </div>

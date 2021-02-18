@@ -66,6 +66,6 @@ export const updateTask = task => dispatch => {
 
 export const deleteTask = (taskId) => dispatch => {
     return TaskUtil.removeTask(taskId)
-        .then(task => dispatch(removeTask(task.id)))
+        .then(task => dispatch(removeTask(task._id)))
         .catch (err => console.log(err))
 }
