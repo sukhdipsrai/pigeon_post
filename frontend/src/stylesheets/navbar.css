@@ -28,51 +28,74 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-/* .header-logo {
-    font-size: 40px;
-} */
 
 .top{
-    /* height: 125px; */
-    /* padding-top: 30px; */
+    /* background-color: red; */
     letter-spacing: -2px;
-    /* background-color:  pink; */
     width: 100%;
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* padding-bottom: 20px; */
+
 }
 
 .top img {
     margin-left: 3%;
-    /* background-color: darkslateblue; */
 }
 
-.dropdown{
-    width: 250px;
-    /* height: 50px; */
-    /* margin-top: -10px; */
-    margin-bottom: -85px;
-    margin-right: 2%;
-    /* background-color: skyblue; */
-    /* float: right; */
-    /* display: flex; */
-    justify-content:end;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-}
-.dropdown .header-button{
-    position: relative;
+.dropdown-holder{
+    width: 25%;
+    height: 50%;
+    /* background-color: rebeccapurple; */
     display: flex;
-    font-family: 'Roboto';
-    background-color: rgb(187, 239, 248);
-    color: black;
-    padding: 2px 15px;
-    border-radius: 8px;
-    box-shadow: 0px 0px #757474;
-    margin-left: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.drop-down-holder h1 {
+    font-weight: lighter;
+}
+
+.header-button{
+    position: absolute;
+    /* font-family: 'Roboto'; */
+    background-color:inherit;
+    display: none;
+    padding-bottom: 5px;
+    width: 100%;
+    justify-content: center;
+    /* height: 0px; */
+    transition: .3s;
+    
+    
+}
+
+.dropdown {
+    position: relative;
+    background-color: maroon;
+    border-radius: 7px;
+    color: white;
+    width: 50%;
+    padding: 5px 0;
+    border: none;
+    transition: .3s;
+    cursor:pointer;
+}
+
+/* .dropdown:hover {
+    padding-bottom: 20px;
+} */
+
+.dropdown:hover .header-button{
+    /* background-color: ivory; */
+    border-radius: 7px;
+    /* padding-top: 10px; */
+    padding-top: 5px;
+    display: flex;
+    color: ivory;
+    /* height: 50px; */
+    /* padding-bottom: 30px; */
+    /* position: absolute; */
+    /* transition: .3s; */
+
 }
