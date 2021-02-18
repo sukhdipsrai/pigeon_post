@@ -169,7 +169,15 @@ class GapiForm extends React.Component {
   }
 
   formSubmit() {
-    if (this.state.price !== null && this.state.errors === null)
+    debugger;
+    if (
+      this.state.price !== null &&
+      this.state.errors === null &&
+      this.props.form.pickup_loc !== null &&
+      this.props.form.dropoff_loc !== null &&
+      this.state.pickup_loc === this.props.form.pickup_loc.address &&
+      this.state.dropoff_loc === this.props.form.dropoff_loc.address
+    )
       this.handleFinalSubmit();
     else this.handleSubmit();
   }
@@ -188,7 +196,19 @@ class GapiForm extends React.Component {
       customer_id,
       duration,
     } = this.state;
-    if (this.state.price !== null && this.state.errors === null) {
+    if (
+      pickup_loc === this.props.form.pickup_loc &&
+      dropoff_loc === this.props.form.dropoff_loc
+    )
+      console.log("form changed");
+    if (
+      this.state.price !== null &&
+      this.state.errors === null &&
+      this.props.form.pickup_loc !== null &&
+      this.props.form.dropoff_loc !== null &&
+      pickup_loc === this.props.form.pickup_loc.address &&
+      dropoff_loc === this.props.form.dropoff_loc.address
+    ) {
       submitButtonValue = "Confirm";
       priceDisplay = (
         <div className="price-display-box">
