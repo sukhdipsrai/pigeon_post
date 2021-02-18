@@ -1,32 +1,78 @@
 import React from 'react' 
-
+import smallpigeon from '../../images/favicon-32x32.png'
 
 
 class PackageHistoryItem extends React.Component {
 
     constructor(props){
         super(props)
+        this.myfunction = this.myfunction.bind(this)
     }
 
-
+    myfunction(){
+        debugger
+        let more = document.getElementById(this.props.task._id)
+        if (more!==null){
+            
+            if (more.style.display === "none"){
+                more.style.display = "block";
+                more.style.paddingBottom = 300;
+            }else{
+                more.style.display = "none"
+            }
+        }
+        
+    }
 
     render(){
         return (
             <div className="package-history-item">
                           {/* <div className="addresses"> */}
-                            
+                            <h2>task id:</h2>{this.props.task._id}
+                <br />
+                <br />
                             <h2> pickup: </h2>{this.props.task.pickup_loc}
+                <br />
+                <br />
                             <h2>dropoff: </h2>{this.props.task.dropoff_loc}
-                            <h2>pigeon id:</h2>{this.props.task.driver_id}
-                            <h2>mailer id:</h2>{this.props.task.customer_id}
-                            <h2>distance:</h2>{(this.props.task.distance/1609.0).toFixed(1)}Mi
-                            <h2>payout:</h2> ${this.props.task.price.toFixed(2)}
-                            {/* <span>payout</span> */}
-                        <br/>
-                        <br/>
+                <br />
+                <br />
+                <div className="status">
+                    <img className="active-small-logo" src={smallpigeon} />
+                    <button onClick={()=>this.myfunction()}>Show more</button>
+                </div>
+                <div id={this.props.task._id} style={{ display:'none' }}>
+                    <div id='more'>
+
+                    
+                    <div className="text-div">
+                    {/* <br/> */}
+                    {/* <p> */}
+                    <h2>pigeon id:</h2>{this.props.task.driver_id}
+                    <br />
+                    <br />
+                    <h2>mailer id:</h2>{this.props.task.customer_id}
+                    <br />
+                    <br />
+                    <h2>distance:</h2>{(this.props.task.distance / 1609.0).toFixed(1)} Mi
+                    <br />
+                    <br />
+                    <h2>total weight:</h2> {this.props.task.weight} lbs
+                    <br />
+                    <br />
+                    <h2>payout:</h2> $ {this.props.task.price.toFixed(2)}
+                    
+                    {/* <span>payout</span> */}
+                    <br />
+                    <br />
                             date posted: {this.props.task.date_posted}
-                            <br/>
+                    <br />
                             date completed: {this.props.task.updatedAt}
+
+                    {/* </p> */}
+                </div>
+                </div>
+                </div>
                      </div>
         )
     }

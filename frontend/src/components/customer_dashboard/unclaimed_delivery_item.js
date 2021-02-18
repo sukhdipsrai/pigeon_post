@@ -64,7 +64,7 @@ class UnclaimedDeliveryItem extends React.Component {
             <br />
           </div>
         </Link>
-        <button className="cancel-delivery" onClick={this.handleClick}>
+        <button className="cancel-delivery" onClick={() => this.props.deleteTask(this.props.task._id)}>
           Cancel this delivery
         </button>
       </div>
