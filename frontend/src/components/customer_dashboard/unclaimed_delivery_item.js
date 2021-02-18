@@ -8,23 +8,21 @@ class UnclaimedDeliveryItem extends React.Component {
     this.state = {
       currentTask: props.task,
     };
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.deleted = false;
     // this.handleClick = this.handleClick.bind(this)
   }
 
-  // handleClick() {
-  //         debugger
-  //         console.log(this.state.currentTask.status)
-  //         this.state.currentTask.status = "Finished";
-  //         this.state.currentTask.driver_id = this.props.driverId
-  //         console.log(this.state.currentTask.status)
-  //         this.props.completeTask(this.state.currentTask).then(window.location.reload())
-  //         debugger
-  // }
-  // handleClick() {
-  //   // debugger
-  //   this.props.deleteTask(this.props.task._id).then(window.location.reload());
-  // }
+  handleClick() {
+    // debugger;
+    this.deleted = true;
+    this.props.deleteTask(this.props.task._id);
+  }
+
+  componentWillUnmount() {
+    if (this.deleted) this.props.fetchUserTasks(this.props.userId);
+  }
+
   render() {
     return (
       <div className="unclaimed-main">

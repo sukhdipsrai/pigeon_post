@@ -130,9 +130,6 @@ class GapiForm extends React.Component {
       that.setState({ price: null });
       that.props.closeModal();
       alert("Task Created!");
-      window.location.reload();
-      // fire off an action or update redux state
-      //TODO: rework reducer
     });
   }
 
@@ -157,13 +154,13 @@ class GapiForm extends React.Component {
       status: status,
       customer_id: customer_id,
       api: {
-        Bucket: 'pigeon-task-package',
-        Key: '1613521743984.jpg',
-        Expires: 604800
+        Bucket: "pigeon-task-package",
+        Key: "1613614824990.jpg",
+        Expires: 604800,
       },
       
       imageUrl:
-        "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613521743984.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210205%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210205T040654Z&X-Amz-Expires=604800&X-Amz-Signature=db9b795b34bda9a43354f28c6a4fd0168821e1125563b600c4febff1aad2e18b&X-Amz-SignedHeaders=host",
+        "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613614824990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210218%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T022025Z&X-Amz-Expires=604800&X-Amz-Signature=d2e55c99cab69610e06439a6323b4dab7dc42606f3d5e5f5239f68e8a89bc6cb&X-Amz-SignedHeaders=host",
     };
     this.props.createTask(data);
     return new Promise(function (resolve, reject) {
