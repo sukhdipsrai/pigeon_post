@@ -27,8 +27,9 @@ const TasksReducer = (oldState = {}, action) => {
       // newState.new = action.task.data
       return Object.assign({}, { [action.task.data._id]: action.task.data });
     case RECEIVE_NEW_TASK:
-      // comeback to this if need be
-      return (newState[action.task._id] = action.task);
+      let arrayState = Object.values(newState);
+      arrayState.push(action.task.data);
+      return arrayState;
     case REMOVE_TASK:
       delete newState[action.taskId];
       return newState;
