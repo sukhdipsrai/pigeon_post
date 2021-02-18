@@ -68,7 +68,6 @@ class TaskShowPage extends React.Component {
         </div>
       );
     }
-    // debugger
     if (this.props.tasks !== undefined) {
       return (
         <div className="taskshow-main">
