@@ -282,13 +282,13 @@ class GapiForm extends React.Component {
           <div className="form-submit-details" id="form-weight">
             <p>Based on Estimated Weight: </p> <p>{weight} lbs.</p>
           </div>
-          <div className="form-submit-details" id="form-">
+          <div className="form-submit-details" id="form-start">
             <p>Start Location: </p> <p> {pickup_loc}</p>
           </div>
-          <div className="form-submit-details" id="form-">
+          <div className="form-submit-details" id="form-end">
             <p>Dropoff Location: </p> <p>{dropoff_loc}</p>
           </div>
-          <div className="form-submit-details" id="form-">
+          <div className="form-submit-details" id="form-contact">
             <p>Delivery Contact:</p> <p> {drop_off_number}</p>
           </div>
           <div className="confirm-buttons">

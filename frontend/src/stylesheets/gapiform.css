@@ -128,10 +128,21 @@ input.task-form-button:hover {
     padding-bottom: 10px;
     padding: 5px;
     border-radius: 6px;
+    transition: .5s;
 }
 
 div.price-display-box {
     margin-right: 7px;
+}
+
+.form-submit-details:hover {
+    display: flex;
+    padding: 20px;
+    font-size: 150%;
+}
+
+#form-start:hover, #form-end:hover {
+    display: block;
 }
 
 .confirm-buttons {
