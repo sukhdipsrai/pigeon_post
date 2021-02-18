@@ -19,16 +19,25 @@ class TaskShowPage extends React.Component {
       // debugger
       this.props.tasks.imageUrl = res.data.imageUrl;
       this.props.tasks.api = res.data.api;
-      this.props.uploadImage(this.props.tasks).then(window.location.reload());
+      this.props
+        .uploadImage(this.props.tasks)
+        .then(this.props.fetchTask(this.props.taskId));
     });
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
-    debugger;
+    // debugger;
   }
 
   render() {
     let imageUpload = null;
+    let image = null;
+
+    try {
+      {
+        image = <img className="task-image" src={this.props.tasks.imageUrl} />;
+      }
+    } catch (e) {}
 
     if (this.props.currentUser.usertype === "Customer") {
       imageUpload = (
@@ -52,10 +61,10 @@ class TaskShowPage extends React.Component {
           <div className="task-holder">
             <div className="graphics">
               <div className="image">
-                {imageUpload || (
-                  <img className="task-image" src={this.props.tasks.imageUrl} />
-                )}
+                {image}
+                {imageUpload}
               </div>
+
               <div className="task-main-map">
                 <div className="task-map">
                   <MapContainer />
