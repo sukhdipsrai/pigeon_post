@@ -4,7 +4,7 @@ export const RECEIVE_ALL_TASKS = "RECEIVE_ALL_TASKS";
 export const RECEIVE_SINGLE_USER_TASKS = "RECEIVE_SINGLE_USER_TASKS";
 export const RECEIVE_TASK = "RECEIVE_TASK";
 export const REMOVE_TASK = "REMOVE_TASK";
-// export const RECEIVE_NEW_TASK = "RECEIVE_NEW_TASK";
+export const RECEIVE_NEW_TASK = "RECEIVE_NEW_TASK";
 export const receiveTasks = (tasks) => ({
   type: RECEIVE_ALL_TASKS,
   tasks,
@@ -20,10 +20,10 @@ export const receiveTask = (task) => ({
   task,
 });
 
-// export const receiveNewTask = (task) => ({
-//   type: RECEIVE_NEW_TASK,
-//   task,
-// });
+export const receiveNewTask = (task) => ({
+  type: RECEIVE_NEW_TASK,
+  task,
+});
 export const removeTask = (taskId) => ({
   type: REMOVE_TASK,
   taskId,
