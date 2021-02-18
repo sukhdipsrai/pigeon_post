@@ -33,6 +33,8 @@ class TaskShowPage extends React.Component {
     let imageUpload = null;
     let image = null;
 
+    let deleteButton = null;
+
     try {
       {
         image = <img className="task-image" src={this.props.tasks.imageUrl} />;
@@ -50,6 +52,21 @@ class TaskShowPage extends React.Component {
           <button>submit</button>
         </form>
       );
+
+      deleteButton = (
+        <div className="delete-button">
+          {imageUpload}
+          <button
+            onClick={() =>
+              this.props
+                .deleteTask(this.props.tasks._id)
+                .then(this.props.history.push("/users/delivery/unclaimed"))
+            }
+          >
+            Delete Task
+          </button>
+        </div>
+      );
     }
     // debugger
     if (this.props.tasks !== undefined) {
@@ -60,10 +77,7 @@ class TaskShowPage extends React.Component {
 
           <div className="task-holder">
             <div className="graphics">
-              <div className="image">
-                {image}
-                {imageUpload}
-              </div>
+              <div className="image">{image}</div>
 
               <div className="task-main-map">
                 <div className="task-map">
@@ -85,19 +99,7 @@ class TaskShowPage extends React.Component {
                 <h1>{this.props.tasks.price}</h1>
               </div>
             </div>
-            <div className="delete-button">
-              {imageUpload}
-              <button
-                onClick={() =>
-                  this.props
-                    .deleteTask(this.props.tasks._id)
-                    .then(this.props.history.push("/users/delivery/unclaimed"))
-                }
-              >
-                Delete Task
-              </button>
-            </div>
-
+            {deleteButton}
             {/* <br/> */}
             {/* <br/> */}
           </div>

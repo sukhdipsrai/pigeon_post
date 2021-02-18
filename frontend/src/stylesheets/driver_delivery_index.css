@@ -13,7 +13,6 @@
 .inner-delivery-main {
     width: 90%;
     /* height: 1000px; */
-    
 }
 
 .index-item-holder {
@@ -24,7 +23,7 @@
     margin: 5px;
 }
 
-.index-item{
+.index-item {
     background-color: teal;
     border-bottom: 1px solid black;
     padding: 5px;
@@ -37,15 +36,15 @@
     cursor: pointer;
 }
 
-.index-item:hover{
+.index-item:hover {
     background-color: slateblue;
     padding: 12px;
     margin: 7px;
 }
 
-.index-item:hover > .claim-delivery {
+.delivery-task-container:hover>.claim-delivery {
     border: none;
-    border-radius: 10px; 
+    border-radius: 10px;
     color: white;
     background-color: maroon;
     margin-top: 10px;
@@ -54,6 +53,7 @@
     height: 20px;
     transition: .5s;
 }
+
 .claim-delivery {
     display: none;
     font-size: 12px;
@@ -61,6 +61,7 @@
     height: 0px;
     cursor: pointer;
 }
+
 .addresses {
     width: 55%;
     /* background-color: royalblue; */
@@ -69,11 +70,11 @@
     justify-content: space-between;
 }
 
-.addresses h2{ 
+.addresses h2 {
     font-size: 13px;
     font-weight: 100;
-    
 }
+
 .right-side {
     width: 45%;
     height: 50px;
@@ -87,8 +88,8 @@
     /* background-color: royalblue; */
     display: flex;
     flex-direction: column;
-
 }
+
 .money {
     /* background-color: royalblue; */
     /* width: 120px; */
@@ -98,12 +99,11 @@
 
 .money h1 {
     font-weight: 100;
-
     font-size: 250%;
     /* background-color: red; */
 }
 
-.payout span{
+.payout span {
     margin-top: -5px;
     /* margin-left: 67%; */
     font-size: 13px;
@@ -115,6 +115,7 @@
     width: 75px;
     font-size: 40px;
 }
+
 .distance h1 {
     font-weight: 100;
 }
@@ -124,4 +125,3 @@
     margin-top: -5px;
     font-size: 13px;
 }
-
