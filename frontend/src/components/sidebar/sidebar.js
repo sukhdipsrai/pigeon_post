@@ -1,6 +1,6 @@
 import React from "react";
 import "../../stylesheets/sidebar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
@@ -16,24 +16,34 @@ class Sidebar extends React.Component {
     };
   }
   render() {
+
+    const activeButton = {
+            fontWeight: "bold",
+            backgroundColor: "maroon",
+            opacity: 1
+          }
+
     // debugger
     if (this.props.isloggedin) {
       if (this.props.currentUser.usertype === "Driver") {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              <Link className="links" to="/dashboard">
-                <li> Dashboard </li>
-              </Link>
-              <Link className="links" to="/driver/deliveries">
+              <NavLink className="links" to="/dashboard"activeStyle={activeButton}>
+                <li> 
+                  Dashboard 
+
+                </li>
+              </NavLink>
+              <NavLink className="links" to="/driver/deliveries" activeStyle={activeButton}>
                 <li> Open Delivieries </li>
-              </Link>
-              <Link className="links" to="/driver/currentdelivery">
+              </NavLink>
+              <NavLink className="links" to="/driver/currentdelivery" activeStyle={activeButton}>
                 <li>Current Delivery</li>
-              </Link>
-              <Link className="links" to="/driver/history">
+              </NavLink>
+              <NavLink className="links" to="/driver/history" activeStyle={activeButton}>
                 <li>Past Packages</li>
-              </Link>
+              </NavLink>
             </ul>
           </div>
         );
@@ -41,18 +51,18 @@ class Sidebar extends React.Component {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              <Link className="links" to="/dashboard">
+              <NavLink className="links" to="/dashboard" activeStyle={activeButton}>
                 <li> Dashboard </li>
-              </Link>
-              <Link className="links" to="/users/delivery/active">
+              </NavLink>
+              <NavLink className="links" to="/users/delivery/active" activeStyle={activeButton}>
                 <li> In Progress </li>
-              </Link>
-              <Link className="links" to="/users/delivery/unclaimed">
+              </NavLink>
+              <NavLink className="links" to="/users/delivery/unclaimed" activeStyle={activeButton}>
                 <li> Unclaimed </li>
-              </Link>
-              <Link className="links" to="/users/delivery/history">
+              </NavLink>
+              <NavLink className="links" to="/users/delivery/history" activeStyle={activeButton}>
                 <li>History/Receipts</li>
-              </Link>
+              </NavLink>
               <button
                 className="post-delivery"
                 onClick={this.handleClick("create-task")}
