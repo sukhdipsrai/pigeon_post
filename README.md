@@ -33,20 +33,16 @@ Make sure to update the redux states with no perceptible delay for interactions 
 ## Features:
 
 
-### Map shows when user login
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/map.gif)
+### Dual User login/out
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/login.gif)
 
 
-### Showing tasks which driver can claim
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/claim.gif)
+### Posting task by real address; Calculating price automatically; Giving alert messages to user about task post.
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/post.gif)
 
 
 ### Showing customer's in-progress tasks
 ![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/progress.gif)
-
-
-### Changing task status when delivery is done
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/status.gif)
 
 
 ### Uploading package image by user
@@ -57,8 +53,12 @@ Make sure to update the redux states with no perceptible delay for interactions 
 ![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/history.gif)
 
 
-### Posting task by real address; Calculating price automatically; Giving alert messages to user about task post.
-![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/post.gif)
+### Showing tasks which driver can claim
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/claim.gif)
+
+
+### Changing task status when delivery is done
+![alt text](https://github.com/sukhdipsrai/pigeon_post/blob/main/frontend/src/images/status.gif)
 
 
 ## Technical Challenges:
