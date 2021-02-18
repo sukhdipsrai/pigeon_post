@@ -37,10 +37,7 @@ class DeliveryTasksIndex extends React.Component {
     } else {
       return (
         <div className="active-delivery-main">
-          <h1>
-            This is where all active deliveries will be available to choose
-            from.
-          </h1>
+          
         </div>
       );
     }

@@ -29,8 +29,8 @@ class DeliveryIndexItem extends React.Component {
   render() {
     return (
       <div className="delivery-task-container">
-        <Link className="links" to={`/tasks/${this.props.task._id}`}>
           <div className="index-item">
+        <Link className="links" to={`/tasks/${this.props.task._id}`}>
             <div className="index-item-holder">
               {/* <div className="inner-index-item" > */}
 
@@ -60,11 +60,11 @@ class DeliveryIndexItem extends React.Component {
               {/* <br/> */}
               {/* <br/> */}
             </div>
-          </div>
         </Link>
         <button className="claim-delivery" onClick={() => this.handleClick()}>
           Claim this delivery
         </button>
+          </div>
       </div>
     );
   }
