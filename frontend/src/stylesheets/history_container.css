@@ -16,12 +16,7 @@
     /* background-color: indigo; */
 }
 
-.package-history-item {
-    background-color: green;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-}
+
 
 .package-history-item > * {
         margin: 1px;

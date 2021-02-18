@@ -2,3 +2,25 @@
     height: 500px;
     background-color: black;
 }
+
+.package-history-item {
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    letter-spacing: 1.5px;
+    transition: .3s;
+}
+
+#more{
+    display: block;
+    padding-bottom: 300px;
+    /* background-color: #002D62; */
+}
+#more >.text-div {
+    padding-top: 15px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    /* height: 10px; */
+}
