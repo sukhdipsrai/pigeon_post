@@ -25,12 +25,11 @@ const TasksReducer = (oldState = {}, action) => {
       return action.tasks.data;
     case RECEIVE_TASK:
       // newState.new = action.task.data
-      // return Object.assign({}, { [action.task.data._id]: action.task.data });
-      return action.tasks.data;
-    // case RECEIVE_NEW_TASK:
-    //   // comeback to this if need be
-    //   Object.assign(newState, { [action.task.data._id]: action.task.data });
-    //   return newState;
+      return Object.assign({}, { [action.task.data._id]: action.task.data });
+    case RECEIVE_NEW_TASK:
+      let arrayState = Object.values(newState);
+      arrayState.push(action.task.data);
+      return arrayState;
     case REMOVE_TASK:
       delete newState[action.taskId];
       return newState;
