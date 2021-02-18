@@ -61,14 +61,8 @@ class TaskShowPage extends React.Component {
           <div className="task-holder">
             <div className="graphics">
               <div className="image">
-<<<<<<< HEAD
                 {image}
                 {imageUpload}
-=======
-                
-                  <img className="task-image" src={this.props.tasks.imageUrl} />
-              
->>>>>>> 135150a5a00fa943540552c7eb5ed6d9538204ed
               </div>
 
               <div className="task-main-map">
@@ -102,9 +96,8 @@ class TaskShowPage extends React.Component {
               >
                 Delete Task
               </button>
-              
             </div>
-            
+
             {/* <br/> */}
             {/* <br/> */}
           </div>
