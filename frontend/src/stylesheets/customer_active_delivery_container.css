@@ -29,7 +29,7 @@
     display: none;
     height: 1px;
     color: transparent;
-    transition: 5s;
+    /* transition: 5s; */
 }
 
 .text-div p:hover {
@@ -42,9 +42,22 @@
 }
 
 .active-task-item:hover>.text-div {
-    padding-top: 5px;
+    padding-top: 15px;
     display: block;
     color: tomato;
     cursor: pointer;
     /* height: 10px; */
+}
+
+.status {
+    /* background-color: teal; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.active-small-logo {
+    /* background-color: violet; */
+    margin-right: 5px;
+    /* position: absolute; */
 }
