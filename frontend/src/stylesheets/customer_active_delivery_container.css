@@ -13,19 +13,23 @@
 
 .active-task-item {
     font-weight: 100px;
+    letter-spacing: 1.5px;
     width: 65%;
-    background-color: #002D62;
+    /* height: 250px; */
+    background-color: #002e629d ;
+    /* opacity: .5; */
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
     transition: .3s;
 }
 
+
 .text-div {
     display: none;
     height: 1px;
     color: transparent;
-    transition: 5s;
+    /* transition: 5s; */
 }
 
 .text-div p:hover {
@@ -34,12 +38,26 @@
 
 .active-task-item:hover {
     padding-bottom: 25px;
+    background-color: #002D62;
 }
 
 .active-task-item:hover>.text-div {
-    padding-top: 5px;
+    padding-top: 15px;
     display: block;
     color: tomato;
     cursor: pointer;
     /* height: 10px; */
+}
+
+.status {
+    /* background-color: teal; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.active-small-logo {
+    /* background-color: violet; */
+    margin-right: 5px;
+    /* position: absolute; */
 }
