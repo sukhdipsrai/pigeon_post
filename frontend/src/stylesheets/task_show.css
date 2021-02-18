@@ -43,10 +43,14 @@
 }
 
 .image-upload {
-    background-color: black;
-    /* width: 50%; */
+    /* background-color: black; */
+    display: contents;
+    width: 23%;
 }
 
+.image-upload input{
+    color:aliceblue;
+}
 .delete-button {
     display: flex;
     float: left;
@@ -69,7 +73,9 @@
     width: 100%;
     position: relative;
 }
-
+.task-image{
+    height: 100%;
+}
 .task-map {
     background-color: brown;
     /* width: 10%; */
