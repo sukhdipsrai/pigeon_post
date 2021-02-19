@@ -44,19 +44,21 @@ class TaskShowPage extends React.Component {
 
     if (this.props.currentUser.usertype === "Customer") {
       imageUpload = (
+        <div className="image-upload" >
+
         <form
-          className="image-upload"
+          // className="image-upload"
           type="form-data"
           onSubmit={(e) => this.handleImageUpload(e)}
-        >
-          <input type="file" />
+          >
+          <input className="inputbutton"type="file" />
           <button>submit</button>
         </form>
+          </div>
       );
 
       deleteButton = (
         <div className="delete-button">
-          {imageUpload}
           <button
             onClick={() =>
               this.props
@@ -72,7 +74,7 @@ class TaskShowPage extends React.Component {
     if (this.props.tasks !== undefined) {
       return (
         <div className="taskshow-main">
-          <h1>this is the tasks show page</h1>
+          <h1>Task #{this.props.tasks._id}</h1>
           <br />
 
           <div className="task-holder">
@@ -87,13 +89,24 @@ class TaskShowPage extends React.Component {
                   <MapContainer />
                 </div>
               </div>
+          
+          <div className="info-section" >
 
             <div className="directions">
-              <p>total weight: {this.props.tasks.weight} lbs</p>
-              <p> from: {this.props.tasks.pickup_loc}</p>
-              <p>to: {this.props.tasks.dropoff_loc}</p>
-              {/* <p>{this.props.tasks.weight} lbs</p> */}
-              <p>total distance: {this.props.tasks.distance}</p>
+             
+                  <h1>
+                  from: 
+                  </h1>
+              <p>{this.props.tasks.pickup_loc}</p>
+              <h1>to: </h1>
+              <p> {this.props.tasks.dropoff_loc}</p>
+              <br/>
+              <h1>total distance:</h1>
+              <p> {this.props.tasks.distance}</p>
+              <h1>total weight: </h1>
+                <p>
+                  {this.props.tasks.weight} lbs
+                  </p>
             </div>
             <div className="price-accept">
               <p>total price: </p>
@@ -103,10 +116,15 @@ class TaskShowPage extends React.Component {
               </div>
             </div>
           </div>
+          </div>
             {/* <br/> */}
             {/* <br/> */}
             </div>
+            <div className="task-show-buttons" >
+
+            {imageUpload}
             {deleteButton}
+            </div>
         </div>
       );
     } else {

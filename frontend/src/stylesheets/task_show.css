@@ -1,6 +1,8 @@
 .taskshow-main {
     height: 500px;
-    background-color: seagreen;
+    background-color: darkslateblue;
+    border-radius: 7px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +10,7 @@
 }
 
 .task-holder {
-    background-color: darkslateblue;
+    background-color: black;
     padding: 10px;
     border-radius: 7px;
     padding: 5px;
@@ -31,87 +33,119 @@
 
 .task-show-info {
     background-color: black;
+    height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .image {
     height: 100%;
-    width: 50%;
-    background-color: red;
+    width: 450px;
+    margin-right: 3px;
+    background-color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
 }
 
 .image img {
-    height: 50%;
+    height: 100%;
 }
 
+.task-show-buttons {
+    width: 80%;
+    padding: 5px;
+    display: flex;
+    /* background: lightcoral; */
+    justify-content: space-between;
+}
+.inputbutton {
+    opacity: 0;
+}
+.task-show-buttons button {
+    border: none;
+    padding: 5px;
+    min-width: 100px;
+    background: lightcoral;
+}
 .image-upload {
-    /* background-color: black; */
-    display: contents;
-    width: 23%;
+    background-color: pink;
 }
 
 .image-upload input{
-    color:aliceblue;
-}
-.delete-button {
-    display: flex;
-    float: left;
-    position: relative;
-    justify-content: left;
-    justify-self: left;
+    background-color:aliceblue;
 }
 
-/* .map-holder {
-    height: 100%;
-    width: 50%;
-    background-color: green;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* .image-upload button {
+    width: 100px;
 } */
 
-.task-main-map {
-    background-color: black;
-    /* width: 100%; */
+/* .delete-button button {
+    width: 200px;
+} */
+.delete-button {
+    background-color: navy;
     padding: 5px;
+    /* width: 70%; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+    /* float: left; */
+    /* position: relative; */
+    /* justify-content: left; */
+    /* justify-self: left; */
 }
-.task-image{
+
+.task-main-map {
+    /* background-color: yellow; */
+    /* width: 100%; */
+    height: 50%;
+    /* padding: 0 3px; */
+}
+/* .task-image{
     height: 100%;
-}
+} */
 .task-map {
     position: relative;
     background-color: brown;
     /* width: 10%; */
-    height: 250px;
+    height: 100%;
     /* display: flex; */
     /* justify-content: center; */
 }
 
+.info-section {
+    /* background-color: khaki; */
+    display:flex;
+    height: 47%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .directions {
-    background-color: grey;
-    height: 35%;
-    width: 90%;
-    padding: 7px;
+    /* background-color: navy; */
+    height: 65%;
+    width: 95%;
+    padding: 3px;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    /* align-items: center; */
     font-size: 14px;
 }
 
 .price-accept {
     padding: 7px;
     border-radius: 7px;
-    background-color: grey;
+    /* background-color: grey; */
     width: 20%;
     min-width: 175px;
-    height: 10%;
+    /* height: 10%; */
     display: flex;
     justify-content: space-between;
 }
@@ -127,4 +161,31 @@
 
 .price-accept p {
     margin-top: 5px;
+}
+
+@media  (max-width: 1250px) {
+    .task-holder {
+        /* background-color: darkslateblue; */
+        flex-direction: column;
+        height: 100%;
+        min-height: 600px;
+    }
+
+    .taskshow-main {
+        height: 100%;
+    }
+
+    .task-show-info {
+        width: 100%;
+    }
+
+    .directions{
+        height: auto;
+        /* background-color: pink; */
+    }
+    .price-accept {
+        /* background-color: ivory; */
+        /* width: 20%; */
+        margin-top: -75px;
+    }
 }
