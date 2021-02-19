@@ -1,6 +1,6 @@
-.history-container{
+.history-container {
     padding: 10px;
-    background-color: darkslategrey;
+    background-color: rgb(47, 79, 79);
     display: flex;
     /* justify-content: space-around; */
     flex-direction: column;
@@ -9,15 +9,40 @@
     border-radius: 10px;
     /* overflow: hidden; */
     overflow-y: scroll;
-
 }
 
-.inner-history-container {
-    /* background-color: indigo; */
+.active-main {
+    height: 500px;
+    z-index: 2;
 }
 
+.inactive-main {
+    height: 200px;
+    z-index: -2;
+}
 
+.active-card {
+    transition: .3s;
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
 
-.package-history-item > * {
-        margin: 1px;
+.inactive-card {
+    transition: .3s;
+    display: none;
+    opacity: 0;
+    z-index: -2;
+}
+
+.package-history-item:hover {
+    cursor: pointer;
+    background-color: green;
+    /* height: 300px; */
+}
+
+.package-history-item {
+    margin: 10px;
+    background-color: rgba(0, 128, 0, 0.349);
+    z-index: 1;
 }
