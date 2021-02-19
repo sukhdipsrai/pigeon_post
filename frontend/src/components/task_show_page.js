@@ -9,20 +9,27 @@ class TaskShowPage extends React.Component {
     super(props);
     this.handleImageUpload = this.handleImageUpload.bind(this);
   }
-  handleImageUpload = (event) => {
-    // debugger
-    const files = event.target[0].files;
-    const formData = new FormData();
-    formData.append("image", files[0]);
 
-    axios.post("/api/image-upload", formData).then((res) => {
-      // debugger
-      this.props.tasks.imageUrl = res.data.imageUrl;
-      this.props.tasks.api = res.data.api;
-      this.props
+  handleImageUpload = (event) => {
+    debugger
+
+    if(event.target[0].files.length !== 0) {
+      
+      const files = event.target[0].files;
+      const formData = new FormData();
+      formData.append("image", files[0]);
+      
+      axios.post("/api/image-upload", formData).then((res) => {
+        // debugger
+        this.props.tasks.imageUrl = res.data.imageUrl;
+        this.props.tasks.api = res.data.api;
+        this.props
         .uploadImage(this.props.tasks)
         .then(this.props.fetchTask(this.props.taskId));
-    });
+      });
+    } else {
+      alert("Select an image first.")
+    }
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
@@ -52,7 +59,7 @@ class TaskShowPage extends React.Component {
           onSubmit={(e) => this.handleImageUpload(e)}
           >
           <input className="inputbutton"type="file" />
-          <button>submit</button>
+          <button>Upload Image</button>
         </form>
           </div>
       );
@@ -60,6 +67,7 @@ class TaskShowPage extends React.Component {
       deleteButton = (
         <div className="delete-button">
           <button
+          className="deletebutton"
             onClick={() =>
               this.props
                 .deleteTask(this.props.tasks._id)

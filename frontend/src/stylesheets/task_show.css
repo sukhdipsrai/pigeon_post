@@ -1,8 +1,8 @@
 .taskshow-main {
     height: 500px;
-    background-color: darkslateblue;
+    background-color: black;
     border-radius: 7px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +11,7 @@
 
 .task-holder {
     background-color: black;
+    border: 1px solid darkslateblue;
     padding: 10px;
     border-radius: 7px;
     padding: 5px;
@@ -63,20 +64,23 @@
     justify-content: space-between;
 }
 .inputbutton {
-    opacity: 0;
+    /* opacity: 0; */
 }
 .task-show-buttons button {
     border: none;
     padding: 5px;
-    min-width: 100px;
-    background: lightcoral;
+    min-width: 300px;
+    color:white;
+    background: darkslateblue;
 }
 .image-upload {
     background-color: pink;
 }
 
 .image-upload input{
-    background-color:aliceblue;
+    color: white;
+    background-color:darkslateblue;
+    border-bottom: 1px solid black;
 }
 
 /* .image-upload button {
@@ -86,9 +90,11 @@
 /* .delete-button button {
     width: 200px;
 } */
-.delete-button {
+.deletebutton {
     background-color: navy;
-    padding: 5px;
+    
+    /* padding: 5px; */
+    height: 100%;
     /* width: 70%; */
     /* display: flex; */
     /* flex-direction: row; */
