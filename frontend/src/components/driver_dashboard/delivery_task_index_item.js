@@ -14,10 +14,10 @@ class DeliveryIndexItem extends React.Component {
 
   handleClick() {
     // debugger
-    console.log(this.state.currentTask.status);
+    // console.log(this.state.currentTask.status);
     this.state.currentTask.status = "In Process";
     this.state.currentTask.driver_id = this.props.driverId;
-    console.log(this.state.currentTask.status);
+    // console.log(this.state.currentTask.status);
     this.props.claimTask(this.state.currentTask);
     this.accepted = true;
     // debugger
@@ -29,8 +29,8 @@ class DeliveryIndexItem extends React.Component {
   render() {
     return (
       <div className="delivery-task-container">
-          <div className="index-item">
-        <Link className="links" to={`/tasks/${this.props.task._id}`}>
+        <div className="index-item">
+          <Link className="links" to={`/tasks/${this.props.task._id}`}>
             <div className="index-item-holder">
               {/* <div className="inner-index-item" > */}
 
@@ -60,11 +60,11 @@ class DeliveryIndexItem extends React.Component {
               {/* <br/> */}
               {/* <br/> */}
             </div>
-        </Link>
-        <button className="claim-delivery" onClick={() => this.handleClick()}>
-          Claim this delivery
-        </button>
-          </div>
+          </Link>
+          <button className="claim-delivery" onClick={() => this.handleClick()}>
+            Claim this delivery
+          </button>
+        </div>
       </div>
     );
   }
