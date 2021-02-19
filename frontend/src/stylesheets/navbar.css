@@ -1,8 +1,7 @@
 .navbar {
     /* margin-top: 40px; */
     width: 80%;
-    min-width: 750px;
-    max-width: 1200px;
+    /* min-width: 750px; */
     background-color: #4a5050;
     height: 130px;
     display: flex;
@@ -16,8 +15,7 @@
 .navbar-loggedin {
     /* margin-top: 40px; */
     width: 80%;
-    min-width: 750px;
-    max-width: 1200px;
+    /* min-width: 750px; */
     background-color: #4a5050;
     height: 130px;
     display: flex;
