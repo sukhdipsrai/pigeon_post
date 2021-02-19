@@ -15,17 +15,24 @@
     width: 80%;
     height: 400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .graphics {
-    background-color: seashell;
+    /* background-color: seashell;
     height: 45%;
     width: 90%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-evenly; */
+}
+
+.task-show-info {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
@@ -39,7 +46,7 @@
 }
 
 .image img {
-    /* height: 100%; */
+    height: 50%;
 }
 
 .image-upload {
@@ -70,18 +77,19 @@
 
 .task-main-map {
     background-color: black;
-    width: 100%;
-    position: relative;
+    /* width: 100%; */
+    padding: 5px;
 }
 .task-image{
     height: 100%;
 }
 .task-map {
+    position: relative;
     background-color: brown;
     /* width: 10%; */
-    /* height: 500px; */
-    /* display: flex;
-    justify-content: center; */
+    height: 250px;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 .directions {
