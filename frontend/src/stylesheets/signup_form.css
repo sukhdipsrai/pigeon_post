@@ -29,12 +29,12 @@
     /* background: slateblue; */
     /* width: 500px; */
     /* height: 500px; */
-    padding:50px;
+    padding: 50px;
     display: flex;
     justify-content: space-evenly;
 }
 
-.signup-form{
+.signup-form {
     background-color: #4a5050;
     padding: 15px;
     border-radius: 15px;
@@ -43,10 +43,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
-form{
+form {
     /* background: blue; */
     width: 100%;
     display: flex;
@@ -57,7 +56,7 @@ form input {
     padding: 5px 2px;
 }
 
-.formsubmit{
+.formsubmit {
     width: 100%;
     height: 30px;
     /* margin: 10px 30px; */
@@ -73,11 +72,11 @@ form input {
     cursor: pointer;
 }
 
-.formsubmit:hover{
+.formsubmit:hover {
     height: 40px;
     /* margin: 0 10px; */
     width: 100%;
-    background-color: firebrick;
+    background-color: maroon;
     color: white;
 }
 
@@ -101,11 +100,11 @@ form input {
     height: 40px;
     margin: 0 10px;
     width: 90%;
-    background-color: firebrick;
+    background-color: maroon;
     color: white;
 }
+
 /* .clickon:focus {
     background-color:black;
     border: none;
 } */
-

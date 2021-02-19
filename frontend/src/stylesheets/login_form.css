@@ -1,4 +1,4 @@
-.login-form-container{
+.login-form-container {
     background: silver;
     border-radius: 10px;
     height: 500px;
@@ -23,7 +23,6 @@
     height: 25vh;
     background-color: #4a5050;
     border-radius: 15px;
-
     padding-top: 15px;
     /* width: 500px;
     height: 100%; */
@@ -39,11 +38,11 @@
     padding-bottom: 30px;
 }
 
-.login-button{
+.login-button {
     background-color: #687C96;
     box-shadow: 0;
     border-radius: 5px;
-    border:0;
+    border: 0;
     opacity: .5;
     margin-top: 5px;
     padding-top: 5px;
@@ -51,23 +50,23 @@
     height: 30px;
     display: flex;
     align-self: center;
-    justify-content: center;    
+    justify-content: center;
     text-align: center;
     font-weight: 700;
     color: white;
     transition: .5s;
 }
 
-.login-button:hover{
+.login-button:hover {
     opacity: 1;
     cursor: pointer;
     width: 200px;
-    background: firebrick;
+    background: maroon;
     padding: 11px;
     padding-bottom: 30px;
     padding-top: 10px;
 }
 
-:focus{
+:focus {
     outline: none;
 }

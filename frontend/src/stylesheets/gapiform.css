@@ -77,7 +77,7 @@ input.task-form-button:hover {
 }
 
 #cancel.task-form-button:hover {
-    background-color: firebrick;
+    background-color: maroon;
 }
 
 #confirm.task-form-button:hover {
@@ -106,7 +106,7 @@ input.task-form-button:hover {
 }
 
 .task-form-errors {
-    color: rgb(88, 9, 9);
+    color: maroon;
     font-weight: 900;
     list-style-type: square;
     margin-left: 30px;
