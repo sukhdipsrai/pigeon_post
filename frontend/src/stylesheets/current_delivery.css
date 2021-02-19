@@ -1,7 +1,10 @@
 .current-delivery-container {
-    width: 100%;
-    background-color: #00387b;
+    /* width: 100%; */
+    background-color: #477fc4;
     height: 75vh;
+    padding: 10px;
+
+    
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
@@ -13,9 +16,12 @@
     margin-top: 10x;
 }
 
-
+.current-delivery-item #more{
+    display: block;
+    padding-bottom: 220px;
+}
 .current-delivery-item {
-    background-color: rgb(80, 11, 11)	;
+    background-color: rgb(112, 27, 27)	;
     width: 80%;
     height: 80%;
     border-radius: 10px;
@@ -35,13 +41,13 @@
     /* margin: 5px; */
     padding: 10px;
     /* border-bottom: 1px solid black; */
-    background-color: #4A5050;
+    background-color: #a6dbdb;
     border-radius: 5px;
     margin-top: 1px;
     /* box-shadow: none; */
     border: none;
     /* text-decoration: none; */
-    color:white;
+    color:rgb(51, 47, 47);
     cursor: pointer;
     transition: .3s;
 }
