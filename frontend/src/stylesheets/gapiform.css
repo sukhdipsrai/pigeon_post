@@ -128,7 +128,8 @@ input.task-form-button:hover {
     padding-bottom: 10px;
     padding: 5px;
     border-radius: 6px;
-    transition: .5s;
+    transition: 1s;
+    max-width: inherit;
 }
 
 div.price-display-box {
@@ -136,13 +137,13 @@ div.price-display-box {
 }
 
 .form-submit-details:hover {
-    display: flex;
     padding: 20px;
-    font-size: 150%;
+    font-size: 20px;
 }
 
 #form-start:hover, #form-end:hover {
     display: block;
+    font: inherit;
 }
 
 .confirm-buttons {
