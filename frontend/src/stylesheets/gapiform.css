@@ -51,12 +51,45 @@ input {
     z-index: 10;
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: 500;
-    color: black;
+    color: white;
     margin-top: 5px;
+    transition: .3s;
+    text-align: center;
 }
 
-.task-form-button:hover {
+#confirm {
+    text-align: center;
+    padding-top: 8px;
+    justify-content: center;
+    align-content: center;
+}
+
+.task-form-button:active {
     opacity: .3;
+}
+
+button.task-form-button:hover {
+    width: 140px;
+}
+
+input.task-form-button:hover {
+    width: 140px;
+}
+
+#cancel.task-form-button:hover {
+    background-color: maroon;
+}
+
+#confirm.task-form-button:hover {
+    background-color: green;
+}
+
+#edit.task-form-button:hover {
+    background-color: green;
+}
+
+#submit.task-form-button:hover {
+    background-color: rgb(41, 41, 145);
 }
 
 :focus {
@@ -70,4 +103,60 @@ input {
     width: 300px;
     align-content: center;
     display: flex;
+}
+
+.task-form-errors {
+    color: maroon;
+    font-weight: 900;
+    list-style-type: square;
+    margin-left: 30px;
+    letter-spacing: 1pt;
+}
+
+.price-display-box {
+    text-align: center;
+    position: relative;
+}
+
+.price-display-box div {
+    display: flex;
+    justify-content: space-between;
+    border: .5px outset black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    transition: 1s;
+    max-width: inherit;
+}
+
+div.price-display-box {
+    margin-right: 7px;
+}
+
+.form-submit-details:hover {
+    padding: 20px;
+    font-size: 20px;
+}
+
+#form-start:hover, #form-end:hover {
+    display: block;
+    font: inherit;
+}
+
+.confirm-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.confirm-buttons {
+    margin-top: 20px;
+    border: 0;
+}
+
+.price-display-box>div>p:nth-child(1) {
+    margin-right: 20px;
 }
