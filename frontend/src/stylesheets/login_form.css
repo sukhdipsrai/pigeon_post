@@ -1,7 +1,7 @@
 .login-form-container {
     background: silver;
     border-radius: 10px;
-    height: 500px;
+    height: 65vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -20,7 +20,7 @@
 
 .login-form {
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     background-color: #4a5050;
     border-radius: 15px;
     padding-top: 15px;
