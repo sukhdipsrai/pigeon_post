@@ -42,7 +42,8 @@ class CurrentDeliveryItem extends React.Component {
 
   render() {
     return (
-      <div className="current-delivery-item">
+      <div className="current-delivery-item" onClick={() => this.myfunction()}>
+        
         {/* <div className="addresses"> */}
 
         <h2> Pick-Up: {this.props.task.pickup_loc}</h2>
@@ -60,7 +61,7 @@ class CurrentDeliveryItem extends React.Component {
         <img className="active-small-logo" src={smallpigeon} />
         <div className="status">
           
-          <button onClick={() => this.myfunction()}>Show more</button>
+          {/* <button onClick={() => this.myfunction()}>Show more</button> */}
         </div>
         <div id={this.props.task._id} style={{ display: 'none' }}>
           <div id='more'>
