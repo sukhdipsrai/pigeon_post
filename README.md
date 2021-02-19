@@ -114,3 +114,4 @@ Sukhdip Rai(Leader, Flex), Juan Sanchez(Frontend), Zihao Li(Backend)
   * Sukhdip - Finish up Styling related issues or remaining backend/frontend features
   * Juan - Finishing up/continuing any styling needed to pages previously made.
   * Zihao - Finish up Styling related issues or remaining backend/frontend features
+
