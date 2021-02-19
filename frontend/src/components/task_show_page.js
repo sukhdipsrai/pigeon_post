@@ -76,15 +76,18 @@ class TaskShowPage extends React.Component {
           <br />
 
           <div className="task-holder">
-            <div className="graphics">
               <div className="image">{image}</div>
+            {/* <div className="graphics"> */}
 
+            {/* </div> */}
+
+            <div className="task-show-info">
               <div className="task-main-map">
                 <div className="task-map">
                   <MapContainer />
                 </div>
               </div>
-            </div>
+
             <div className="directions">
               <p>total weight: {this.props.tasks.weight} lbs</p>
               <p> from: {this.props.tasks.pickup_loc}</p>
@@ -99,10 +102,11 @@ class TaskShowPage extends React.Component {
                 <h1>{this.props.tasks.price}</h1>
               </div>
             </div>
-            {deleteButton}
-            {/* <br/> */}
-            {/* <br/> */}
           </div>
+            {/* <br/> */}
+            {/* <br/> */}
+            </div>
+            {deleteButton}
         </div>
       );
     } else {

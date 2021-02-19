@@ -5,7 +5,7 @@
     /* background-color: pink; */
 }
 
-.sidebar-links{ 
+.sidebar-links {
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
@@ -19,17 +19,16 @@
     border-radius: 5px;
     margin-top: 1px;
     border: none;
-    color:white;
+    color: white;
     text-align: left;
     cursor: pointer;
-
+    transition: .2s;
 }
 
-.price-display-box{
+.price-display-box {
     align-items: center;
     display: block;
 }
-
 
 .sidebar-links .links:hover, .sidebar-links button:hover {
     opacity: 1;

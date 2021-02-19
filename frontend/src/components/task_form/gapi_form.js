@@ -17,7 +17,6 @@ class GapiForm extends React.Component {
       drop_off_number: "",
       weight: "",
       distance: "",
-      price: "",
       status: "unfinished",
       customer_id: this.props.user.id,
       price: null,
@@ -28,6 +27,10 @@ class GapiForm extends React.Component {
     this.getDist = this.getDist.bind(this);
     this.calcPrice = this.calcPrice.bind(this);
   }
+  componentWillUnmount() {
+    // TODO : if see the old address when canceling the form is undesirable, uncomment line below
+    this.props.resetTaskForm();
+  }
 
   getDist(ori, dist) {
     let that = this;
@@ -35,7 +38,7 @@ class GapiForm extends React.Component {
     axios
       .post("/api/gapi/distance", { ori, dist })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const json = res.data.rows[0].elements[0];
         if (json.status === "ZERO_RESULTS") {
           that.setState({
@@ -55,17 +58,24 @@ class GapiForm extends React.Component {
       })
       .then(() => this.validateForm())
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         that.setState({ matrixError: err });
       });
   }
 
   handleSubmit() {
-    let errors = null;
+    let errors = [];
     let that = this;
     const { pickup_loc, dropoff_loc } = this.props.form;
-    if (pickup_loc === null || dropoff_loc === null) {
-      errors = "Please Choose a Pickup AND Drop-off Address";
+    const { weight, drop_off_number } = this.state;
+    let addressBool = pickup_loc === null || dropoff_loc === null;
+    let weightBool = weight === "";
+    let phoneBool = drop_off_number === "";
+    if (addressBool || weightBool || phoneBool) {
+      if (addressBool) errors.push("Enter a Valid Pickup/Drop-off Address");
+      if (weightBool) errors.push("Enter a Valid Weight");
+      if (phoneBool) errors.push("Enter a Valid a Phone");
+
       this.setState({ errors: errors });
     } else {
       this.setState({
@@ -81,8 +91,8 @@ class GapiForm extends React.Component {
       // let ori = [`${pickup_loc.latLng.lat},${pickup_loc.latLng.lng}`]
       // let dist = [`${dropoff_loc.latLng.lat},${dropoff_loc.latLng.lng}`]
       // debugger;
-      console.log(ori);
-      console.log(dist);
+      // console.log(ori);
+      // console.log(dist);
       this.getDist(ori, dist);
     }
   }
@@ -93,6 +103,7 @@ class GapiForm extends React.Component {
 
   update(field) {
     return (e) => {
+      e.preventDefault();
       const num = e.target.value;
       if (field === "drop_off_number") {
         this.setState({ [field]: this.phonefy(num), price: null });
@@ -162,14 +173,21 @@ class GapiForm extends React.Component {
       imageUrl:
         "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613614824990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210218%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T022025Z&X-Amz-Expires=604800&X-Amz-Signature=d2e55c99cab69610e06439a6323b4dab7dc42606f3d5e5f5239f68e8a89bc6cb&X-Amz-SignedHeaders=host",
     };
-    this.props.createTask(data);
+    let that = this;
     return new Promise(function (resolve, reject) {
-      resolve("Post Final Data.");
+      resolve(that.props.createTask(data));
     });
   }
 
   formSubmit() {
-    if (this.state.price !== null && this.state.errors === null)
+    if (
+      this.state.price !== null &&
+      this.state.errors === null &&
+      this.props.form.pickup_loc !== null &&
+      this.props.form.dropoff_loc !== null &&
+      this.state.pickup_loc === this.props.form.pickup_loc.address &&
+      this.state.dropoff_loc === this.props.form.dropoff_loc.address
+    )
       this.handleFinalSubmit();
     else this.handleSubmit();
   }
@@ -188,69 +206,144 @@ class GapiForm extends React.Component {
       customer_id,
       duration,
     } = this.state;
-    if (this.state.price !== null && this.state.errors === null) {
+
+    let cancelButton = (
+      <button
+        className="task-form-button"
+        id="cancel"
+        onClick={() => this.props.closeModal()}
+      >
+        Cancel
+      </button>
+    );
+
+    let editButton = (
+      <button
+        className="task-form-button"
+        id="edit"
+        onClick={() => this.setState({ price: null })}
+      >
+        Edit
+      </button>
+    );
+
+    let submitButton = (
+      <button
+        type="submit"
+        id="submit"
+        className="task-form-button"
+        onClick={() => this.formSubmit()}
+      >
+        Submit
+      </button>
+    );
+
+    let confirmButton = (
+      <input
+        type="submit"
+        id="confirm"
+        value={"Confirm"}
+        className="task-form-button"
+      />
+    );
+
+    let errorsDisplay = null;
+    if (this.state.errors !== null)
+      errorsDisplay = this.state.errors.map((err, i) => {
+        return <li key={i}>{err}</li>;
+      });
+    let matrixErrorsDisplay = null;
+    if (this.state.matrixError !== null) {
+      matrixErrorsDisplay = <li>{this.state.matrixError}</li>;
+    }
+
+    if (
+      this.state.price !== null &&
+      this.state.errors === null &&
+      this.props.form.pickup_loc !== null &&
+      this.props.form.dropoff_loc !== null &&
+      pickup_loc === this.props.form.pickup_loc.address &&
+      dropoff_loc === this.props.form.dropoff_loc.address
+    ) {
       submitButtonValue = "Confirm";
       priceDisplay = (
         <div className="price-display-box">
-          <p>Price Determined {price}</p>
-          <p>Based on Distance: {distance}</p>
-          <p>Based on Route Duration: {duration}</p>
-          <p>Based on Estimated Weight: {weight}</p>
-          <p>Start Location: {pickup_loc}</p>
-          <p>Dropoff Location: {dropoff_loc}</p>
-          <p>Conact number for Delivery: {drop_off_number}</p>
-          <p>{this.props.user.id}</p>
+          <div className="form-submit-details" id="form-price">
+            <p>Price Determined </p> <p>${price}</p>
+          </div>
+          <div className="form-submit-details" id="form-distance">
+            <p>Based on Distance: </p>{" "}
+            <p> {(distance * 0.00062137).toFixed(2)} mi.</p>
+          </div>
+          <div className="form-submit-details" id="form-duration">
+            <p>Based on Route Duration: </p>{" "}
+            <p>{Math.ceil(duration / 60)} Minutes</p>
+          </div>
+          <div className="form-submit-details" id="form-weight">
+            <p>Based on Estimated Weight: </p> <p>{weight} lbs.</p>
+          </div>
+          <div className="form-submit-details" id="form-start">
+            <p>Start Location: </p> <p> {pickup_loc}</p>
+          </div>
+          <div className="form-submit-details" id="form-end">
+            <p>Dropoff Location: </p> <p>{dropoff_loc}</p>
+          </div>
+          <div className="form-submit-details" id="form-contact">
+            <p>Delivery Contact:</p> <p> {drop_off_number}</p>
+          </div>
+          <div className="confirm-buttons">
+            {cancelButton}
+            {editButton}
+            {submitButton}
+          </div>
         </div>
       );
-    } else {
-      priceDisplay = null;
     }
-    return (
-      <div>
-        <h2>Place a Delivery here</h2>
-        <div className="task-form-container">
-          <form onSubmit={() => this.formSubmit()} className="task-form">
-            <br />
-            <input
-              type="tel"
-              pattern="\(([0-9]{3})\) [0-9]{3}-[0-9]{4}"
-              value={this.state.drop_off_number}
-              onChange={this.update("drop_off_number")}
-              placeholder="Recipient Phone Number"
-            />
-            <br />
-            <label>
+    if (!priceDisplay)
+      return (
+        <div>
+          <h2>Place a Delivery here</h2>
+          <div className="task-form-container">
+            <form onSubmit={() => this.formSubmit()} className="task-form">
+              <br />
               <input
-                type="number"
-                value={this.state.weight}
-                onChange={this.update("weight")}
-                min={1}
-                placeholder="Weight of Package in Pounds"
+                type="tel"
+                pattern="\(([0-9]{3})\) [0-9]{3}-[0-9]{4}"
+                value={this.state.drop_off_number}
+                onChange={this.update("drop_off_number")}
+                placeholder="Recipient Phone Number"
               />
-            </label>
-            <br />
-            <GapiAutoFillForm type="Origin" field="Pick Up Location" />
-            <br></br>
-            <GapiAutoFillForm type={"Destination"} field="Drop Off Location" />
-            <br></br>
-            {this.state.errors}
-            {this.state.matrixError}
-            {priceDisplay}
-            <input
-              type="submit"
-              value={submitButtonValue}
-              className="task-form-button"
-            />
-            <button
-              className="task-form-button"
-              onClick={() => this.props.closeModal()}
-            >
-              Cancel
-            </button>
-          </form>
+              <br />
+              <label>
+                <input
+                  type="number"
+                  value={this.state.weight}
+                  onChange={this.update("weight")}
+                  min={1}
+                  placeholder="Weight of Package in Pounds"
+                />
+              </label>
+              <br />
+              <GapiAutoFillForm type="Origin" field="Pick Up Location" />
+              <br></br>
+              <GapiAutoFillForm
+                type={"Destination"}
+                field="Drop Off Location"
+              />
+              <br></br>
+              <ul className="task-form-errors">
+                {errorsDisplay}
+                {this.state.matrixError}
+              </ul>
+              <div className="confirm-buttons">
+                {confirmButton}
+                {cancelButton}
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    );
+      );
+    else return priceDisplay;
   }
 }
 

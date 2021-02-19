@@ -29,7 +29,7 @@ class GapiAutoFillForm extends React.Component {
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
       .then((latLng) => {
-        console.log("Success", latLng);
+        // console.log("Success", latLng);
         if (this.props.type === "Origin") {
           this.setState({ address });
           this.props.originToState({ address, latLng });
