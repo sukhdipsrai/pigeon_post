@@ -2,9 +2,6 @@ import React from "react";
 import "../../stylesheets/sidebar.css";
 import { NavLink } from "react-router-dom";
 class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   handleClick(modal) {
     let that = this;
     return (e) => {
@@ -16,12 +13,11 @@ class Sidebar extends React.Component {
     };
   }
   render() {
-
     const activeButton = {
-            fontWeight: "bold",
-            backgroundColor: "maroon",
-            opacity: 1
-          }
+      fontWeight: "bold",
+      backgroundColor: "maroon",
+      opacity: 1,
+    };
 
     // debugger
     if (this.props.isloggedin) {
@@ -29,20 +25,33 @@ class Sidebar extends React.Component {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              <NavLink className="links" to="/dashboard"activeStyle={activeButton}>
-                <li> 
-                  Dashboard 
-
-                </li>
+              <NavLink
+                className="links"
+                to="/dashboard"
+                activeStyle={activeButton}
+              >
+                <li>Dashboard</li>
               </NavLink>
-              <NavLink className="links" to="/driver/deliveries" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/driver/deliveries"
+                activeStyle={activeButton}
+              >
                 <li> Open Delivieries </li>
               </NavLink>
-              <NavLink className="links" to="/driver/currentdelivery" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/driver/currentdelivery"
+                activeStyle={activeButton}
+              >
                 <li>Current Delivery</li>
               </NavLink>
-              <NavLink className="links" to="/driver/history" activeStyle={activeButton}>
-                <li>Past Packages</li>
+              <NavLink
+                className="links"
+                to="/driver/history"
+                activeStyle={activeButton}
+              >
+                <li>History</li>
               </NavLink>
             </ul>
           </div>
@@ -51,16 +60,32 @@ class Sidebar extends React.Component {
         return (
           <div className="sidebar">
             <ul className="sidebar-links">
-              <NavLink className="links" to="/dashboard" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/dashboard"
+                activeStyle={activeButton}
+              >
                 <li> Dashboard </li>
               </NavLink>
-              <NavLink className="links" to="/users/delivery/active" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/users/delivery/active"
+                activeStyle={activeButton}
+              >
                 <li> In Progress </li>
               </NavLink>
-              <NavLink className="links" to="/users/delivery/unclaimed" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/users/delivery/unclaimed"
+                activeStyle={activeButton}
+              >
                 <li> Unclaimed </li>
               </NavLink>
-              <NavLink className="links" to="/users/delivery/history" activeStyle={activeButton}>
+              <NavLink
+                className="links"
+                to="/users/delivery/history"
+                activeStyle={activeButton}
+              >
                 <li>History/Receipts</li>
               </NavLink>
               <button

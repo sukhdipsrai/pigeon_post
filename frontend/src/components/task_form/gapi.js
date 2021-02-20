@@ -33,7 +33,7 @@ class GapiAutoFillForm extends React.Component {
         if (this.props.type === "Origin") {
           this.setState({ address });
           this.props.originToState({ address, latLng });
-        } else if (this.props.type == "Destination") {
+        } else if (this.props.type === "Destination") {
           this.setState({ address });
           this.props.destinationToState({ address, latLng });
         }

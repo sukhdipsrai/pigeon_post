@@ -49,7 +49,7 @@ class Navbar extends React.Component {
       <div className="navbar">
         <div className="top">
           <Link to="/">
-            <img src={logowhite} />
+            <img alt="" src={logowhite} />
           </Link>
         </div>
       </div>

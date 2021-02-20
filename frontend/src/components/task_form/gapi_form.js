@@ -66,7 +66,6 @@ class GapiForm extends React.Component {
 
   handleSubmit() {
     let errors = [];
-    let that = this;
     const { pickup_loc, dropoff_loc } = this.props.form;
     const { weight, drop_off_number } = this.state;
     let addressBool = pickup_loc === null || dropoff_loc === null;
@@ -195,7 +194,6 @@ class GapiForm extends React.Component {
 
   render() {
     let priceDisplay = null;
-    let submitButtonValue = "Submit";
     const {
       pickup_loc,
       dropoff_loc,
@@ -203,8 +201,8 @@ class GapiForm extends React.Component {
       weight,
       distance,
       price,
-      status,
-      customer_id,
+      // status,
+      // customer_id,
       duration,
     } = this.state;
 
@@ -266,7 +264,6 @@ class GapiForm extends React.Component {
       pickup_loc === this.props.form.pickup_loc.address &&
       dropoff_loc === this.props.form.dropoff_loc.address
     ) {
-      submitButtonValue = "Confirm";
       priceDisplay = (
         <div className="price-display-box">
           <div className="form-submit-details" id="form-price">
@@ -334,7 +331,7 @@ class GapiForm extends React.Component {
               <br></br>
               <ul className="task-form-errors">
                 {errorsDisplay}
-                {this.state.matrixError}
+                {matrixErrorsDisplay}
               </ul>
               <div className="confirm-buttons">
                 {confirmButton}

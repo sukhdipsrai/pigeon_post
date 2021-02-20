@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import github from '../images/25231.png'
 
 export default class Footer extends React.Component {
@@ -7,7 +6,7 @@ export default class Footer extends React.Component {
         return (
             <div className="div-foot">
                 <ul className='account-link'>
-                    <li><a href="https://github.com/sukhdipsrai/pigeon_post"><img src= {github}/></a></li>
+                    <li><a href="https://github.com/sukhdipsrai/pigeon_post"><img alt= "" src= {github}/></a></li>
                 </ul>
                 <ul className='account-link'>Sukhdip Rai
                     <li><a href="https://github.com/sukhdipsrai">Github</a></li>

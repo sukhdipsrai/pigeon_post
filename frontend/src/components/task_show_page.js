@@ -43,10 +43,12 @@ class TaskShowPage extends React.Component {
     let deleteButton = null;
 
     try {
-      {
-        image = <img className="task-image" src={this.props.tasks.imageUrl} />;
-      }
-    } catch (e) {}
+      image = (
+        <img alt="" className="task-image" src={this.props.tasks.imageUrl} />
+      );
+    } catch (e) {
+      //TODO: Setup default image?
+    }
 
     if (this.props.currentUser.usertype === "Customer") {
       imageUpload = (
