@@ -24,7 +24,7 @@ class DeliveryTasksIndex extends React.Component {
               task={task}
             />
           );
-        }
+        } else return null;
       });
 
       return (
@@ -35,11 +35,7 @@ class DeliveryTasksIndex extends React.Component {
         </div>
       );
     } else {
-      return (
-        <div className="active-delivery-main">
-          
-        </div>
-      );
+      return <div className="active-delivery-main"></div>;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../stylesheets/navbar.css";
-import logoblack from "../../images/pigeonpostblack.png";
+// import logoblack from "../../images/pigeonpostblack.png";
 import logowhite from "../../images/pigeonpostwhite.png";
 
 import { Link } from "react-router-dom";
@@ -30,7 +30,7 @@ class Navbar extends React.Component {
       <div className="navbar-loggedin">
         <div className="top">
           <Link to="/dashboard">
-            <img src={logowhite} />
+            <img alt="" src={logowhite} />
           </Link>
 
           {/* <h1 className="header-logo">Pigeon Post</h1> */}
@@ -38,10 +38,10 @@ class Navbar extends React.Component {
         <div className="dropdown-holder">
           <h1>Welcome {this.props.currentUser.firstname}</h1>
           <button className="dropdown">
-            {this.props.currentUser.firstname}{" "}▼
-              <p className="header-button" onClick={this.handlelogout}>
-                Log Out
-              </p>
+            {this.props.currentUser.firstname} ▼
+            <p className="header-button" onClick={this.handlelogout}>
+              Log Out
+            </p>
           </button>
         </div>
       </div>

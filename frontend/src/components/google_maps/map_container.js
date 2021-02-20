@@ -1,7 +1,6 @@
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import React from "react";
-import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
-import { googlekey } from "../../config/keys";
+// import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import "../../stylesheets/dashboard.css";
 const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
 export class MapContainer extends React.Component {
@@ -9,15 +8,15 @@ export class MapContainer extends React.Component {
     super(props);
   }
 
-  addressToCord(address) {
-    geocodeByAddress(address)
-      .then((results) => getLatLng(results[0]))
-      .then((latLng) => {
-        // console.log("Success", latLng);
-        return latLng;
-      })
-      .catch((error) => console.error("Error", error));
-  }
+  // addressToCord(address) {
+  //   geocodeByAddress(address)
+  //     .then((results) => getLatLng(results[0]))
+  //     .then((latLng) => {
+  //       // console.log("Success", latLng);
+  //       return latLng;
+  //     })
+  //     .catch((error) => console.error("Error", error));
+  // }
 
   componentDidMount() {}
   render() {

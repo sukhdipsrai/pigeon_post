@@ -9,6 +9,7 @@ import { closeModal } from "../../actions/modal_actions";
 
 class GapiForm extends React.Component {
   constructor(props) {
+    console.log("gapi initialized");
     super(props);
     this.state = {
       errors: null,
@@ -169,7 +170,7 @@ class GapiForm extends React.Component {
         Key: "1613614824990.jpg",
         Expires: 604800,
       },
-      
+
       imageUrl:
         "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613614824990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210218%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T022025Z&X-Amz-Expires=604800&X-Amz-Signature=d2e55c99cab69610e06439a6323b4dab7dc42606f3d5e5f5239f68e8a89bc6cb&X-Amz-SignedHeaders=host",
     };

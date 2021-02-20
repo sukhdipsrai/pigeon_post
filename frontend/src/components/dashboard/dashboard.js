@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
       let key = "dropoff_loc";
       if (this.props.currentUser === "Driver") key = "pickup_loc";
       // debugger;
-      this.props.tasks.map((task) => {
+      this.props.tasks.forEach((task, i) => {
         if (task.status !== "Finished")
           data.push({ id: task._id, loc: task[key], status: task.status });
       });

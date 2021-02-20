@@ -27,6 +27,8 @@ class CurrentDeliveryItem extends React.Component {
   handleClick() {
     // debugger
     // console.log(this.state.currentTask.status);
+    // this.setState({})
+    debugger;
     this.state.currentTask.status = "Finished";
     this.state.currentTask.driver_id = this.props.driverId;
     // console.log(this.state.currentTask.status);
