@@ -9,6 +9,7 @@ import { closeModal } from "../../actions/modal_actions";
 
 class GapiForm extends React.Component {
   constructor(props) {
+    console.log("gapi initialized");
     super(props);
     this.state = {
       errors: null,
@@ -23,6 +24,7 @@ class GapiForm extends React.Component {
       apiCall: null,
       duration: "",
       matrixError: null,
+      isLoading: true,
     };
     this.getDist = this.getDist.bind(this);
     this.calcPrice = this.calcPrice.bind(this);
@@ -30,6 +32,39 @@ class GapiForm extends React.Component {
   componentWillUnmount() {
     // TODO : if see the old address when canceling the form is undesirable, uncomment line below
     this.props.resetTaskForm();
+  }
+
+  componentDidMount() {
+    // function googleApiLoaded(src) {
+    //   const apiString = "https://maps.googleapis.com/maps/api/js";
+    //   return document.querySelector('script[src*="' + apiString + '"]')
+    //     ? true
+    //     : false;
+    // }
+
+    // function libraryLoad() {
+    //   // debugger;
+    //   const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
+    //   if (document.getElementById("gapi-import") === null) {
+    //     let script = document.createElement("script");
+    //     script.id = "gapi-import";
+    //     script.type = "text/javascript";
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
+    //     document.head.append(script);
+    //   }
+    // }
+    // if (!googleApiLoaded()) libraryLoad();
+    // else this.setState({ isLoading: false });
+
+    // prevents rendering of component which will creash if window.google is not loaded from API
+    const nextCheck = () => {
+      setTimeout(() => {
+        if (window.google === null) {
+          nextCheck();
+        } else this.setState({ isLoading: false });
+      }, 1000);
+    };
+    nextCheck();
   }
 
   getDist(ori, dist) {
@@ -65,7 +100,6 @@ class GapiForm extends React.Component {
 
   handleSubmit() {
     let errors = [];
-    let that = this;
     const { pickup_loc, dropoff_loc } = this.props.form;
     const { weight, drop_off_number } = this.state;
     let addressBool = pickup_loc === null || dropoff_loc === null;
@@ -169,7 +203,7 @@ class GapiForm extends React.Component {
         Key: "1613614824990.jpg",
         Expires: 604800,
       },
-      
+
       imageUrl:
         "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613614824990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210218%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T022025Z&X-Amz-Expires=604800&X-Amz-Signature=d2e55c99cab69610e06439a6323b4dab7dc42606f3d5e5f5239f68e8a89bc6cb&X-Amz-SignedHeaders=host",
     };
@@ -194,7 +228,6 @@ class GapiForm extends React.Component {
 
   render() {
     let priceDisplay = null;
-    let submitButtonValue = "Submit";
     const {
       pickup_loc,
       dropoff_loc,
@@ -202,8 +235,8 @@ class GapiForm extends React.Component {
       weight,
       distance,
       price,
-      status,
-      customer_id,
+      // status,
+      // customer_id,
       duration,
     } = this.state;
 
@@ -265,7 +298,6 @@ class GapiForm extends React.Component {
       pickup_loc === this.props.form.pickup_loc.address &&
       dropoff_loc === this.props.form.dropoff_loc.address
     ) {
-      submitButtonValue = "Confirm";
       priceDisplay = (
         <div className="price-display-box">
           <div className="form-submit-details" id="form-price">
@@ -299,6 +331,9 @@ class GapiForm extends React.Component {
         </div>
       );
     }
+    // TODO: add an animation or something fancier
+    if (this.state.isLoading) return <div>Loading...</div>;
+
     if (!priceDisplay)
       return (
         <div>
@@ -333,7 +368,7 @@ class GapiForm extends React.Component {
               <br></br>
               <ul className="task-form-errors">
                 {errorsDisplay}
-                {this.state.matrixError}
+                {matrixErrorsDisplay}
               </ul>
               <div className="confirm-buttons">
                 {confirmButton}

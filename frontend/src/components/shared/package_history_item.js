@@ -48,7 +48,7 @@ class PackageHistoryItem extends React.Component {
         <br />
         <br />
         <div className="status">
-          <img className="active-small-logo" src={smallpigeon} />
+          <img alt="" className="active-small-logo" src={smallpigeon} />
         </div>
         <div className="inactive-card" id={this.props.task._id + "text"}>
           <div id="more">

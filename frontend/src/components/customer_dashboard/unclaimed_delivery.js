@@ -2,17 +2,13 @@ import React from "react";
 import UnclaimedDeliveryItem from "./unclaimed_delivery_item";
 import "../../stylesheets/unclaimed_delivery.css";
 class UnclaimedDelivery extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchUserTasks(this.props.currentUser.id);
   }
 
   render() {
     if (this.props.tasks.length > 0) {
-      let tasklist = this.props.tasks.map((task) => {
+      let tasklist = this.props.tasks.map((task, index) => {
         if (task.driver_id === "null") {
           return (
             <UnclaimedDeliveryItem
@@ -20,9 +16,10 @@ class UnclaimedDelivery extends React.Component {
               task={task}
               deleteTask={this.props.deleteTask}
               fetchUserTasks={this.props.fetchUserTasks}
+              key={index}
             />
           );
-        }
+        } else return null;
       });
 
       return (

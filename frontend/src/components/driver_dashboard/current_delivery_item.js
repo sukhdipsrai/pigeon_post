@@ -27,8 +27,10 @@ class CurrentDeliveryItem extends React.Component {
   handleClick() {
     // debugger
     // console.log(this.state.currentTask.status);
-    this.state.currentTask.status = "Finished";
-    this.state.currentTask.driver_id = this.props.driverId;
+    let currentTaskNew = this.state.currentTask;
+    currentTaskNew.status = "Finished";
+    currentTaskNew.driver_id = this.props.driverId;
+    this.setState({ currentTask: currentTaskNew });
     // console.log(this.state.currentTask.status);
     this.props.completeTask(this.state.currentTask).then();
     this.completed = true;
@@ -55,7 +57,7 @@ class CurrentDeliveryItem extends React.Component {
         <h1>Status: {this.state.currentTask.status}</h1>
         <br />
 
-        <img className="active-small-logo" src={smallpigeon} />
+        <img alt="" className="active-small-logo" src={smallpigeon} />
         <div className="status">
           {/* <button onClick={() => this.myfunction()}>Show more</button> */}
         </div>
@@ -84,7 +86,9 @@ class CurrentDeliveryItem extends React.Component {
           </div>
           <br />
         </div>
-        <button onClick={() => this.handleClick()}>Mission Complete</button>
+        <button onClick={() => this.handleClick()}>
+          Mark Post as Deliverd
+        </button>
         {/* </div> */}
       </div>
     );
