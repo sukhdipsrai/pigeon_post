@@ -332,7 +332,8 @@ class GapiForm extends React.Component {
         </div>
       );
     }
-    if (this.state.isLoading) return <div>Google is fucking loading</div>;
+    // TODO: add an animation or something fancier
+    if (this.state.isLoading) return <div>Loading...</div>;
 
     if (!priceDisplay)
       return (
