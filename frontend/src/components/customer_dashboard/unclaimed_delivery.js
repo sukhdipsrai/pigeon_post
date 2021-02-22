@@ -8,7 +8,7 @@ class UnclaimedDelivery extends React.Component {
 
   render() {
     if (this.props.tasks.length > 0) {
-      let tasklist = this.props.tasks.map((task) => {
+      let tasklist = this.props.tasks.map((task, index) => {
         if (task.driver_id === "null") {
           return (
             <UnclaimedDeliveryItem
@@ -16,6 +16,7 @@ class UnclaimedDelivery extends React.Component {
               task={task}
               deleteTask={this.props.deleteTask}
               fetchUserTasks={this.props.fetchUserTasks}
+              key={index}
             />
           );
         } else return null;

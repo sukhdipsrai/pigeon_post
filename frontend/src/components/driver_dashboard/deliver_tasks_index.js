@@ -10,7 +10,7 @@ class DeliveryTasksIndex extends React.Component {
   render() {
     // debugger
     if (this.props.tasks.length > 0) {
-      let tasklist = this.props.tasks.map((task) => {
+      let tasklist = this.props.tasks.map((task, index) => {
         if (task.driver_id === "null") {
           return (
             <DeliveryIndexItem
@@ -18,6 +18,7 @@ class DeliveryTasksIndex extends React.Component {
               claimTask={this.props.claimTask}
               fetchTasks={this.props.fetchTasks}
               task={task}
+              key={index}
             />
           );
         } else return null;

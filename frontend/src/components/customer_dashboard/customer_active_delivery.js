@@ -8,9 +8,9 @@ class CustomerActiveDelivery extends React.Component {
 
   render() {
     if (this.props.tasks.length > 0) {
-      let activeTasks = this.props.tasks.map((task) => {
+      let activeTasks = this.props.tasks.map((task, index) => {
         if (task.status === "In Process") {
-          return <ActiveTaskItem task={task} />;
+          return <ActiveTaskItem task={task} key={index} />;
         } else return null;
       });
 

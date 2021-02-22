@@ -106,11 +106,13 @@ input.task-form-button:hover {
 }
 
 .task-form-errors {
-    color: maroon;
+    color: white;
     font-weight: 900;
+    font-size: 13pt;
     list-style-type: square;
     margin-left: 30px;
     letter-spacing: 1pt;
+    background-color: rgba(255, 255, 0, 0.582);
 }
 
 .price-display-box {
