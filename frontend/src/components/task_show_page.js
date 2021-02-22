@@ -5,7 +5,7 @@ import MapContainer from "./google_maps/map_container";
 
 class TaskShowPage extends React.Component {
   constructor(props) {
-    // debugger;
+    debugger;
     super(props);
     this.handleImageUpload = this.handleImageUpload.bind(this);
     this.imageSelect = this.imageSelect.bind(this);

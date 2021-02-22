@@ -23,6 +23,10 @@ class UnclaimedDeliveryItem extends React.Component {
     if (this.deleted) this.props.fetchUserTasks(this.props.userId);
   }
 
+  componentDidMount(){
+    this.props.fetchUserTasks(this.props.userId);
+  }
+
   render() {
     return (
       <div className="unclaimed-main">

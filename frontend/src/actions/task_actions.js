@@ -55,7 +55,7 @@ export const fetchDriverTasks = (id) => (dispatch) => {
 
 export const createTask = (task) => (dispatch) => {
   return TaskUtil.writeTask(task)
-      .then((tasks) => dispatch(receiveUserTasks(task.customer_id)))
+    .then((task) => dispatch(receiveNewTask(task)))
     .catch((err) => console.log(err));
 };
 
