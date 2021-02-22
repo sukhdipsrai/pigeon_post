@@ -16,6 +16,17 @@ class Dashboard extends React.Component {
     this.setState({ show: newState });
   }
 
+  componentWillUnmount() {
+    // const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
+    // if (document.getElementById("gapi-import") === null) {
+    //   let script = document.createElement("script");
+    //   script.id = "gapi-import";
+    //   script.type = "text/javascript";
+    //   script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
+    //   document.head.append(script);
+    // }
+  }
+
   componentDidMount() {
     if (this.props.currentUser.usertype === "Driver") this.props.fetchTasks();
     else this.props.fetchUserTasks(this.props.currentUser.id);

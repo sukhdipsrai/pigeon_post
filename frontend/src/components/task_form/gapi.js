@@ -3,8 +3,11 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+
 import { connect } from "react-redux";
 import * as gActions from "../../actions/gapi_actions";
+const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
 
 class GapiAutoFillForm extends React.Component {
   constructor(props) {
@@ -40,7 +43,20 @@ class GapiAutoFillForm extends React.Component {
       })
       .catch((error) => console.error("Error", error));
   };
-  componentDidMount() {}
+  componentDidMount() {
+    // function libraryLoad() {
+    //   // debugger;
+    //   const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
+    //   if (document.getElementById("gapi-import") === null) {
+    //     let script = document.createElement("script");
+    //     script.id = "gapi-import";
+    //     script.type = "text/javascript";
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
+    //     document.head.append(script);
+    //   }
+    // }
+    // libraryLoad();
+  }
 
   render() {
     return (
@@ -110,4 +126,7 @@ const mdtp = (dispatch) => {
   };
 };
 
-export default connect(mstp, mdtp)(GapiAutoFillForm);
+// export default connect(mstp, mdtp)(GapiAutoFillForm);
+export default GoogleApiWrapper({
+  apiKey: GOOGLE_API_KEY,
+})(connect(mstp, mdtp)(GapiAutoFillForm));

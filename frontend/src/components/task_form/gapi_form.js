@@ -23,6 +23,7 @@ class GapiForm extends React.Component {
       apiCall: null,
       duration: "",
       matrixError: null,
+      isLoading: true,
     };
     this.getDist = this.getDist.bind(this);
     this.calcPrice = this.calcPrice.bind(this);
@@ -30,6 +31,38 @@ class GapiForm extends React.Component {
   componentWillUnmount() {
     // TODO : if see the old address when canceling the form is undesirable, uncomment line below
     this.props.resetTaskForm();
+  }
+
+  componentDidMount() {
+    function googleApiLoaded(src) {
+      const apiString = "https://maps.googleapis.com/maps/api/js";
+      return document.querySelector('script[src*="' + apiString + '"]')
+        ? true
+        : false;
+    }
+
+    function libraryLoad() {
+      // debugger;
+      const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
+      if (document.getElementById("gapi-import") === null) {
+        let script = document.createElement("script");
+        script.id = "gapi-import";
+        script.type = "text/javascript";
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
+        document.head.append(script);
+      }
+    }
+    // if (!googleApiLoaded()) libraryLoad();
+    // else this.setState({ isLoading: false });
+
+    const nextCheck = () => {
+      setTimeout(() => {
+        if (window.google === null) {
+          nextCheck();
+        } else this.setState({ isLoading: false });
+      }, 1000);
+    };
+    nextCheck();
   }
 
   getDist(ori, dist) {
@@ -169,7 +202,7 @@ class GapiForm extends React.Component {
         Key: "1613614824990.jpg",
         Expires: 604800,
       },
-      
+
       imageUrl:
         "https://pigeon-task-package.s3.us-east-2.amazonaws.com/1613614824990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJURXHXMMONQFH73A%2F20210218%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210218T022025Z&X-Amz-Expires=604800&X-Amz-Signature=d2e55c99cab69610e06439a6323b4dab7dc42606f3d5e5f5239f68e8a89bc6cb&X-Amz-SignedHeaders=host",
     };
@@ -299,6 +332,8 @@ class GapiForm extends React.Component {
         </div>
       );
     }
+    if (this.state.isLoading) return <div>Google is fucking loading</div>;
+
     if (!priceDisplay)
       return (
         <div>
