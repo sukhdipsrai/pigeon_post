@@ -3,7 +3,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { GoogleApiWrapper } from "google-maps-react";
 
 import { connect } from "react-redux";
 import * as gActions from "../../actions/gapi_actions";
@@ -45,7 +45,7 @@ class GapiAutoFillForm extends React.Component {
   };
   componentDidMount() {
     // function libraryLoad() {
-    //   // debugger;
+    //   debugger;
     //   const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
     //   if (document.getElementById("gapi-import") === null) {
     //     let script = document.createElement("script");

@@ -8,17 +8,17 @@ export class MapContainer extends React.Component {
     super(props);
   }
 
+  // *** used for testing only
   // addressToCord(address) {
   //   geocodeByAddress(address)
   //     .then((results) => getLatLng(results[0]))
   //     .then((latLng) => {
-  //       // console.log("Success", latLng);
+  //       console.log("Success", latLng);
   //       return latLng;
   //     })
   //     .catch((error) => console.error("Error", error));
   // }
 
-  componentWillMount() {}
   render() {
     const style = {
       width: "100%",

@@ -84,7 +84,9 @@ class CurrentDeliveryItem extends React.Component {
           </div>
           <br />
         </div>
-        <button onClick={() => this.handleClick()}>Mission Complete</button>
+        <button onClick={() => this.handleClick()}>
+          Mark Post as Deliverd
+        </button>
         {/* </div> */}
       </div>
     );

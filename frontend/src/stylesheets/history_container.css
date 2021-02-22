@@ -45,4 +45,21 @@
     margin: 10px;
     background-color: rgba(0, 128, 0, 0.349);
     z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    transition: .3s;
+}
+
+#more {
+    display: block;
+    padding-bottom: 300px;
+}
+
+#more>.text-div {
+    padding-top: 15px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    height: 10px;
 }

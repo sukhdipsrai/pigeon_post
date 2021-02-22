@@ -55,6 +55,7 @@ class GapiForm extends React.Component {
     // if (!googleApiLoaded()) libraryLoad();
     // else this.setState({ isLoading: false });
 
+    // prevents rendering of component which will creash if window.google is not loaded from API
     const nextCheck = () => {
       setTimeout(() => {
         if (window.google === null) {

@@ -1,21 +1,14 @@
+// import { connect } from "react-redux";
+// import CustomerHistory from "./customer_history";
 
+// const mSTP = (state, ownProps) => {
+//   return {};
+// };
 
+// const mDTP = (dispatch) => {
+//   return {};
+// };
 
-import { connect } from 'react-redux'
-import CustomerHistory from './customer_history'
+// export default connect(mSTP, mDTP)(CustomerHistory);
 
-const mSTP = (state, ownProps) => {
-    return {
-
-    }
-}
-
-const mDTP = dispatch => {
-    return {
-
-    }
-}
-
-
-export default connect(mSTP, mDTP)(CustomerHistory)
-
+// File Marked For Deletion

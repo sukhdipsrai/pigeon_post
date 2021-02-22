@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 
+  // ** Loading the API, not used because
   // const GOOGLE_API_KEY = require("./config/keys").googlekeyS;
-
   // if (document.getElementById("gapi-import") === null) {
   //   let script = document.createElement("script");
   //   script.id = "gapi-import";
