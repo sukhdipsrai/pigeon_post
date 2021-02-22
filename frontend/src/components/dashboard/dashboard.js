@@ -42,6 +42,7 @@ class Dashboard extends React.Component {
       this.props.tasks.map((task) => {
         if (task.status !== "Finished")
           data.push({ id: task._id, loc: task[key], status: task.status });
+        else return null;
       });
       if (data.length > 5) smallData = data.slice(0, 5);
     } catch {
