@@ -37,6 +37,7 @@
 .splashpage-main {
     background-color: silver;
     width: 100%;
+    min-width: 500px;
     height: 70vh;
     display: flex;
     align-items: center;
@@ -77,6 +78,12 @@
 .splashpage-right-side img {
     height: 600px;
     margin-top: -50px;
+    /* width: 50vw;
+    height: 50vw; */
+    max-width: 55vw;
+    max-height: 55vw;
+    /* background-color: red; */
+    align-self: center;
 }
 
 .div-foot {

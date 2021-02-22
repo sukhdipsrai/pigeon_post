@@ -1,6 +1,8 @@
 .navbar {
     /* margin-top: 40px; */
     width: 80%;
+    max-width: 100vw;
+    min-width: 700px;
     /* min-width: 750px; */
     background-color: #4a5050;
     height: 130px;

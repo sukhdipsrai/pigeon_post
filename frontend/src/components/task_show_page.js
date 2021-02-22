@@ -8,6 +8,10 @@ class TaskShowPage extends React.Component {
     // debugger;
     super(props);
     this.handleImageUpload = this.handleImageUpload.bind(this);
+    this.imageSelect = this.imageSelect.bind(this);
+    this.state = {
+      filePath: "",
+    };
   }
 
   handleImageUpload = (event) => {
@@ -32,8 +36,29 @@ class TaskShowPage extends React.Component {
   };
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
-
+    this.imageSelect();
     // debugger;
+  }
+
+  imageSelect() {
+    debugger;
+    const nextCheck = () => {
+      setTimeout(() => {
+        const val = document.getElementsByClassName("inputbutton")[0];
+        if (
+          val !== null &&
+          val !== undefined &&
+          val.files[0] !== undefined &&
+          val.files[0].name !== this.state.filePath
+        ) {
+          this.setState({
+            filePath: val.files[0].name,
+          });
+        }
+        if (this.props.history.location.pathname.includes("tasks")) nextCheck();
+      }, 500);
+    };
+    nextCheck();
   }
 
   render() {
@@ -49,16 +74,27 @@ class TaskShowPage extends React.Component {
     } catch (e) {
       //TODO: Setup default image?
     }
+    let chooseFileButton = null;
+    this.state.filePath === ""
+      ? (chooseFileButton = <div>Choose File</div>)
+      : (chooseFileButton = (
+          <div>
+            <p>Choose File</p> <p>{this.state.filePath} </p>
+          </div>
+        ));
 
     if (this.props.currentUser.usertype === "Customer") {
       imageUpload = (
         <div className="image-upload">
           <form
-            // className="image-upload"
+            className="image-upload-form"
             type="form-data"
             onSubmit={(e) => this.handleImageUpload(e)}
           >
-            <input className="inputbutton" type="file" />
+            <div className="inputButtonText">
+              {chooseFileButton}
+              <input className="inputbutton" type="file"></input>
+            </div>
             <button>Upload Image</button>
           </form>
         </div>

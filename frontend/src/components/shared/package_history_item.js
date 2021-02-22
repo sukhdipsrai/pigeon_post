@@ -28,6 +28,11 @@ class PackageHistoryItem extends React.Component {
   }
 
   render() {
+    let dateStart = new Date(this.props.task.date_posted);
+    const dateStartAP = dateStart.getHours() >= 12 ? "PM" : "AM";
+    let dateFinish = new Date(this.props.task.updatedAt);
+    const dateFinishAP = dateFinish.getHours() >= 12 ? "PM" : "AM";
+    debugger;
     return (
       <div
         onClick={() => this.myfunction()}
@@ -74,9 +79,31 @@ class PackageHistoryItem extends React.Component {
               {/* <span>payout</span> */}
               <br />
               <br />
-              date posted: {this.props.task.date_posted}
+              date posted:{" "}
+              {dateStart.getFullYear() +
+                "-" +
+                (dateStart.getMonth() + 1) +
+                "-" +
+                dateStart.getDate() +
+                " - " +
+                (dateStart.getHours() % 12) +
+                ":" +
+                dateStart.getMinutes() +
+                " " +
+                dateStartAP}
               <br />
-              date completed: {this.props.task.updatedAt}
+              date completed:{" "}
+              {dateFinish.getFullYear() +
+                "-" +
+                (dateFinish.getMonth() + 1) +
+                "-" +
+                dateFinish.getDate() +
+                " - " +
+                (dateFinish.getHours() % 12) +
+                ":" +
+                dateFinish.getMinutes() +
+                " " +
+                dateFinishAP}
               {/* </p> */}
             </div>
           </div>

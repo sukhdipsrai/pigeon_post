@@ -61,26 +61,63 @@
     padding: 5px;
     display: flex;
     /* background: lightcoral; */
+    /* background-color: white; */
     justify-content: space-between;
 }
+
 .inputbutton {
-    /* opacity: 0; */
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+    /* position: absolute; */
+    grid-column: 1;
+    grid-row: 1;
 }
+
+.inputButtonText {
+    color: white;
+    justify-self: center;
+    user-select: none;
+    /* Standard */
+    z-index: 0;
+    display: grid
+    /* display: block; */
+}
+
+.inputButtonText div {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 15px;
+    font-size: "Arial";
+}
+
 .task-show-buttons button {
     border: none;
     padding: 5px;
-    min-width: 300px;
-    color:white;
+    min-width: 200px;
+    /* width: 300px; */
+    color: white;
     background: darkslateblue;
-}
-.image-upload {
-    background-color: pink;
+    cursor: pointer;
 }
 
-.image-upload input{
+.image-upload-form {
+    background-color: darkslateblue;
+    z-index: -1;
+    text-align: center;
+    cursor: pointer;
     color: white;
-    background-color:darkslateblue;
+}
+
+input#file-upload-button {
+    cursor: pointer;
+}
+
+.image-upload input {
+    color: white;
+    background-color: darkslateblue;
     border-bottom: 1px solid black;
+    z-index: 1;
 }
 
 /* .image-upload button {
@@ -90,9 +127,9 @@
 /* .delete-button button {
     width: 200px;
 } */
+
 .deletebutton {
     background-color: navy;
-    
     /* padding: 5px; */
     height: 100%;
     /* width: 70%; */
@@ -111,9 +148,11 @@
     height: 50%;
     /* padding: 0 3px; */
 }
+
 /* .task-image{
     height: 100%;
 } */
+
 .task-map {
     position: relative;
     background-color: brown;
@@ -125,7 +164,7 @@
 
 .info-section {
     /* background-color: khaki; */
-    display:flex;
+    display: flex;
     height: 47%;
     flex-direction: column;
     justify-content: space-between;
@@ -169,23 +208,20 @@
     margin-top: 5px;
 }
 
-@media  (max-width: 1250px) {
+@media (max-width: 1250px) {
     .task-holder {
         /* background-color: darkslateblue; */
         flex-direction: column;
         height: 100%;
         min-height: 600px;
     }
-
     .taskshow-main {
         height: 100%;
     }
-
     .task-show-info {
         width: 100%;
     }
-
-    .directions{
+    .directions {
         height: auto;
         /* background-color: pink; */
     }

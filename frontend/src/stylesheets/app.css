@@ -58,7 +58,8 @@ table {
   margin: 0;
   width: 80%;
   max-width: 100vw;
-  max-height: 100vh;
+  min-width: 700px;
+  min-height: 500px;
   /* background-color: seagreen; */
   display: flex;
   justify-content: center;
