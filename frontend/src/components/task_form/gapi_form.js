@@ -35,24 +35,24 @@ class GapiForm extends React.Component {
   }
 
   componentDidMount() {
-    function googleApiLoaded(src) {
-      const apiString = "https://maps.googleapis.com/maps/api/js";
-      return document.querySelector('script[src*="' + apiString + '"]')
-        ? true
-        : false;
-    }
+    // function googleApiLoaded(src) {
+    //   const apiString = "https://maps.googleapis.com/maps/api/js";
+    //   return document.querySelector('script[src*="' + apiString + '"]')
+    //     ? true
+    //     : false;
+    // }
 
-    function libraryLoad() {
-      // debugger;
-      const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
-      if (document.getElementById("gapi-import") === null) {
-        let script = document.createElement("script");
-        script.id = "gapi-import";
-        script.type = "text/javascript";
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
-        document.head.append(script);
-      }
-    }
+    // function libraryLoad() {
+    //   // debugger;
+    //   const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
+    //   if (document.getElementById("gapi-import") === null) {
+    //     let script = document.createElement("script");
+    //     script.id = "gapi-import";
+    //     script.type = "text/javascript";
+    //     script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
+    //     document.head.append(script);
+    //   }
+    // }
     // if (!googleApiLoaded()) libraryLoad();
     // else this.setState({ isLoading: false });
 
