@@ -15,8 +15,10 @@ class DeliveryIndexItem extends React.Component {
   handleClick() {
     // debugger
     // console.log(this.state.currentTask.status);
-    this.state.currentTask.status = "In Process";
-    this.state.currentTask.driver_id = this.props.driverId;
+    let currentTaskNew = this.state.currentTask;
+    currentTaskNew.status = "In Process";
+    currentTaskNew.driver_id = this.props.driverId;
+    this.setState({ currentTask: currentTaskNew });
     // console.log(this.state.currentTask.status);
     this.props.claimTask(this.state.currentTask);
     this.accepted = true;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../stylesheets/splashpage.css";
-import Footer from "./foot";
 import splashpaper from "../images/splash-test.png";
 
 // import '../stylesheets/splashpage.css'
@@ -34,7 +33,7 @@ class SplashPage extends React.Component {
             </div>
           </div>
           <div className="splashpage-right-side">
-            <img src={splashpaper} />
+            <img alt="" src={splashpaper} />
           </div>
         </div>
         {/* <Footer/> */}

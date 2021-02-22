@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ** Loading the API, not used because
   // const GOOGLE_API_KEY = require("./config/keys").googlekeyS;
+
   // if (document.getElementById("gapi-import") === null) {
   //   let script = document.createElement("script");
   //   script.id = "gapi-import";

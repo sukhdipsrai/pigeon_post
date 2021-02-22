@@ -1,13 +1,13 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import {
+  Map,
+  /*InfoWindow,*/ Marker,
+  GoogleApiWrapper,
+} from "google-maps-react";
 import React from "react";
 // import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import "../../stylesheets/dashboard.css";
 const GOOGLE_API_KEY = require("../../config/keys").googlekeyS;
 export class MapContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   // *** used for testing only
   // addressToCord(address) {
   //   geocodeByAddress(address)

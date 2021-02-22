@@ -2,10 +2,6 @@ import React from "react";
 import UnclaimedDeliveryItem from "./unclaimed_delivery_item";
 import "../../stylesheets/unclaimed_delivery.css";
 class UnclaimedDelivery extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchUserTasks(this.props.currentUser.id);
   }
@@ -22,7 +18,7 @@ class UnclaimedDelivery extends React.Component {
               fetchUserTasks={this.props.fetchUserTasks}
             />
           );
-        }
+        } else return null;
       });
 
       return (

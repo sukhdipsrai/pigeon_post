@@ -6,12 +6,6 @@ import {
   RECEIVE_NEW_TASK,
 } from "../actions/task_actions";
 
-const defaultState = {
-  all: {},
-  user: {},
-  new: undefined,
-};
-
 const TasksReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
