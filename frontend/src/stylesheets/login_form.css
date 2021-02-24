@@ -24,6 +24,7 @@
     background-color: #4a5050;
     border-radius: 15px;
     padding-top: 15px;
+    min-height: 300px;
     /* width: 500px;
     height: 100%; */
     display: flex;

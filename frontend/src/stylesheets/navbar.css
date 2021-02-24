@@ -17,7 +17,7 @@
 .navbar-loggedin {
     /* margin-top: 40px; */
     width: 80%;
-    /* min-width: 750px; */
+    min-width: 700px;
     background-color: #4a5050;
     height: 130px;
     display: flex;
@@ -40,7 +40,7 @@
 }
 
 .dropdown-holder {
-    width: 25%;
+    width: 30vw;
     height: 50%;
     /* background-color: rebeccapurple; */
     display: flex;
