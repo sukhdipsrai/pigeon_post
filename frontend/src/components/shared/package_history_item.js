@@ -32,7 +32,7 @@ class PackageHistoryItem extends React.Component {
     const dateStartAP = dateStart.getHours() >= 12 ? "PM" : "AM";
     let dateFinish = new Date(this.props.task.updatedAt);
     const dateFinishAP = dateFinish.getHours() >= 12 ? "PM" : "AM";
-    debugger;
+    // debugger;
     return (
       <div
         onClick={() => this.myfunction()}

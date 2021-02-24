@@ -25,7 +25,7 @@ const TasksReducer = (oldState = {}, action) => {
       arrayState.push(action.task.data);
       return arrayState;
     case REMOVE_TASK:
-      debugger
+      // debugger
       delete newState[action.taskId];
       return newState;
     default:

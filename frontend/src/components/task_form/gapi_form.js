@@ -9,7 +9,7 @@ import { closeModal } from "../../actions/modal_actions";
 
 class GapiForm extends React.Component {
   constructor(props) {
-    console.log("gapi initialized");
+    // console.log("gapi initialized");
     super(props);
     this.state = {
       errors: null,
