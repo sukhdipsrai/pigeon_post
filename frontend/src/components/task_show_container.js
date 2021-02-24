@@ -4,9 +4,17 @@ import { fetchTask, updateTask, deleteTask } from "../actions/task_actions";
 const mSTP = (state, ownProps) => {
   // debugger
   let taskId = ownProps.match.params.taskId;
+  let tasks = {};
+  let arr = Object.values(state.entities.tasks)
+    arr.forEach(obj => {
+      if(obj['_id'] === taskId){
+        tasks = obj
+      }
+    });
+
   return {
     taskId,
-    tasks: Object.values(state.entities.tasks)[0],
+    tasks: tasks,
     currentUser: Object.values(state.entities.user)[0],
   };
 };

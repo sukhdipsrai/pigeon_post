@@ -34,6 +34,11 @@ class TaskShowPage extends React.Component {
       alert("Select an image first.");
     }
   };
+
+  // componentWillMount(){
+  //   this.props.fetchTask(this.props.taskId);
+
+  // }
   componentDidMount() {
     this.props.fetchTask(this.props.taskId);
     this.imageSelect();
@@ -62,6 +67,7 @@ class TaskShowPage extends React.Component {
   }
 
   render() {
+    // debugger
     let imageUpload = null;
     let image = null;
 
