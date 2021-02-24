@@ -67,7 +67,7 @@ class TaskShowPage extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     let imageUpload = null;
     let image = null;
 
