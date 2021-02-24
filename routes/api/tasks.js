@@ -66,7 +66,13 @@ router.post('/create',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-
+        var promise = s3.getSignedUrlPromise('getObject', {
+            Bucket: 'pigeon-task-package',
+            Key: '1613521743984.jpg',
+            Expires: 604800
+        }).then(function (url) {
+                req.body.imageUrl = url;
+            })
         const newTask = new Task({
             pickup_loc: req.body.pickup_loc,
             dropoff_loc: req.body.dropoff_loc,
