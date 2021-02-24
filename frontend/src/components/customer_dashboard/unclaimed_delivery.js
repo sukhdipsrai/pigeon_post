@@ -9,7 +9,7 @@ class UnclaimedDelivery extends React.Component {
   render() {
     if (this.props.tasks.length > 0) {
       let tasklist = this.props.tasks.map((task, index) => {
-        if (task.driver_id === "null") {
+        if (task.driver_id === "null" && task.status === "unfinished") {
           return (
             <UnclaimedDeliveryItem
               userId={this.props.currentUser.id}
