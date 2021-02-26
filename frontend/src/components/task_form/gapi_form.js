@@ -201,7 +201,7 @@ class GapiForm extends React.Component {
       api: {
         Bucket: "pigeon-task-package",
         Key: '1613521743984.jpg',
-        Expires: 604800,
+        Expires: 3600,
       },
 
       imageUrl:

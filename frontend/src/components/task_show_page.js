@@ -61,7 +61,7 @@ class TaskShowPage extends React.Component {
           });
         }
         if (this.props.history.location.pathname.includes("tasks")) nextCheck();
-      }, 500);
+      }, 50);
     };
     nextCheck();
   }

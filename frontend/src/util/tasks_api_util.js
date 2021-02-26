@@ -6,7 +6,6 @@ export const getTasks = () => {
 }
 
 export const getUserTasks = id => {
-    // debugger
     return axios.get(`/api/tasks/user/${id}`)
 }
 
